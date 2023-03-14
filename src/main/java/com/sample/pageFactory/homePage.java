@@ -41,7 +41,5 @@ public class homePage extends basePage {
 
         Reporter.log("clicked on logout Successful");
         testBed.test.log(Status.PASS, "clicked on logout Successful");
-
     }
-
 }

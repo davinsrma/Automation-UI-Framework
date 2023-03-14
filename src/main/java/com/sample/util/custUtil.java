@@ -35,11 +35,20 @@ import static com.sample.util.testBed.*;
 public class custUtil {
 
     protected javaScriptUtil js = new javaScriptUtil();
+    JavascriptExecutor jse= (JavascriptExecutor) driver;
 
     public static int GetRandomInteger() {
         Random r1 = new Random();
         return r1.nextInt(1000);
     }
+
+    public void zoomOutPage(WebDriver driver){
+
+       jse.executeScript("document.body.style.zoom='50%");
+
+    }
+
+
 
     public void clearDirectory(String Dir) throws NullPointerException {
         File file = new File(Dir);
@@ -245,7 +254,8 @@ public class custUtil {
         try {
         Thread.sleep(1000);
         javaScriptUtil js = new javaScriptUtil();
-        js.execute_js(driver,"window.scrollBy(0,600)");
+        js.execute_js(driver,"window.scrollBy(0,300)");
+
         Thread.sleep(2000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
@@ -269,6 +279,7 @@ public class custUtil {
       try {
           File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 
+
           String encodedBase64 = null;
 
           FileInputStream fileInputStreamReader;
@@ -278,15 +289,20 @@ public class custUtil {
               fileInputStreamReader.read(bytes);
               encodedBase64 = new String(Base64.encodeBase64(bytes));
 
+
         String sImageFile = "data:image/png;base64," + encodedBase64;
+//              ////        New code below
+//
+//              File trg=new File("./ScreenShot/"+sImageFile+".png");
+//              FileUtils.copyFile(scrFile,trg);
+//
+//              ////        New code Above
+
 
         Reporter.log("capturing screen shot: " + Message, true);
         Reporter.log(String.valueOf(MediaEntityBuilder.createScreenCaptureFromPath(sImageFile).build()));
         test.log(Status.PASS, "capturing screen shot: " + Message, MediaEntityBuilder.createScreenCaptureFromPath(sImageFile).build());
-////        New code below
-//              File trg=new File("./ScreenShot/"+sImageFile+".png");
-//              FileUtils.copyFile(scrFile,trg);
-////        New code Above
+
           } catch ( FileNotFoundException e) {
               e.printStackTrace();
           }
@@ -338,6 +354,7 @@ public class custUtil {
             message.setFrom(new InternetAddress("davinsrma@gmail.com"));
             // Set the recipient address
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("davinsrma@gmail.com"));
+            message.setRecipients(Message.RecipientType.CC, InternetAddress.parse("kumarsaurav.234@gmail.com"));
 
             // Add the subject link
             message.setSubject("**** UI Atmtn Rpt - Device: "+SystemDetails+" tmpstmp: " + getCurrentDateTimeStamp() + " On Browser: "+TestBedBrowser+ "****");

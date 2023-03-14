@@ -73,7 +73,7 @@ public class sendResultByEmailTest {
             // Create object to add multimedia type content
             BodyPart messageBodyPart1 = new MimeBodyPart();
 
-            String sMessage = "***Sent By Selenium Automation Script***\n***please donot reply to this****";
+            String sMessage = "***Sent By Selenium Automation Script***\n*********please donot reply to this**********";
             // Set the body of email
             messageBodyPart1.setText(sMessage);
 

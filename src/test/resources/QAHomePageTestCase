@@ -1,0 +1,52 @@
+After Each Execution Send a mail to My Id davinsrma@gmail.com
+
+
+1. Open https://demoqa.com/ url
+2. Click on Elements Button
+3. Click on TextBox
+4. Fill fullName, Email and Submit
+5. Validate Name and Email
+
+
+6. Click on Check Box
+7. Click on Home Dropdown icon
+8. select drowpdown of download folder
+9. click excel File.doc
+9. validate you have selected excelFile
+
+10. Click on Radio Button
+11. Select Impressive Radio button
+12. Validate you have selected impressive
+
+13. Click on Web Tables
+14. Click on Add
+15. fill firstName, Lastname, Email, Age, Salary, Department
+16. Clikc on Submit
+17. Validate the result
+
+18. Click on Buttons
+19. Perform double click and validate
+20. Perform right click and validate
+21. perform single click and validate
+
+22. Click on Links
+23. then click on Home link. it will open in new tab. close that tab and return to main window
+
+24. Click on Created and validate
+25. Click on No Contant and validate
+26. Click on Unauthoriz and validate
+
+27. Click on upload and download
+28. Click on download button
+29. Validate download
+30. choose file to upload and validate
+
+31. Click on Dyanamic Property
+32. Fetch the color change after wait to appear this element
+
+
+
+33. Click on Forms
+34. Click on Practice form
+35. Fill the full details and click submit
+36. Validate

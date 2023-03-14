@@ -77,7 +77,7 @@ public class mySqlUtil {
         	Connection con = DriverManager.getConnection(dbUrl,username,password);
     
 			//Query to Execute		
-			String query = "insert into employee (name, age) values ('Akshat12',2);";	
+			String query = "insert into employee (name, age) values ('Davinder',2);";
             
      	    //Load mysql jdbc driver		
       
@@ -108,7 +108,7 @@ public class mySqlUtil {
         	Connection con = DriverManager.getConnection(dbUrl,username,password);
     
 			//Query to Execute		
-			String query = "delete  from employee where name ='Akshat12';";	
+			String query = "delete  from employee where name ='Davinder';";
             
      	    //Load mysql jdbc driver		
       
@@ -142,7 +142,7 @@ public static void updaterow() {
 		 
 	   
 	      // create the java mysql update preparedstatement
-	      String query = "update employee set name = 'Aayush' where age =3";
+	      String query = "update employee set name = 'Davinder' where age =3";
 	      PreparedStatement preparedStmt = con.prepareStatement(query);
 	     
 	      // execute the java preparedstatement

@@ -7,6 +7,7 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
+import com.sample.olivettiPlusPageFactory.OlivetiHomePage;
 import com.sample.pageFactory.homePage;
 import com.sample.pageFactory.loginPage;
 import com.sample.report.custReportListener;
@@ -46,10 +47,18 @@ public abstract class testBed {
     public  static String TestBedBrowser;
     public loginPage objLogin;
     public homePage objHome;
+
+//    Below variables for demoQA
+    public OlivetiHomePage olivetiHomePage;
+
+
+//    Below line is for executing Orange HRM Test
     private final String produrl = propertyUtil.getProperty(getEnvFilePath(), "URL");
+//    Below line is for executing DemoQA UI Test
+//private final String produrl = propertyUtil.getProperty(getEnvFilePath(), "urlDemoQA");
     private final String extentReportName = getResultPath() + "/testReport_" + custUtil.getCurrentDateTimeStamp() + ".html";
     ExtentSparkReporter spark;
-    public WebDriver driver;
+    public static WebDriver driver;
     public WebDriverWait mywait;
 
     public static ExtentReports extent;
@@ -150,6 +159,9 @@ public abstract class testBed {
         mywait = new WebDriverWait(driver, Duration.ofSeconds(TIMEOUT));
         objLogin = new loginPage(getDriver(), getWebDriverWait());
         objHome = new homePage(getDriver(), getWebDriverWait());
+        olivetiHomePage= new OlivetiHomePage();
+
+
     }
 
 
@@ -224,11 +236,11 @@ public abstract class testBed {
         List<String> summary =new ArrayList<String>();
 
         summary.add("\n");
-        summary.add("**************");
+        summary.add("*******************************");
         summary.add("\n");
         summary.add("** Test Execution Summary **");
         summary.add("\n");
-        summary.add("**************");
+        summary.add("*******************************");
         summary.add("\n");
         summary.add("Pass : " + itstCntxt.getPassedTests().size());
         summary.add("\n");
@@ -236,9 +248,9 @@ public abstract class testBed {
         summary.add("\n");
         summary.add("Skipped : " + itstCntxt.getSkippedTests().size());
         summary.add("\n");
-        summary.add("**************");
+        summary.add("*******************************");
         summary.add("\n");
-        summary.add("NOTE: This is system generated email. plz do not reply. If any questions please let me know at ggggggg@gmail.com");
+        summary.add("NOTE: This is system generated email. plz do not reply. If any questions please let me know at davinsrma@gmail.com or Call +91 8877993131");
         summary.add("\n");
         custUtil.sendEmailReport(extentReportName , summary);
     }
