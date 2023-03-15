@@ -35,7 +35,7 @@ import static com.sample.util.testBed.*;
 public class custUtil {
 
     protected javaScriptUtil js = new javaScriptUtil();
-    JavascriptExecutor jse= (JavascriptExecutor) driver;
+    protected JavascriptExecutor jse= (JavascriptExecutor) driver;
 
     public static int GetRandomInteger() {
         Random r1 = new Random();
@@ -138,19 +138,19 @@ public class custUtil {
         Thread.sleep(1000);
     }
 
-    public void checkToastrDisplayed(WebElement ToastrLoc) {
-        int Cnt = 0;
-        try {
-            while (!ToastrLoc.isDisplayed() && Cnt <= 30) {
-                //noinspection BusyWait
-                Thread.sleep(1000);
-                Cnt++;
-                System.out.println("waiting for toastr" + ToastrLoc.getTagName() + " elapsed time in sec: " + Cnt);
-            }
-        } catch (Exception e) {
-            System.out.println(e + " -- Could not find the toaster message");
-        }
-    }
+//    public void checkToastrDisplayed(WebElement ToastrLoc) {
+//        int Cnt = 0;
+//        try {
+//            while (!ToastrLoc.isDisplayed() && Cnt <= 30) {
+//                //noinspection BusyWait
+//                Thread.sleep(1000);
+//                Cnt++;
+//                System.out.println("waiting for toastr" + ToastrLoc.getTagName() + " elapsed time in sec: " + Cnt);
+//            }
+//        } catch (Exception e) {
+//            System.out.println(e + " -- Could not find the toaster message");
+//        }
+//    }
 
 //	public void waitForBouncerDisapper(WebDriver driver) throws InterruptedException {
 //		String sLoc = "//div[@class=\"gray-bg\"]//div[@class=\"ibox-content sk-loading\"]/div[@class=\"sk-spinner sk-spinner-double-bounce\"]/div";
@@ -249,7 +249,7 @@ public class custUtil {
             System.err.println(e);
         }
     }
-    public static void pageScrollDown(WebDriver driver)
+    public void pageScrollDown(WebDriver driver)
     {
         try {
         Thread.sleep(1000);
@@ -275,11 +275,9 @@ public class custUtil {
         }
     }
 
-    public static void captureScreenShot(WebDriver driver, String Message) {
+    public void captureScreenShot(WebDriver driver, String Message) {
       try {
           File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-
-
           String encodedBase64 = null;
 
           FileInputStream fileInputStreamReader;
@@ -289,16 +287,7 @@ public class custUtil {
               fileInputStreamReader.read(bytes);
               encodedBase64 = new String(Base64.encodeBase64(bytes));
 
-
         String sImageFile = "data:image/png;base64," + encodedBase64;
-//              ////        New code below
-//
-//              File trg=new File("./ScreenShot/"+sImageFile+".png");
-//              FileUtils.copyFile(scrFile,trg);
-//
-//              ////        New code Above
-
-
         Reporter.log("capturing screen shot: " + Message, true);
         Reporter.log(String.valueOf(MediaEntityBuilder.createScreenCaptureFromPath(sImageFile).build()));
         test.log(Status.PASS, "capturing screen shot: " + Message, MediaEntityBuilder.createScreenCaptureFromPath(sImageFile).build());
@@ -312,7 +301,7 @@ public class custUtil {
       }
     }
 
-    public static void sendEmailReport(String fileName, List<String> summary) {
+    public void sendEmailReport(String fileName, List<String> summary) {
 
         // Create object of Property file
         Properties props = new Properties();
@@ -337,7 +326,7 @@ public class custUtil {
 
                 new javax.mail.Authenticator() {
                     protected PasswordAuthentication getPasswordAuthentication() {
-                        return new PasswordAuthentication("davinsrma@gmail.com", "zpduslopfrypbbfo");
+                        return new PasswordAuthentication("davinsrmaa@gmail.com", "depksbavxmgemsbi");
                     }
 
                 });
@@ -351,13 +340,13 @@ public class custUtil {
                 throw new RuntimeException(e);
             }
             // Set the from address
-            message.setFrom(new InternetAddress("davinsrma@gmail.com"));
+            message.setFrom(new InternetAddress("davinsrmaa@gmail.com"));
             // Set the recipient address
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("davinsrma@gmail.com"));
-            message.setRecipients(Message.RecipientType.CC, InternetAddress.parse("kumarsaurav.234@gmail.com"));
+//            message.setRecipients(Message.RecipientType.CC, InternetAddress.parse("kumarsaurav.234@gmail.com"));
 
             // Add the subject link
-            message.setSubject("**** UI Atmtn Rpt - Device: "+SystemDetails+" tmpstmp: " + getCurrentDateTimeStamp() + " On Browser: "+TestBedBrowser+ "****");
+            message.setSubject("**** UI Automation Rep - Device: "+SystemDetails+" ReportId: " + getCurrentDateTimeStamp() + " On Browser: "+TestBedBrowser+ "****");
 
             // Create object to add multimedia type content
             BodyPart messageBodyPart1 = new MimeBodyPart();

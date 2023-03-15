@@ -3,8 +3,13 @@ import com.sample.util.logs4jUtil;
 import org.testng.*;
 
 public class testListener implements ITestListener	,ISuiteListener
-{		
+{
+
+    /* Till the last of the page commented  15 march 2023
+
+
 	public static logs4jUtil Log4j = new logs4jUtil();
+
     public String TCName = null;
 	
 	public void onStart(ISuite arg0) {
@@ -93,4 +98,7 @@ public class testListener implements ITestListener	,ISuiteListener
     }		
     Log4j.LogSumInfo("=========================");
     }
+
+
+     */
 }			

@@ -6,8 +6,7 @@ import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
-
-import com.sample.olivettiPlusPageFactory.OlivetiHomePage;
+import com.sample.demoQAPageFactory.QADemoElementPage;
 import com.sample.pageFactory.homePage;
 import com.sample.pageFactory.loginPage;
 import com.sample.report.custReportListener;
@@ -47,15 +46,9 @@ public abstract class testBed {
     public  static String TestBedBrowser;
     public loginPage objLogin;
     public homePage objHome;
-
-//    Below variables for demoQA
-    public OlivetiHomePage olivetiHomePage;
-
-
-//    Below line is for executing Orange HRM Test
     private final String produrl = propertyUtil.getProperty(getEnvFilePath(), "URL");
-//    Below line is for executing DemoQA UI Test
-//private final String produrl = propertyUtil.getProperty(getEnvFilePath(), "urlDemoQA");
+
+    custUtil custUtil=new custUtil();
     private final String extentReportName = getResultPath() + "/testReport_" + custUtil.getCurrentDateTimeStamp() + ".html";
     ExtentSparkReporter spark;
     public static WebDriver driver;
@@ -64,6 +57,7 @@ public abstract class testBed {
     public static ExtentReports extent;
     //helps to generate the logs in the test report.
     public static ExtentTest test;
+
 
     @BeforeSuite
     public void beforeSuite() {
@@ -157,9 +151,10 @@ public abstract class testBed {
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(TIMEOUT));
         mywait = new WebDriverWait(driver, Duration.ofSeconds(TIMEOUT));
-        objLogin = new loginPage(getDriver(), getWebDriverWait());
-        objHome = new homePage(getDriver(), getWebDriverWait());
-        olivetiHomePage= new OlivetiHomePage();
+//        objLogin = new loginPage(getDriver(), getWebDriverWait());
+//        objHome = new homePage(getDriver(), getWebDriverWait());
+
+
 
 
     }
@@ -223,9 +218,10 @@ public abstract class testBed {
     @AfterClass(alwaysRun = true)
     public void tearDownClass() {
         System.out.println("AfterClass:");
+
 //        if (null != driver) {
         if (driver!=null) {
-            driver.close();
+//            driver.close();
             driver.quit();
         }
     }
@@ -267,7 +263,7 @@ public abstract class testBed {
         String filename = "";
         try {
 
-            filename = new java.io.File(".").getCanonicalPath() + "/config/dev_env.properties";
+            filename = new java.io.File(".").getCanonicalPath() + "/src/test/resources/data.properties";
         } catch (IOException e) {
             e.printStackTrace();
             // TODO Auto-generated catch block

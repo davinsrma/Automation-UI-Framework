@@ -15,6 +15,7 @@ public class loginPage  extends basePage {
 
     homePage objHome = new homePage(driver, mywait);
     objectRepository objRepo = new objectRepository(driver, mywait);
+    custUtil custUtil=new custUtil();
 
     public loginPage(WebDriver driver, WebDriverWait mywait) {
         super(driver, mywait);

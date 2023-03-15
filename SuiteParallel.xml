@@ -10,7 +10,7 @@
 	</listeners>
 
 	<test name="Simple Smoke Test" >
-		<parameter name="browser" value="chrome" />
+		<parameter name="browser" value="safari" />
 		<classes>
 			<class name="com.sample.orangeHRMLoginTest" />
 			<class name="com.sample.orangeHRMLoginWithDtPrverTest" />

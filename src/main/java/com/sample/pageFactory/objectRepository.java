@@ -11,8 +11,8 @@ import com.sample.util.basePage;
 
 
 public class objectRepository extends basePage {
-    protected WebDriver driver;
-    protected WebDriverWait mywait;
+//    protected WebDriver driver;
+//    protected WebDriverWait mywait;
 
     public objectRepository(WebDriver driver, WebDriverWait mywait) {
         super(driver, mywait);

@@ -1,7 +1,7 @@
 package com.DemoQATest;
 
 import com.aventstack.extentreports.Status;
-import com.sample.DemoQAPageFactory.QADemoElementPage;
+import com.sample.demoQAPageFactory.QADemoElementPage;
 import com.sample.util.testBed;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;

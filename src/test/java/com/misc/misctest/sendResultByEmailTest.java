@@ -51,7 +51,7 @@ public class sendResultByEmailTest {
 
                     protected PasswordAuthentication getPasswordAuthentication() {
 
-                        return new PasswordAuthentication("davinsrma@gmail.com", "zpduslopfrypbbfo");
+                        return new PasswordAuthentication("davinsrmaa@gmail.com", "depksbavxmgemsbi");
 
                     }
 
@@ -62,11 +62,11 @@ public class sendResultByEmailTest {
             Message message = new MimeMessage(session);
 
             // Set the from address
-            message.setFrom(new InternetAddress("davinsrma@gmail.com"));
+            message.setFrom(new InternetAddress("davinsrmaa@gmail.com"));
 
             // Set the recipient address
-            message.setRecipients(Message.RecipientType.TO,InternetAddress.parse("davinsrma@gmail.com,davinsrmaa@gmail.com"));
-            message.setRecipients(Message.RecipientType.CC,InternetAddress.parse("davinsrma@gmail.com"));
+            message.setRecipients(Message.RecipientType.TO,InternetAddress.parse("davinsrmaa@gmail.com"));
+            message.setRecipients(Message.RecipientType.CC,InternetAddress.parse("davinsrmaa@gmail.com"));
             // Add the subject link
             message.setSubject("***** UIAutomation Test Report executed at ************");
 

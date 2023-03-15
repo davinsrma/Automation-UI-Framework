@@ -1,7 +1,6 @@
-package com.sample.DemoQAPageFactory;
+package com.sample.demoQAPageFactory;
 
 import com.sample.util.custUtil;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -72,15 +71,10 @@ custUtil custUtil=new custUtil();
 
 
 
-
-
-
-
-
     public void clickTextBox() throws InterruptedException, AWTException {
         wait.until(ExpectedConditions.visibilityOf(textBox));
         wait.until(ExpectedConditions.elementToBeClickable(textBox));
-        com.sample.util.custUtil.captureScreenShot(driver,"TextBox Clicked");
+        custUtil.captureScreenShot(driver,"TextBox Clicked");
         textBox.click();
     }
     public void fillTextBox(String userName, String email, String currAdd, String perAdd){
@@ -100,7 +94,7 @@ custUtil custUtil=new custUtil();
 
        try{
            custUtil.scrollToElement(driver,textBoxSubmit);
-           com.sample.util.custUtil.captureScreenShot(driver,"textBoxSubmit");
+           custUtil.captureScreenShot(driver,"textBoxSubmit");
         textBoxSubmit.click();
        }catch (Exception e){
            System.out.println(e);

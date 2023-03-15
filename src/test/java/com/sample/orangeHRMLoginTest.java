@@ -4,8 +4,6 @@ import com.aventstack.extentreports.Status;
 import com.sample.util.custUtil;
 import com.sample.util.propertyUtil;
 import com.sample.util.testBed;
-import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import java.lang.reflect.Method;
