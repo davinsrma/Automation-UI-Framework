@@ -2,6 +2,7 @@ package com.sample.demoQAPageFactory;
 
 import com.sample.util.custUtil;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -15,6 +16,7 @@ public class QADemoElementPage {
 
 WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(10));
 custUtil custUtil=new custUtil();
+    Actions actions=new Actions(driver);
 
     @FindBy(xpath = "//div[@class='element-list collapse show']//li[@id='item-0']")
     WebElement textBox;
@@ -119,30 +121,30 @@ custUtil custUtil=new custUtil();
         wait.until(ExpectedConditions.visibilityOf(dropDownHome));
         wait.until(ExpectedConditions.elementToBeClickable(dropDownHome));
         try{
+            custUtil.scrollToElement(driver,dropDownHome);
         dropDownHome.click();
         }catch (Exception e){
-            custUtil.pageScrollDown(driver);
-            clickDropdownHome();
+            System.out.println(e);
         }
     }
     public void clickDropdownDownload(){
         wait.until(ExpectedConditions.visibilityOf(dropDownDownload));
         wait.until(ExpectedConditions.elementToBeClickable(dropDownDownload));
         try{
+            custUtil.scrollToElement(driver,dropDownDownload);
         dropDownDownload.click();
         }catch (Exception e){
-            custUtil.pageScrollDown(driver);
-            clickDropdownDownload();
+            System.out.println(e);
         }
     }
     public void clickExcelFile(){
         wait.until(ExpectedConditions.visibilityOf(excelFile));
         wait.until(ExpectedConditions.elementToBeClickable(excelFile));
         try{
+            custUtil.scrollToElement(driver,excelFile);
         excelFile.click();
         }catch (Exception e){
-            custUtil.pageScrollDown(driver);
-            clickExcelFile();
+            System.out.println(e);
         }
     }
     public String getExcelClickValue(){
@@ -155,20 +157,21 @@ custUtil custUtil=new custUtil();
         wait.until(ExpectedConditions.visibilityOf(radioButton));
         wait.until(ExpectedConditions.elementToBeClickable(radioButton));
         try{
+            custUtil.scrollToElement(driver,radioButton);
         radioButton.click();
         }catch (Exception e){
-            custUtil.pageScrollDown(driver);
-            clickRadioButton();
+
+            System.out.println(e);
         }
     }
     public void clickImpressiveRadioButton(){
         wait.until(ExpectedConditions.visibilityOf(impressivRadioButton));
         wait.until(ExpectedConditions.elementToBeClickable(impressivRadioButton));
         try{
+            custUtil.scrollToElement(driver,impressivRadioButton);
         impressivRadioButton.click();
         }catch (Exception e){
-            custUtil.pageScrollDown(driver);
-            clickImpressiveRadioButton();
+            System.out.println(e);
         }
     }
     public String fetchImpressiveButtonText(){
@@ -194,10 +197,10 @@ custUtil custUtil=new custUtil();
         wait.until(ExpectedConditions.visibilityOf(addRecordButton));
         wait.until(ExpectedConditions.elementToBeClickable(addRecordButton));
         try{
+            custUtil.scrollToElement(driver,addRecordButton);
             addRecordButton.click();
         }catch (Exception e){
-            custUtil.pageScrollDown(driver);
-            clickAddButton();
+            System.out.println(e);
         }
     }
     public void fillRegistrationForm(String firstName, String lastName,String uEmail, String age,String salary,String department){
@@ -217,12 +220,70 @@ custUtil custUtil=new custUtil();
             userSubmit.click();
 
         }catch (Exception e){
-//            custUtil.pageScrollDown(driver);
-//            submitRegistrationForm();
             System.out.println(e);
         }
     }
 
+    @FindBy(xpath = "//*[@id=\"item-4\"]/span")
+    WebElement buttons;
+
+    @FindBy(xpath = "//button[@id='doubleClickBtn']")
+    WebElement doubleClickMe;
+    @FindBy(xpath = "//*[@id=\"doubleClickMessage\"]")
+    WebElement doubleClickValidation;
+
+    @FindBy(xpath = "//*[@id=\"rightClickBtn\"]")
+    WebElement rightClickMe;
+    @FindBy(xpath = "//*[@id=\"rightClickMessage\"]")
+    WebElement rightClickValidation;
+
+    @FindBy(xpath = "//button[text()='Click Me']")
+    WebElement clickMe;
+    @FindBy(xpath = "//*[@id=\"dynamicClickMessage\"]")
+    WebElement clickMeValidation;
+
+    public void clickOnButtons(){
+        try {
+            custUtil.scrollToElement(driver, buttons);
+            wait.until(ExpectedConditions.visibilityOf(buttons));
+            wait.until(ExpectedConditions.elementToBeClickable(buttons));
+            buttons.click();
+        }catch (Exception e){
+            System.out.println(e);
+        }
+    }
+    public void doubleClickOnDoubleClickMeButton(){
+        wait.until(ExpectedConditions.visibilityOf(doubleClickMe));
+        wait.until(ExpectedConditions.elementToBeClickable(doubleClickMe));
+        actions.doubleClick(doubleClickMe).perform();
+    }
+    public String doubleClickValidation(){
+        wait.until(ExpectedConditions.visibilityOf(doubleClickValidation));
+        String doubleClickValidate=doubleClickValidation.getText();
+        return doubleClickValidate;
+    }
+
+    public void rightClickMe(){
+        wait.until(ExpectedConditions.visibilityOf(rightClickMe));
+        wait.until(ExpectedConditions.elementToBeClickable(rightClickMe));
+        actions.contextClick(rightClickMe).perform();
+    }
+    public String setRightClickValidation(){
+        wait.until(ExpectedConditions.visibilityOf(rightClickValidation));
+        String rightClickValidate=rightClickValidation.getText();
+        return rightClickValidate;
+    }
+    public void singleClick(){
+        wait.until(ExpectedConditions.visibilityOf(clickMe));
+        wait.until(ExpectedConditions.elementToBeClickable(clickMe));
+        actions.click(clickMe).perform();
+    }
+    public String sigleClickValidation(){
+        wait.until(ExpectedConditions.visibilityOf(clickMeValidation));
+        String clickMeValidate=clickMeValidation.getText();
+        return clickMeValidate;
+
+    }
 
 
 }

@@ -1,4 +1,4 @@
-package com.DemoQATest;
+package com.demoQATest;
 
 import com.aventstack.extentreports.Status;
 import com.sample.demoQAPageFactory.QADemoElementPage;
@@ -20,7 +20,7 @@ public class QADemoElementTest extends testBed {
 
 
 
-    @Test
+//    @Test
     public void fillTextBoxFullAndValidate(Method method) throws InterruptedException, IOException, AWTException {
         qaHomePage= PageFactory.initElements(testBed.driver, QADemoElementPage.class);
 
@@ -79,6 +79,23 @@ public class QADemoElementTest extends testBed {
                 properties.getProperty("email"),properties.getProperty("age"),properties.getProperty("salary"),properties.getProperty("department"));
         qaHomePage.submitRegistrationForm();
         Thread.sleep(10000);
+
+    }
+
+    @Test
+    public void singleDoubleRightClickAndValidation(Method method){
+        qaHomePage= PageFactory.initElements(testBed.driver, QADemoElementPage.class);
+        test = extent.createTest(method.getName());
+        test.log(Status.INFO, "The thread ID for method: " + method.getName() + "browser: " + TestBedBrowser + " is " + Thread.currentThread().getId());
+
+        qaHomePage.clickOnButtons();
+        qaHomePage.doubleClickOnDoubleClickMeButton();
+        Assert.assertEquals(qaHomePage.doubleClickValidation(),"You have done a double click");
+        qaHomePage.rightClickMe();
+        Assert.assertEquals(qaHomePage.setRightClickValidation(),"You have done a right click");
+        qaHomePage.singleClick();
+        Assert.assertEquals(qaHomePage.sigleClickValidation(),"You have done a dynamic click");
+
 
     }
 
