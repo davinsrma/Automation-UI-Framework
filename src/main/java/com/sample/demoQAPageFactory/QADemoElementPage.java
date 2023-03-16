@@ -76,7 +76,7 @@ public class QADemoElementPage {
     public void clickTextBox() throws InterruptedException, AWTException {
         wait.until(ExpectedConditions.visibilityOf(textBox));
         wait.until(ExpectedConditions.elementToBeClickable(textBox));
-        custUtil.captureScreenShot(driver,"TextBox Clicked");
+//        custUtil.captureScreenShot(driver,"TextBox Clicked");
         textBox.click();
     }
     public void fillTextBox(String userName, String email, String currAdd, String perAdd){
@@ -96,7 +96,7 @@ public class QADemoElementPage {
 
        try{
            custUtil.scrollToElement(driver,textBoxSubmit);
-           custUtil.captureScreenShot(driver,"textBoxSubmit");
+//           custUtil.captureScreenShot(driver,"textBoxSubmit");
         textBoxSubmit.click();
        }catch (Exception e){
            System.out.println(e);
@@ -225,7 +225,7 @@ public class QADemoElementPage {
     @FindBy(xpath = "//*[@id=\"item-4\"]/span")
     WebElement buttons;
 
-    @FindBy(xpath = "//button[@id='doubleClickBtn']")
+    @FindBy(xpath = "//button[text()='Double Click Me']")
     WebElement doubleClickMe;
     @FindBy(xpath = "//*[@id=\"doubleClickMessage\"]")
     WebElement doubleClickValidation;
@@ -253,35 +253,65 @@ public class QADemoElementPage {
     public void doubleClickOnDoubleClickMeButton(){
         wait.until(ExpectedConditions.visibilityOf(doubleClickMe));
         wait.until(ExpectedConditions.elementToBeClickable(doubleClickMe));
+        custUtil.scrollToElement(driver,doubleClickMe);
         actions.doubleClick(doubleClickMe).perform();
     }
     public String doubleClickValidation(){
         wait.until(ExpectedConditions.visibilityOf(doubleClickValidation));
+        custUtil.scrollToElement(driver,doubleClickValidation);
+
         String doubleClickValidate=doubleClickValidation.getText();
         return doubleClickValidate;
     }
     public void rightClickMe(){
         wait.until(ExpectedConditions.visibilityOf(rightClickMe));
         wait.until(ExpectedConditions.elementToBeClickable(rightClickMe));
+        custUtil.scrollToElement(driver,rightClickMe);
         actions.contextClick(rightClickMe).perform();
     }
     public String setRightClickValidation(){
         wait.until(ExpectedConditions.visibilityOf(rightClickValidation));
+        custUtil.scrollToElement(driver,rightClickValidation);
         String rightClickValidate=rightClickValidation.getText();
         return rightClickValidate;
     }
     public void singleClick(){
         wait.until(ExpectedConditions.visibilityOf(clickMe));
         wait.until(ExpectedConditions.elementToBeClickable(clickMe));
+        custUtil.scrollToElement(driver,clickMe);
         actions.click(clickMe).perform();
     }
     public String sigleClickValidation() throws InterruptedException {
 
         wait.until(ExpectedConditions.visibilityOf(clickMeValidation));
+        custUtil.scrollToElement(driver,clickMeValidation);
         String clickMeValidate=clickMeValidation.getText();
-        custUtil.captureScreenShot(driver,"Click Actions");
-        return clickMeValidate;
 
+//        custUtil.captureScreenShot(driver,"Click Actions");
+        return clickMeValidate;
+    }
+    @FindBy(xpath = "//span[normalize-space()='Upload and Download']")
+    WebElement uploadAndDownloadButton;
+    @FindBy(xpath = "//a[@id='downloadButton']")
+    WebElement clickToDownload;
+    @FindBy(xpath = "//input[@id='uploadFile']")
+    WebElement clickToUpload;
+
+    public void clickUploadAndDownloadButton(){
+        wait.until(ExpectedConditions.visibilityOf(uploadAndDownloadButton));
+        wait.until(ExpectedConditions.elementToBeClickable(uploadAndDownloadButton));
+        custUtil.scrollToElement(driver,uploadAndDownloadButton);
+        uploadAndDownloadButton.click();
+    }
+    public void setClickToDownload(){
+        wait.until(ExpectedConditions.visibilityOf(clickToDownload));
+        wait.until(ExpectedConditions.elementToBeClickable(clickToDownload));
+        clickToDownload.click();
+    }
+    public void setClickToUpload() throws InterruptedException, AWTException {
+        wait.until(ExpectedConditions.visibilityOf(clickToUpload));
+        wait.until(ExpectedConditions.elementToBeClickable(clickToUpload));
+        custUtil.uploadFileUsingRobot("/Users/davinder/Desktop/11111111.png");
     }
 
 

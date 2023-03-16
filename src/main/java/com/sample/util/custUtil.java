@@ -43,9 +43,13 @@ public class custUtil {
     }
 
     public void zoomOutPage(WebDriver driver){
-
-       jse.executeScript("document.body.style.zoom='50%");
-
+    try {
+        Thread.sleep(1000);
+        jse.executeScript("document.body.style.zoom='50%");
+        Thread.sleep(1000);
+        }catch (Exception e){
+        System.out.println(e);
+        }
     }
 
 
@@ -253,7 +257,7 @@ public class custUtil {
     {
         try {
         Thread.sleep(1000);
-        javaScriptUtil js = new javaScriptUtil();
+        js = new javaScriptUtil();
         js.execute_js(driver,"window.scrollBy(0,300)");
 
         Thread.sleep(2000);
