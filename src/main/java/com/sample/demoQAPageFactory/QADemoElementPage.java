@@ -14,8 +14,8 @@ import static com.sample.util.testBed.driver;
 
 public class QADemoElementPage {
 
-WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(10));
-custUtil custUtil=new custUtil();
+    WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(10));
+    custUtil custUtil=new custUtil();
     Actions actions=new Actions(driver);
 
     @FindBy(xpath = "//div[@class='element-list collapse show']//li[@id='item-0']")
@@ -188,8 +188,6 @@ custUtil custUtil=new custUtil();
             custUtil.scrollToElement(driver,webTableButton);
             webTableButton.click();
         }catch (Exception e){
-//            custUtil.pageScrollDown(driver);
-//            clickWebTableButton();
             System.out.println(e);
         }
     }
@@ -262,7 +260,6 @@ custUtil custUtil=new custUtil();
         String doubleClickValidate=doubleClickValidation.getText();
         return doubleClickValidate;
     }
-
     public void rightClickMe(){
         wait.until(ExpectedConditions.visibilityOf(rightClickMe));
         wait.until(ExpectedConditions.elementToBeClickable(rightClickMe));
@@ -278,9 +275,11 @@ custUtil custUtil=new custUtil();
         wait.until(ExpectedConditions.elementToBeClickable(clickMe));
         actions.click(clickMe).perform();
     }
-    public String sigleClickValidation(){
+    public String sigleClickValidation() throws InterruptedException {
+
         wait.until(ExpectedConditions.visibilityOf(clickMeValidation));
         String clickMeValidate=clickMeValidation.getText();
+        custUtil.captureScreenShot(driver,"Click Actions");
         return clickMeValidate;
 
     }
