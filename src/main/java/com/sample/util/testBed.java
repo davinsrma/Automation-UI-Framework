@@ -6,9 +6,6 @@ import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
-import com.sample.demoQAPageFactory.QADemoElementPage;
-import com.sample.pageFactory.homePage;
-import com.sample.pageFactory.loginPage;
 import com.sample.report.custReportListener;
 import com.sample.report.testListener;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -44,16 +41,12 @@ import static java.net.InetAddress.getLocalHost;
 public abstract class testBed {
     public static final int TIMEOUT = 5;
     public  static String TestBedBrowser;
-    public loginPage objLogin;
-    public homePage objHome;
     private final String produrl = propertyUtil.getProperty(getEnvFilePath(), "URL");
-
     custUtil custUtil=new custUtil();
     private final String extentReportName = getResultPath() + "/testReport_" + custUtil.getCurrentDateTimeStamp() + ".html";
     ExtentSparkReporter spark;
     public static WebDriver driver;
     public WebDriverWait mywait;
-
     public static ExtentReports extent;
     //helps to generate the logs in the test report.
     public static ExtentTest test;
@@ -71,7 +64,7 @@ public abstract class testBed {
         //initialize ExtentReports and attach the HtmlReporter
         extent = new ExtentReports();
 
-        spark.config().setTheme(Theme.STANDARD);
+        spark.config().setTheme(Theme.DARK);
         spark.config().setDocumentTitle("UI Automation Report");
         spark.config().setReportName("Extent Test Report");
         spark.config().setTimeStampFormat("EEEE, MMMM dd, yyyy, hh:mm a '('zzz')'");
@@ -100,20 +93,16 @@ public abstract class testBed {
 
     @Parameters("browser")
     @BeforeClass
-    public void beforeClass(String browser) {
-//        public void beforeClass(@Optional("chrome") String browser) {
+    public void beforeClass(@Optional("safari") String browser) {
         System.out.println("BeforeClass: invoking browser:" + browser);
         TestBedBrowser = browser;
 
         if (browser.equalsIgnoreCase("chrome")) {
             ChromeOptions options = new ChromeOptions();
-//            ************************New line below if facing 403 Forbidden
-//            options.addArguments("--remove-allow-origins=*");
-//            ************************New line above
             options.addArguments("--incognito");
             options.addArguments("--start-maximized");
 
-//            options.addArguments("--headless");
+//          options.addArguments("--headless");
 //			options.addArguments("--disable-web-security");
 //			options.addArguments("--allow-insecure-localhost");
 //			options.addArguments("--ignore-urlfetcher-cert-requests");
@@ -135,11 +124,6 @@ public abstract class testBed {
 			driver = new FirefoxDriver(options);
         } else if (browser.equalsIgnoreCase("safari")) {
             SafariOptions options = new SafariOptions();
-
-
-//            options.setUseTechnologyPreview(true);
-//            System.out.println(options.getBrowserVersion());
-
             options.setCapability("safari.cleanSession", true);
             WebDriverManager.safaridriver().setup();
             driver = new SafariDriver(options);
@@ -164,9 +148,7 @@ public abstract class testBed {
     @BeforeMethod
     public void beforeMethod() {
         System.out.println("BeforeMethod time stamp: " + custUtil.getCurrentDateTimeStamp());
-
         Reporter.log("Launching URL : " + produrl);
-
         driver.get(produrl);
 
     }
@@ -218,10 +200,7 @@ public abstract class testBed {
     @AfterClass(alwaysRun = true)
     public void tearDownClass() {
         System.out.println("AfterClass:");
-
-//        if (null != driver) {
         if (driver!=null) {
-//            driver.close();
             driver.quit();
         }
     }

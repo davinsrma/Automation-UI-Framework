@@ -3,6 +3,7 @@ package com.demoQATest;
 import com.aventstack.extentreports.Status;
 import com.sample.demoQAPageFactory.QADemoElementPage;
 import com.sample.util.testBed;
+
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.Reporter;
@@ -20,7 +21,7 @@ public class QADemoElementTest extends testBed {
 
 
 
-//    @Test
+    @Test
     public void fillTextBoxFullAndValidate(Method method) throws InterruptedException, IOException, AWTException {
         qaHomePage= PageFactory.initElements(testBed.driver, QADemoElementPage.class);
 
@@ -38,7 +39,7 @@ public class QADemoElementTest extends testBed {
         Assert.assertEquals(qaHomePage.getEmail(),"Email:"+properties.getProperty("email"));
     }
 
-//    @Test
+    @Test
     public void clickCheckBoxThenExcelAndValidate(Method method){
         qaHomePage= PageFactory.initElements(testBed.driver, QADemoElementPage.class);
         test = extent.createTest(method.getName());
@@ -52,7 +53,7 @@ public class QADemoElementTest extends testBed {
         Reporter.log("ClickCheckBox and Select Excel Validation Completed");
     }
 
-//    @Test
+    @Test
     public void clickRadioButtonAndImpressiveButtonAndValidate(Method method){
         qaHomePage= PageFactory.initElements(testBed.driver, QADemoElementPage.class);
         test = extent.createTest(method.getName());
@@ -63,7 +64,7 @@ public class QADemoElementTest extends testBed {
 
         Assert.assertEquals(qaHomePage.fetchImpressiveButtonText(),"Impressive");
     }
-//    @Test
+    @Test
     public void clickWebTableAndFillRegistrationFormAndSubmit(Method method) throws IOException, InterruptedException {
         qaHomePage= PageFactory.initElements(testBed.driver, QADemoElementPage.class);
 
@@ -82,7 +83,7 @@ public class QADemoElementTest extends testBed {
 
     }
 
-//    @Test
+    @Test
     public void singleDoubleRightClickAndValidation(Method method) throws InterruptedException {
         qaHomePage= PageFactory.initElements(testBed.driver, QADemoElementPage.class);
         test = extent.createTest(method.getName());
@@ -96,7 +97,7 @@ public class QADemoElementTest extends testBed {
         qaHomePage.singleClick();
         Assert.assertEquals(qaHomePage.sigleClickValidation(),"You have done a dynamic click");
     }
-    @Test
+    @Test(description = "This test is to verify download and uploads are working")
     public void clickUploadAndDownloadThenDownloadAndUploadAFile(Method method) throws InterruptedException, AWTException {
         qaHomePage= PageFactory.initElements(testBed.driver, QADemoElementPage.class);
         test = extent.createTest(method.getName());
@@ -106,6 +107,16 @@ public class QADemoElementTest extends testBed {
         qaHomePage.setClickToDownload();
         qaHomePage.setClickToUpload();
 
+    }
+    @Test
+    public void clickDyanamicProperties_andFetchButtonTextAfterButtonVisible(Method method){
+        qaHomePage= PageFactory.initElements(testBed.driver, QADemoElementPage.class);
+        test = extent.createTest(method.getName());
+        test.log(Status.INFO, "The thread ID for method: " + method.getName() + "browser: " + TestBedBrowser + " is " + Thread.currentThread().getId());
+
+        qaHomePage.clickDyanamicPropertiesButton();
+        Assert.assertEquals(qaHomePage.visibleAfter5Sec(),"Visible After 5 Seconds");
+        Assert.assertEquals(qaHomePage.getButtonColor(),"Color Change");
     }
 
 }

@@ -13,13 +13,13 @@ import org.testng.xml.XmlSuite;
 public class reportListener implements IReporter{
    public void generateReport(List<XmlSuite> xmlSuites, List<ISuite> suites,
       String outputDirectory) {
-      
+
       //Iterating over each suite included in the test
       for (ISuite suite : suites) {
-            
+
          //Following code gets the suite name
          String suiteName = suite.getName();
-            
+
          //Getting the results for the said suite
          Map<String, ISuiteResult> suiteResults = suite.getResults();
          for (ISuiteResult sr : suiteResults.values()) {

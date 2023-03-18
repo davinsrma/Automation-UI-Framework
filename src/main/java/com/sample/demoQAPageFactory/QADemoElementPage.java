@@ -22,8 +22,10 @@ public class QADemoElementPage {
     WebElement textBox;
 
     @FindBy(id = "userName")
+
     WebElement textBoxFullName;
     @FindBy(id = "userEmail")
+
     WebElement textBoxEmail;
     @FindBy(id = "currentAddress")
     WebElement texBoxCurrentAddress;
@@ -286,8 +288,6 @@ public class QADemoElementPage {
         wait.until(ExpectedConditions.visibilityOf(clickMeValidation));
         custUtil.scrollToElement(driver,clickMeValidation);
         String clickMeValidate=clickMeValidation.getText();
-
-//        custUtil.captureScreenShot(driver,"Click Actions");
         return clickMeValidate;
     }
     @FindBy(xpath = "//span[normalize-space()='Upload and Download']")
@@ -314,5 +314,31 @@ public class QADemoElementPage {
         custUtil.uploadFileUsingRobot("/Users/davinder/Desktop/11111111.png");
     }
 
+
+    @FindBy(xpath = "//span[normalize-space()='Dynamic Properties']")
+    WebElement dynamicPropertiesButton;
+    @FindBy(xpath = "//button[@id='visibleAfter']")
+    WebElement visibleAfter5SceButton;
+    @FindBy(xpath = "//button[@id='colorChange']")
+    WebElement buttonColor;
+
+    public void clickDyanamicPropertiesButton(){
+        wait.until(ExpectedConditions.visibilityOf(dynamicPropertiesButton));
+        wait.until(ExpectedConditions.elementToBeClickable(dynamicPropertiesButton));
+        custUtil.scrollToElement(driver,dynamicPropertiesButton);
+        dynamicPropertiesButton.click();
+    }
+    public String visibleAfter5Sec(){
+        wait.until(ExpectedConditions.visibilityOf(visibleAfter5SceButton));
+        wait.until(ExpectedConditions.elementToBeClickable(visibleAfter5SceButton));
+        String actual=visibleAfter5SceButton.getText();
+        return actual;
+    }
+
+    public String getButtonColor(){
+        wait.until(ExpectedConditions.visibilityOf(buttonColor));
+        String color=buttonColor.getText();
+        return color;
+    }
 
 }

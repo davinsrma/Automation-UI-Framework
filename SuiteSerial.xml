@@ -13,7 +13,7 @@
 			<class name="com.sample.orangeHRMLoginTest" />
 <!--			<class name="com.sample.orangeHRMLoginWithDtPrverTest" />-->
 <!--			<class name="com.sample.orangeHRMLoginWithExclDaPrverTest" />-->
-<!--			<class name="com.misc.misctest.sampleTest"/>-->
+<!--			<class name="com.misc.misctest.SampleTest"/>-->
 		</classes>
 	</test>
 </suite>

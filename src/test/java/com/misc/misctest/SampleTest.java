@@ -1,13 +1,12 @@
 package com.misc.misctest;
 
 import com.sample.util.testBed;
-import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
 import java.lang.reflect.Method;
 
-public class sampleTest extends testBed {
+public class SampleTest extends testBed {
 
     @Test(enabled=false,priority = 1, description = "Invalid")
     public void level1(Method method)

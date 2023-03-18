@@ -25,7 +25,7 @@ public class excelUtil {
 
 	public static void readExcel(String filePath, String fileName, String sheetName) throws IOException {
 
-		File file = new File(filePath + "\\" + fileName);
+		File file = new File(filePath + "/" + fileName);
 		FileInputStream inputStream = new FileInputStream(file);
 
 		Workbook wb = null;
@@ -97,7 +97,7 @@ public class excelUtil {
 	
 	public static void writeExcel(String filePath, String fileName, String sheetName, String[] dataToWrite)
 			throws IOException {
-		File file = new File(filePath + "\\" + fileName);
+		File file = new File(filePath + "/" + fileName);
 		FileInputStream inputStream = new FileInputStream(file);
 		Workbook workbook = null;
 
@@ -136,10 +136,10 @@ public class excelUtil {
 	// Main function is calling readExcel function to read data from excel file
 	public static void main(String... strings) throws IOException {
 		String filePath = System.getProperty("user.dir");
-
+//		System.out.println(filePath);
 		// Call read file method of the class to read data
-
-		readExcel(filePath, "ExportExcel.xlsx", "ExcelDemo");
+		String fileName="userDataInformation.xlsx";
+		readExcel("./src/test/resources",fileName, "data");
 
 		/////////////////////
 		// Create an array with the data in the same order in which you expect to be

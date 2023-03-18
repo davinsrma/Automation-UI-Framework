@@ -14,7 +14,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class demoExtentTest {
+public class DemoExtentTest {
 
     ExtentReports extent;
     //helps to generate the logs in the test report.

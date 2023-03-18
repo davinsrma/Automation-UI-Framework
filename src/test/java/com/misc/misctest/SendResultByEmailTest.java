@@ -16,7 +16,7 @@ import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 
-public class sendResultByEmailTest {
+public class SendResultByEmailTest {
 
     public static void main(String[] args) {
 //        spring.mail.host=smtp.gmail.com
