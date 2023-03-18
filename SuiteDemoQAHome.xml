@@ -12,7 +12,8 @@
 	<test name="Simple Smoke Test" >
 		<parameter name="browser" value="firefox" />
 		<classes>
-			<class name="com.demoQATest.QADemoElementTest" />
+<!--			<class name="com.demoQATest.DemoQAElementTest" />-->
+			<class name="com.demoQATest.DemoQAFormsPageTest" />
 		</classes>
 	</test>
 </suite>

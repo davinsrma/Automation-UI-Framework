@@ -17,8 +17,8 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 
 public class excelUtil {
-//	public static XSSFWorkbook workbook;
-//	public static XSSFSheet worksheet;
+	public static XSSFWorkbook workbook;
+	public static XSSFSheet worksheet;
 
 
 	public static DataFormatter formatter = new DataFormatter();
@@ -44,7 +44,7 @@ public class excelUtil {
 		for (int i = 0; i < rowCount + 1; i++) {
 			Row row = sht.getRow(i);
 			for (int j = 0; j < row.getLastCellNum(); j++) {
-				System.out.print(row.getCell(j).getStringCellValue() + "|| ");
+ 				System.out.print(row.getCell(j).getStringCellValue() + "|| ");
 			}
 			System.out.println();
 		}
@@ -90,6 +90,7 @@ public class excelUtil {
 		{
 		e.printStackTrace();
 		}
+
 		return Data;
 
 	}

@@ -1,7 +1,7 @@
 package com.demoQATest;
 
 import com.aventstack.extentreports.Status;
-import com.sample.demoQAPageFactory.QADemoElementPage;
+import com.sample.demoQAPageFactory.DemoQAElementPage;
 import com.sample.util.testBed;
 
 import org.openqa.selenium.support.PageFactory;
@@ -14,8 +14,8 @@ import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.Properties;
 
-public class QADemoElementTest extends testBed {
-    QADemoElementPage qaHomePage;
+public class DemoQAElementTest extends testBed {
+    DemoQAElementPage qaHomePage;
     FileInputStream fis;
     Properties properties;
 
@@ -23,7 +23,7 @@ public class QADemoElementTest extends testBed {
 
     @Test
     public void fillTextBoxFullAndValidate(Method method) throws InterruptedException, IOException, AWTException {
-        qaHomePage= PageFactory.initElements(testBed.driver, QADemoElementPage.class);
+        qaHomePage= PageFactory.initElements(testBed.driver, DemoQAElementPage.class);
 
         fis=new FileInputStream("./src/test/resources/data.properties");
         properties=new Properties();
@@ -41,7 +41,7 @@ public class QADemoElementTest extends testBed {
 
     @Test
     public void clickCheckBoxThenExcelAndValidate(Method method){
-        qaHomePage= PageFactory.initElements(testBed.driver, QADemoElementPage.class);
+        qaHomePage= PageFactory.initElements(testBed.driver, DemoQAElementPage.class);
         test = extent.createTest(method.getName());
         test.log(Status.INFO, "The thread ID for method: " + method.getName() + "browser: " + TestBedBrowser + " is " + Thread.currentThread().getId());
 
@@ -55,7 +55,7 @@ public class QADemoElementTest extends testBed {
 
     @Test
     public void clickRadioButtonAndImpressiveButtonAndValidate(Method method){
-        qaHomePage= PageFactory.initElements(testBed.driver, QADemoElementPage.class);
+        qaHomePage= PageFactory.initElements(testBed.driver, DemoQAElementPage.class);
         test = extent.createTest(method.getName());
         test.log(Status.INFO, "The thread ID for method: " + method.getName() + "browser: " + TestBedBrowser + " is " + Thread.currentThread().getId());
 
@@ -66,7 +66,7 @@ public class QADemoElementTest extends testBed {
     }
     @Test
     public void clickWebTableAndFillRegistrationFormAndSubmit(Method method) throws IOException, InterruptedException {
-        qaHomePage= PageFactory.initElements(testBed.driver, QADemoElementPage.class);
+        qaHomePage= PageFactory.initElements(testBed.driver, DemoQAElementPage.class);
 
         fis=new FileInputStream("./src/test/resources/data.properties");
         properties=new Properties();
@@ -85,7 +85,7 @@ public class QADemoElementTest extends testBed {
 
     @Test
     public void singleDoubleRightClickAndValidation(Method method) throws InterruptedException {
-        qaHomePage= PageFactory.initElements(testBed.driver, QADemoElementPage.class);
+        qaHomePage= PageFactory.initElements(testBed.driver, DemoQAElementPage.class);
         test = extent.createTest(method.getName());
         test.log(Status.INFO, "The thread ID for method: " + method.getName() + "browser: " + TestBedBrowser + " is " + Thread.currentThread().getId());
 
@@ -99,7 +99,7 @@ public class QADemoElementTest extends testBed {
     }
     @Test(description = "This test is to verify download and uploads are working")
     public void clickUploadAndDownloadThenDownloadAndUploadAFile(Method method) throws InterruptedException, AWTException {
-        qaHomePage= PageFactory.initElements(testBed.driver, QADemoElementPage.class);
+        qaHomePage= PageFactory.initElements(testBed.driver, DemoQAElementPage.class);
         test = extent.createTest(method.getName());
         test.log(Status.INFO, "The thread ID for method: " + method.getName() + "browser: " + TestBedBrowser + " is " + Thread.currentThread().getId());
 
@@ -110,7 +110,7 @@ public class QADemoElementTest extends testBed {
     }
     @Test
     public void clickDyanamicProperties_andFetchButtonTextAfterButtonVisible(Method method){
-        qaHomePage= PageFactory.initElements(testBed.driver, QADemoElementPage.class);
+        qaHomePage= PageFactory.initElements(testBed.driver, DemoQAElementPage.class);
         test = extent.createTest(method.getName());
         test.log(Status.INFO, "The thread ID for method: " + method.getName() + "browser: " + TestBedBrowser + " is " + Thread.currentThread().getId());
 

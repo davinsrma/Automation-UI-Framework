@@ -12,7 +12,7 @@ import java.time.Duration;
 
 import static com.sample.util.testBed.driver;
 
-public class QADemoElementPage {
+public class DemoQAElementPage {
 
     WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(10));
     custUtil custUtil=new custUtil();
