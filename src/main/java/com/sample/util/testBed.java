@@ -151,6 +151,7 @@ public abstract class testBed {
         Reporter.log("Launching URL : " + produrl);
         driver.get(produrl);
 
+
     }
 
     @AfterMethod

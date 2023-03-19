@@ -21,7 +21,7 @@ public class DemoQAElementTest extends testBed {
 
 
 
-    @Test
+    @Test(priority = 1)
     public void fillTextBoxFullAndValidate(Method method) throws InterruptedException, IOException, AWTException {
         qaHomePage= PageFactory.initElements(testBed.driver, DemoQAElementPage.class);
 
@@ -39,7 +39,7 @@ public class DemoQAElementTest extends testBed {
         Assert.assertEquals(qaHomePage.getEmail(),"Email:"+properties.getProperty("email"));
     }
 
-    @Test
+    @Test(priority = 2)
     public void clickCheckBoxThenExcelAndValidate(Method method){
         qaHomePage= PageFactory.initElements(testBed.driver, DemoQAElementPage.class);
         test = extent.createTest(method.getName());
@@ -53,7 +53,7 @@ public class DemoQAElementTest extends testBed {
         Reporter.log("ClickCheckBox and Select Excel Validation Completed");
     }
 
-    @Test
+    @Test(priority = 3)
     public void clickRadioButtonAndImpressiveButtonAndValidate(Method method){
         qaHomePage= PageFactory.initElements(testBed.driver, DemoQAElementPage.class);
         test = extent.createTest(method.getName());
@@ -64,7 +64,7 @@ public class DemoQAElementTest extends testBed {
 
         Assert.assertEquals(qaHomePage.fetchImpressiveButtonText(),"Impressive");
     }
-    @Test
+    @Test(priority = 4)
     public void clickWebTableAndFillRegistrationFormAndSubmit(Method method) throws IOException, InterruptedException {
         qaHomePage= PageFactory.initElements(testBed.driver, DemoQAElementPage.class);
 
@@ -83,7 +83,7 @@ public class DemoQAElementTest extends testBed {
 
     }
 
-    @Test
+    @Test(priority = 5)
     public void singleDoubleRightClickAndValidation(Method method) throws InterruptedException {
         qaHomePage= PageFactory.initElements(testBed.driver, DemoQAElementPage.class);
         test = extent.createTest(method.getName());
@@ -97,7 +97,7 @@ public class DemoQAElementTest extends testBed {
         qaHomePage.singleClick();
         Assert.assertEquals(qaHomePage.sigleClickValidation(),"You have done a dynamic click");
     }
-    @Test(description = "This test is to verify download and uploads are working")
+    @Test(priority = 6)
     public void clickUploadAndDownloadThenDownloadAndUploadAFile(Method method) throws InterruptedException, AWTException {
         qaHomePage= PageFactory.initElements(testBed.driver, DemoQAElementPage.class);
         test = extent.createTest(method.getName());
@@ -108,7 +108,7 @@ public class DemoQAElementTest extends testBed {
         qaHomePage.setClickToUpload();
 
     }
-    @Test
+    @Test(priority = 7)
     public void clickDyanamicProperties_andFetchButtonTextAfterButtonVisible(Method method){
         qaHomePage= PageFactory.initElements(testBed.driver, DemoQAElementPage.class);
         test = extent.createTest(method.getName());

@@ -75,7 +75,7 @@ public class DemoQAElementPage {
 
 
 
-    public void clickTextBox() throws InterruptedException, AWTException {
+    public void clickTextBox() {
         wait.until(ExpectedConditions.visibilityOf(textBox));
         wait.until(ExpectedConditions.elementToBeClickable(textBox));
 //        custUtil.captureScreenShot(driver,"TextBox Clicked");

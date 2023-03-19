@@ -1,20 +1,25 @@
 package com.sample.demoQAPageFactory;
 
 import com.sample.util.custUtil;
+import com.sample.util.testBed;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.time.Duration;
 
 import static com.sample.util.testBed.driver;
 
 public class DemoQAFormsPage {
     WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
-    com.sample.util.custUtil custUtil=new custUtil();
-    Actions actions=new Actions(driver);
+    custUtil custUtil= new custUtil();
+
 
     @FindBy(xpath = "/html[1]/body[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/span[1]/div[1]")
     WebElement formsButton;
@@ -24,13 +29,16 @@ public class DemoQAFormsPage {
     public void clickFormsButton(){
         wait.until(ExpectedConditions.visibilityOf(formsButton));
         wait.until(ExpectedConditions.elementToBeClickable(formsButton));
-        custUtil.scrollToElement(driver,formsButton);
+        try{
+            custUtil.scrollToElement(driver,formsButton);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
         formsButton.click();
     }
     public void clickPracticeFormButton(){
         wait.until(ExpectedConditions.visibilityOf(practiceFormsButton));
         wait.until(ExpectedConditions.elementToBeClickable(practiceFormsButton));
-        custUtil.scrollToElement(driver,practiceFormsButton);
         practiceFormsButton.click();
     }
 
@@ -39,30 +47,183 @@ public class DemoQAFormsPage {
     @FindBy(id = "lastName")
     WebElement lastName;
     @FindBy(id = "userEmail")
-    WebElement email;
+    WebElement Email;
+
+    public void enterFirstName(String firstname){
+        wait.until(ExpectedConditions.visibilityOf(firstName));
+        wait.until(ExpectedConditions.elementToBeClickable(firstName));
+        firstName.clear();
+        firstName.sendKeys(firstname);
+    }
+    public void enterLastName(String lastname){
+        wait.until(ExpectedConditions.visibilityOf(lastName));
+        wait.until(ExpectedConditions.elementToBeClickable(lastName));
+        lastName.clear();
+        lastName.sendKeys(lastname);
+    }
+    public void enterEmail(String email){
+        wait.until(ExpectedConditions.visibilityOf(Email));
+        wait.until(ExpectedConditions.elementToBeClickable(Email));
+        Email.clear();
+        Email.sendKeys(email);
+    }
+
     @FindBy(xpath = "//label[@for='gender-radio-1']")
     WebElement maleRadioButton;
     @FindBy(xpath = "//label[@for='gender-radio-2']")
     WebElement femaleRadioButton;
     @FindBy(xpath = "//label[@for='gender-radio-3']")
     WebElement otherRadioButton;
+
+    public void clickMaleRadioButton(){
+        wait.until(ExpectedConditions.visibilityOf(maleRadioButton));
+        wait.until(ExpectedConditions.elementToBeClickable(maleRadioButton));
+        maleRadioButton.click();
+    }
+    public void clickFemailRadioButton(){
+        wait.until(ExpectedConditions.visibilityOf(femaleRadioButton));
+        wait.until(ExpectedConditions.elementToBeClickable(femaleRadioButton));
+        femaleRadioButton.click();
+    }
+    public void clickOtherRadioButton(){
+        wait.until(ExpectedConditions.visibilityOf(otherRadioButton));
+        wait.until(ExpectedConditions.elementToBeClickable(otherRadioButton));
+        otherRadioButton.click();
+    }
+
     @FindBy(id = "userNumber")
     WebElement mobileNumber;
+    @FindBy(xpath = "//input[@id='dateOfBirthInput']")
+    WebElement dob1;
     @FindBy(id = "subjectsContainer")
     WebElement subjectsTextBox;
+    public void setMobileNumber(String number){
+        wait.until(ExpectedConditions.visibilityOf(mobileNumber));
+        wait.until(ExpectedConditions.elementToBeClickable(mobileNumber));
+        mobileNumber.clear();
+        mobileNumber.sendKeys(number);
+    }
+    public void setDob(String dob){
+        wait.until(ExpectedConditions.visibilityOf(dob1));
+        wait.until(ExpectedConditions.elementToBeClickable(dob1));
+        dob1.clear();
+        dob1.sendKeys(dob);
+
+    }
+
+    public void setSubjectsTextBox(String subject1) throws AWTException, InterruptedException {
+        wait.until(ExpectedConditions.visibilityOf(subjectsTextBox));
+        wait.until(ExpectedConditions.elementToBeClickable(subjectsTextBox));
+        try {
+            custUtil.scrollToElement(driver,subjectsTextBox);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        subjectsTextBox.click();
+
+        subjectsTextBox.sendKeys(subject1);
+
+    }
+
     @FindBy(xpath = "//label[@for='hobbies-checkbox-1']")
     WebElement sportsCheckBox;
     @FindBy(xpath = "//label[@for='hobbies-checkbox-2']")
     WebElement readingCheckBox;
     @FindBy(xpath = "//label[@for='hobbies-checkbox-3']")
     WebElement musicCheckBox;
+
+    public void setClickSportsCheckBox(){
+        wait.until(ExpectedConditions.visibilityOf(sportsCheckBox));
+        wait.until(ExpectedConditions.elementToBeClickable(sportsCheckBox));
+        try{
+        custUtil.scrollToElement(driver,sportsCheckBox);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        sportsCheckBox.click();
+    }
+    public void setReadingCheckBox(){
+        wait.until(ExpectedConditions.visibilityOf(readingCheckBox));
+        wait.until(ExpectedConditions.elementToBeClickable(readingCheckBox));
+        try {
+            custUtil.scrollToElement(driver,readingCheckBox);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        readingCheckBox.click();
+    }
+    public void setMusicCheckBox(){
+        wait.until(ExpectedConditions.visibilityOf(musicCheckBox));
+        wait.until(ExpectedConditions.elementToBeClickable(musicCheckBox));
+        try{
+        custUtil.scrollToElement(driver,musicCheckBox);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        musicCheckBox.click();
+    }
+
+
+
+
     @FindBy(id = "currentAddress")
     WebElement currentAddressBox;
-    @FindBy(xpath = "//div[@id='state']//div[@class=' css-1hwfws3']")
+    public void setCurrentAddressBox(String address){
+        wait.until(ExpectedConditions.visibilityOf(currentAddressBox));
+        wait.until(ExpectedConditions.elementToBeClickable(currentAddressBox));
+        try{
+            custUtil.scrollToElement(driver,currentAddressBox);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+            currentAddressBox.sendKeys(address);
+    }
+    @FindBy(id = "state")
     WebElement stateDropDown;
-    @FindBy(xpath = "//div[@id='city']//div[contains(@class,'css-1hwfws3')]")
+    @FindBy(xpath = "//*[@id=\"stateCity-wrapper\"]/div[3]")
     WebElement cityDropDown;
-    @FindBy(xpath = "//button[@id='submit']")
+
+    public void selectState(String state1){
+        wait.until(ExpectedConditions.visibilityOf(stateDropDown));
+        wait.until(ExpectedConditions.elementToBeClickable(stateDropDown));
+        try{
+            custUtil.scrollToElement(driver,stateDropDown);
+//            custUtil.pageScrollDown(driver);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        stateDropDown.click();
+        Select select=new Select(stateDropDown);
+        select.selectByVisibleText(state1);
+    }
+    public void selectCity(String city){
+        wait.until(ExpectedConditions.visibilityOf(cityDropDown));
+        wait.until(ExpectedConditions.elementToBeClickable(cityDropDown));
+        try{
+            custUtil.scrollToElement(driver,cityDropDown);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        cityDropDown.click();
+//        dropdown=new Select(cityDropDown);
+//        dropdown.selectByVisibleText(city);
+    }
+
+    @FindBy(id = "submit")
     WebElement submit;
 
+    public void setSubmit(){
+        wait.until(ExpectedConditions.visibilityOf(submit));
+        wait.until(ExpectedConditions.elementToBeClickable(submit));
+        try {
+
+            custUtil.pageScrollDown(driver);
+//            custUtil.scrollToElement(driver,submit);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        ((JavascriptExecutor) testBed.driver).executeScript("arguments[0].scrollIntoView(true);", submit);
+        submit.click();
+    }
 }
