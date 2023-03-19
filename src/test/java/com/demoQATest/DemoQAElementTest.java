@@ -79,7 +79,7 @@ public class DemoQAElementTest extends testBed {
         qaHomePage.fillRegistrationForm(properties.getProperty("firstName"),properties.getProperty("lastName"),
                 properties.getProperty("email"),properties.getProperty("age"),properties.getProperty("salary"),properties.getProperty("department"));
         qaHomePage.submitRegistrationForm();
-        Thread.sleep(10000);
+        Thread.sleep(2000);
 
     }
 

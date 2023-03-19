@@ -23,21 +23,21 @@ public class testListener implements ITestListener	,ISuiteListener
 //		Reporter.log("About to end executing Suite " + arg0.getName(), true);
 //
 //	}
-//	
-//    public void onFinish(ITestContext Result) 					
-//    {		
-//                		
-//    }		
 //
-//    public void onStart(ITestContext Result)					
-//    {		
-//            		
-//    }		
+//    public void onFinish(ITestContext Result)
+//    {
 //
-//    public void onTestFailedButWithinSuccessPercentage(ITestResult Result)					
-//    {		
-//    	
-//    }		
+//    }
+//
+//    public void onStart(ITestContext Result)
+//    {
+//
+//    }
+//
+//    public void onTestFailedButWithinSuccessPercentage(ITestResult Result)
+//    {
+//
+//    }
 
     // When Test case get failed, this method is called.		
   	
