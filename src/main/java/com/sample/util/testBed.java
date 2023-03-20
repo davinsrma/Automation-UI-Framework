@@ -56,8 +56,6 @@ public abstract class testBed {
 
     @BeforeSuite
     public void beforeSuite() {
-
-//        banner.banner();
         System.out.println("BeforeSuite");
     }
 
@@ -89,7 +87,7 @@ public abstract class testBed {
 
     }
     @BeforeTest(alwaysRun = true)
-    public void beforeTest(final ITestContext testContext) throws UnknownHostException {
+    public void beforeTest(final ITestContext testContext) {
         System.out.println("BeforeTest: Testcase start time stamp: " + custUtil.getCurrentDateTimeStamp());
         extentConfig();
     }
@@ -97,8 +95,8 @@ public abstract class testBed {
 
     @Parameters("browser")
     @BeforeClass
-    public void beforeClass(@Optional("safari") String browser) {
-        banner.banner();
+    public void beforeClass(@Optional("safari") String browser) throws IOException {
+        banner.bannerReader();
         System.out.println("BeforeClass: invoking browser:" + browser);
         TestBedBrowser = browser;
 
@@ -150,8 +148,6 @@ public abstract class testBed {
         System.out.println("BeforeMethod time stamp: " + custUtil.getCurrentDateTimeStamp());
         Reporter.log("Launching URL : " + produrl);
         driver.get(produrl);
-
-
     }
 
     @AfterMethod
