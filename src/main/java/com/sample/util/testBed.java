@@ -6,6 +6,7 @@ import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
+import com.sample.Banner.Banner;
 import com.sample.report.custReportListener;
 import com.sample.report.testListener;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -43,6 +44,7 @@ public abstract class testBed {
     public  static String TestBedBrowser;
     private final String produrl = propertyUtil.getProperty(getEnvFilePath(), "URL");
     custUtil custUtil=new custUtil();
+    Banner banner=new Banner();
     private final String extentReportName = getResultPath() + "/testReport_" + custUtil.getCurrentDateTimeStamp() + ".html";
     ExtentSparkReporter spark;
     public static WebDriver driver;
@@ -54,6 +56,8 @@ public abstract class testBed {
 
     @BeforeSuite
     public void beforeSuite() {
+
+//        banner.banner();
         System.out.println("BeforeSuite");
     }
 
@@ -94,6 +98,7 @@ public abstract class testBed {
     @Parameters("browser")
     @BeforeClass
     public void beforeClass(@Optional("safari") String browser) {
+        banner.banner();
         System.out.println("BeforeClass: invoking browser:" + browser);
         TestBedBrowser = browser;
 
@@ -135,11 +140,6 @@ public abstract class testBed {
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(TIMEOUT));
         mywait = new WebDriverWait(driver, Duration.ofSeconds(TIMEOUT));
-//        objLogin = new loginPage(getDriver(), getWebDriverWait());
-//        objHome = new homePage(getDriver(), getWebDriverWait());
-
-
-
 
     }
 
