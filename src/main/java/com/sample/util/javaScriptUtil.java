@@ -11,6 +11,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
@@ -44,12 +45,13 @@ public class javaScriptUtil {
 	}
 	@Test
 	public void SampleExample() throws IOException, InterruptedException {
-		EdgeOptions options = new EdgeOptions();
-		options.addArguments("--incognito");
-		options.addArguments("--start-maximized");
-//        options.addArguments("--start-minimized");
-		WebDriverManager.edgedriver().setup();
-		WebDriver driver = (WebDriver) new EdgeDriver(options);
+////		EdgeOptions options = new EdgeOptions();
+//		FirefoxDriver options=new FirefoxDriver();
+////		options.addArguments("--incognito");
+////		options.addArguments("--start-maximized");
+////        options.addArguments("--start-minimized");
+		WebDriverManager.firefoxdriver().setup();
+		WebDriver driver = new FirefoxDriver();
 
 		driver.manage().timeouts().implicitlyWait(Duration.ofMinutes(10));
 		// Launching the Site.
@@ -60,6 +62,7 @@ public class javaScriptUtil {
 		// Login to Guru99
 		driver.findElement(By.name("uid")).sendKeys("mngr34926");
 		driver.findElement(By.name("password")).sendKeys("amUpenu");
+
 		execute_js(driver,"arguments[0].click();", button);
 		Thread.sleep(2000);
 		Actions builder = new Actions(driver);

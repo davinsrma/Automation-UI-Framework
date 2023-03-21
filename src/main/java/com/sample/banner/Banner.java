@@ -1,4 +1,4 @@
-package com.sample.Banner;
+package com.sample.banner;
 
 import java.io.*;
 

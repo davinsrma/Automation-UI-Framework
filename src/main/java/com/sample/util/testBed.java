@@ -6,7 +6,7 @@ import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
-import com.sample.Banner.Banner;
+import com.sample.banner.Banner;
 import com.sample.report.custReportListener;
 import com.sample.report.testListener;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -48,7 +48,7 @@ public abstract class testBed {
     private final String extentReportName = getResultPath() + "/testReport_" + custUtil.getCurrentDateTimeStamp() + ".html";
     ExtentSparkReporter spark;
     public static WebDriver driver;
-    public WebDriverWait mywait;
+    public WebDriverWait wait;
     public static ExtentReports extent;
     //helps to generate the logs in the test report.
     public static ExtentTest test;
@@ -137,7 +137,7 @@ public abstract class testBed {
         }
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(TIMEOUT));
-        mywait = new WebDriverWait(driver, Duration.ofSeconds(TIMEOUT));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(TIMEOUT));
 
     }
 
@@ -232,7 +232,7 @@ public abstract class testBed {
     }
 
     public WebDriverWait getWebDriverWait() {
-        return mywait;
+        return wait;
     }
 
     public static String getEnvFilePath() {

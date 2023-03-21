@@ -1,31 +1,27 @@
 package com.sample.demoQAPageFactory;
 
 import com.sample.util.custUtil;
+import com.sample.util.testBed;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.awt.*;
 import java.time.Duration;
 
-import static com.sample.util.testBed.driver;
 
-public class DemoQAElementPage {
+public class DemoQAElementPage extends testBed {
 
-    WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(10));
+    WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(TIMEOUT));
     custUtil custUtil=new custUtil();
     Actions actions=new Actions(driver);
 
     @FindBy(xpath = "//div[@class='element-list collapse show']//li[@id='item-0']")
     WebElement textBox;
-
     @FindBy(id = "userName")
-
     WebElement textBoxFullName;
     @FindBy(id = "userEmail")
-
     WebElement textBoxEmail;
     @FindBy(id = "currentAddress")
     WebElement texBoxCurrentAddress;
@@ -78,7 +74,6 @@ public class DemoQAElementPage {
     public void clickTextBox() {
         wait.until(ExpectedConditions.visibilityOf(textBox));
         wait.until(ExpectedConditions.elementToBeClickable(textBox));
-//        custUtil.captureScreenShot(driver,"TextBox Clicked");
         textBox.click();
     }
     public void fillTextBox(String userName, String email, String currAdd, String perAdd){
@@ -98,7 +93,6 @@ public class DemoQAElementPage {
 
        try{
            custUtil.scrollToElement(driver,textBoxSubmit);
-//           custUtil.captureScreenShot(driver,"textBoxSubmit");
         textBoxSubmit.click();
        }catch (Exception e){
            System.out.println(e);
@@ -340,5 +334,4 @@ public class DemoQAElementPage {
         String color=buttonColor.getText();
         return color;
     }
-
 }

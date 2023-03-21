@@ -63,10 +63,10 @@ public class custReportListener implements IReporter {
 		startResultSummaryTable();
 		int testIndex = 1;
 		for (ISuite suite : suites) {
-//			if (suites.size() >= 1) {
+
+			//			if (suites.size() >= 1) {
 //				titleRow(suite.getName(), 5);
 //			}
-
 			Map<String, ISuiteResult> r = suite.getResults();
 			for (ISuiteResult r2 : r.values()) {
 				ITestContext testContext = r2.getTestContext();

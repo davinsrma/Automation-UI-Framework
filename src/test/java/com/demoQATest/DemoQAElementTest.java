@@ -22,7 +22,7 @@ public class DemoQAElementTest extends testBed {
 
 
     @Test(priority = 1)
-    public void fillTextBoxFullAndValidate(Method method) throws InterruptedException, IOException, AWTException {
+    public void fillTextBoxFullAndValidate(Method method) throws IOException{
         qaHomePage= PageFactory.initElements(testBed.driver, DemoQAElementPage.class);
 
         fis=new FileInputStream("./src/test/resources/data.properties");
