@@ -39,7 +39,7 @@ import java.util.List;
 import static java.net.InetAddress.getLocalHost;
 
 @Listeners({testListener.class, custReportListener.class})
-public abstract class testBed {
+public abstract class baseClass {
     public static final int TIMEOUT = 5;
     public  static String TestBedBrowser;
     private final String produrl = propertyUtil.getProperty(getEnvFilePath(), "URL");

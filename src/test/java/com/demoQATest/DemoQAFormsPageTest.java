@@ -2,12 +2,8 @@ package com.demoQATest;
 
 import com.aventstack.extentreports.Status;
 import com.sample.demoQAPageFactory.DemoQAFormsPage;
-import com.sample.util.custUtil;
 import com.sample.util.excelUtil;
-import com.sample.util.testBed;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.interactions.Actions;
+import com.sample.util.baseClass;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Reporter;
 import org.testng.annotations.DataProvider;
@@ -17,7 +13,7 @@ import java.awt.*;
 import java.io.IOException;
 import java.lang.reflect.Method;
 
-public class DemoQAFormsPageTest extends testBed {
+public class DemoQAFormsPageTest extends baseClass {
     DemoQAFormsPage demoQAFormsPage;
 
 
@@ -25,7 +21,7 @@ public class DemoQAFormsPageTest extends testBed {
 
     @Test(dataProvider = "dataForApplicationForm")
     public void Application(Method method,String firstname,String lastname, String email,String gender, String mobile, String dob,String subject, String hobbies, String currentAdd,String state,String city) throws AWTException, InterruptedException {
-        demoQAFormsPage= PageFactory.initElements(testBed.driver,DemoQAFormsPage.class);
+        demoQAFormsPage= PageFactory.initElements(baseClass.driver,DemoQAFormsPage.class);
         test = extent.createTest(method.getName());
         test.log(Status.INFO, "The thread ID for method: " + method.getName() + "browser: " + TestBedBrowser + " is " + Thread.currentThread().getId());
 

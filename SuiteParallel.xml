@@ -12,9 +12,8 @@
 	<test name="Simple Smoke Test" >
 		<parameter name="browser" value="safari" />
 		<classes>
+			<class name="com.demoQATest.DemoQAElementTest" />
 			<class name="com.demoQATest.DemoQAFormsPageTest" />
-
-			<class name="com.misc.misctest.SampleTest"/>
 		</classes>
 	</test>
 </suite>

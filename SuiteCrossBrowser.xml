@@ -13,19 +13,22 @@
     <test name="ChromeTest">
         <parameter name="browser" value="Chrome" />
         <classes>
-            <class name="com.sample.orangeHRMLoginTest" />
+            <class name="com.demoQATest.DemoQAElementTest" />
+            <class name="com.demoQATest.DemoQAFormsPageTest" />
         </classes>
     </test>
     <test name="FirefoxTest">
         <parameter name="browser" value="Firefox" />
         <classes>
-            <class name="com.sample.orangeHRMLoginTest" />
+            <class name="com.demoQATest.DemoQAElementTest" />
+            <class name="com.demoQATest.DemoQAFormsPageTest" />
         </classes>
     </test>
     <test name="Safari Test">
         <parameter name="browser" value="safari" />
         <classes>
-            <class name="com.sample.orangeHRMLoginTest" />
+            <class name="com.demoQATest.DemoQAElementTest" />
+            <class name="com.demoQATest.DemoQAFormsPageTest" />
         </classes>
     </test>
 </suite>

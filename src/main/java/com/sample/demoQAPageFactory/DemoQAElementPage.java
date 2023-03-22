@@ -1,7 +1,7 @@
 package com.sample.demoQAPageFactory;
 
 import com.sample.util.custUtil;
-import com.sample.util.testBed;
+import com.sample.util.baseClass;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -11,13 +11,24 @@ import java.awt.*;
 import java.time.Duration;
 
 
-public class DemoQAElementPage extends testBed {
+public class DemoQAElementPage extends baseClass {
 
     WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(TIMEOUT));
     custUtil custUtil=new custUtil();
     Actions actions=new Actions(driver);
 
-    @FindBy(xpath = "//div[@class='element-list collapse show']//li[@id='item-0']")
+    @FindBy(xpath = "//*[@id=\"app\"]/div/div/div[2]/div/div[1]/div")
+    WebElement elementButton;
+
+    public void clickElementButton(){
+        try{
+            custUtil.scrollToElement(driver, elementButton);
+            elementButton.click();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+    @FindBy(xpath = "//span[normalize-space()='Text Box']")
     WebElement textBox;
     @FindBy(id = "userName")
     WebElement textBoxFullName;
@@ -33,7 +44,7 @@ public class DemoQAElementPage extends testBed {
     WebElement getUsername;
     @FindBy(xpath = "//*[@id=\"email\"]")
     WebElement getEmail;
-    @FindBy(xpath = "//*[@id=\"item-1\"]/span")
+    @FindBy(xpath = "//span[normalize-space()='Check Box']")
     WebElement checkBoxButton;
     @FindBy(xpath = "//button[@title='Toggle']//*[name()='svg']")
     WebElement dropDownHome;
@@ -43,7 +54,7 @@ public class DemoQAElementPage extends testBed {
     WebElement excelFile;
     @FindBy(xpath = "//*[@id=\"result\"]/span[2]")
     WebElement excelFileValue;
-    @FindBy(xpath = "//*[@id=\"item-2\"]/span")
+    @FindBy(xpath = "//span[normalize-space()='Radio Button']")
     WebElement radioButton;
     @FindBy(xpath = "//label[@for='impressiveRadio']")
     WebElement impressivRadioButton;
@@ -72,9 +83,15 @@ public class DemoQAElementPage extends testBed {
 
 
     public void clickTextBox() {
+        try{
         wait.until(ExpectedConditions.visibilityOf(textBox));
         wait.until(ExpectedConditions.elementToBeClickable(textBox));
+        custUtil.scrollToElement(driver, textBox);
         textBox.click();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
     }
     public void fillTextBox(String userName, String email, String currAdd, String perAdd){
         wait.until(ExpectedConditions.visibilityOf(textBoxFullName));

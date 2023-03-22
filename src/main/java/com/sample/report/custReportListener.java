@@ -380,7 +380,7 @@ public class custReportListener implements IReporter {
 		int qty_fail = 0;
 		long time_end = Long.MIN_VALUE;
 		m_testIndex = 1;
-		titleRow("ENV URL: "+ propertyUtil.getProperty(testBed.getEnvFilePath(), "URL"));
+		titleRow("ENV URL: "+ propertyUtil.getProperty(baseClass.getEnvFilePath(), "URL"));
 		for (ISuite suite : suites) {
 			if (suites.size() >= 1) {
 				titleRow(suite.getName());
@@ -401,7 +401,7 @@ public class custReportListener implements IReporter {
 				qty_fail += q;
 				summaryCell(q, 0);
 
-				String browser = propertyUtil.getProperty(testBed.getEnvFilePath(), "browser");
+				String browser = propertyUtil.getProperty(baseClass.getEnvFilePath(), "browser");
 				// Write OS and Browser
 				summaryCell(browser, true);
 				writer.println("</td>");

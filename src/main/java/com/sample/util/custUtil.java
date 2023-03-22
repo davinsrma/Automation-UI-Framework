@@ -3,7 +3,6 @@ package com.sample.util;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import org.apache.commons.codec.binary.Base64;
-import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -30,7 +29,7 @@ import java.time.Duration;
 import java.util.*;
 import java.util.List;
 
-import static com.sample.util.testBed.*;
+import static com.sample.util.baseClass.*;
 
 public class custUtil {
 

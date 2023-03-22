@@ -4812,3 +4812,399 @@
 21/03/2023 23:09:36 SummaryLogger Rajasthan
 21/03/2023 23:09:36 SummaryLogger Jaipur
 21/03/2023 23:09:36 SummaryLogger =========================
+22/03/2023 17:04:27 SummaryLogger Skipped Test Name: alertFrameWindowComponentsTest
+22/03/2023 17:04:27 SummaryLogger Parameters passed as below: 
+22/03/2023 17:04:27 SummaryLogger =========================
+22/03/2023 17:05:08 SummaryLogger Skipped Test Name: alertFrameWindowComponentsTest
+22/03/2023 17:05:08 SummaryLogger Parameters passed as below: 
+22/03/2023 17:05:08 SummaryLogger =========================
+22/03/2023 17:06:46 SummaryLogger Skipped Test Name: alertFrameWindowComponentsTest
+22/03/2023 17:06:46 SummaryLogger Parameters passed as below: 
+22/03/2023 17:06:46 SummaryLogger =========================
+22/03/2023 17:07:30 SummaryLogger Skipped Test Name: alertFrameWindowComponentsTest
+22/03/2023 17:07:30 SummaryLogger Parameters passed as below: 
+22/03/2023 17:07:30 SummaryLogger public void com.demoQATest.DemoQAalertFrameWindowTest.alertFrameWindowComponentsTest(java.lang.reflect.Method)
+22/03/2023 17:07:30 SummaryLogger =========================
+22/03/2023 17:09:14 SummaryLogger Failed Test Name: alertFrameWindowComponentsTest
+22/03/2023 17:09:14 SummaryLogger Parameters passed as below: 
+22/03/2023 17:09:14 SummaryLogger public void com.demoQATest.DemoQAalertFrameWindowTest.alertFrameWindowComponentsTest(java.lang.reflect.Method)
+22/03/2023 17:09:14 SummaryLogger =========================
+22/03/2023 17:10:22 SummaryLogger Failed Test Name: alertFrameWindowComponentsTest
+22/03/2023 17:10:22 SummaryLogger Parameters passed as below: 
+22/03/2023 17:10:22 SummaryLogger public void com.demoQATest.DemoQAalertFrameWindowTest.alertFrameWindowComponentsTest(java.lang.reflect.Method)
+22/03/2023 17:10:22 SummaryLogger =========================
+22/03/2023 17:11:19 SummaryLogger Passed Test Name: alertFrameWindowComponentsTest
+22/03/2023 17:11:19 SummaryLogger Parameters passed as below: 
+22/03/2023 17:11:19 SummaryLogger public void com.demoQATest.DemoQAalertFrameWindowTest.alertFrameWindowComponentsTest(java.lang.reflect.Method)
+22/03/2023 17:11:19 SummaryLogger =========================
+22/03/2023 17:12:31 SummaryLogger Passed Test Name: alertFrameWindowComponentsTest
+22/03/2023 17:12:31 SummaryLogger Parameters passed as below: 
+22/03/2023 17:12:31 SummaryLogger public void com.demoQATest.DemoQAalertFrameWindowTest.alertFrameWindowComponentsTest(java.lang.reflect.Method)
+22/03/2023 17:12:31 SummaryLogger =========================
+22/03/2023 17:14:39 SummaryLogger Passed Test Name: alertFrameWindowComponentsTest
+22/03/2023 17:14:39 SummaryLogger Parameters passed as below: 
+22/03/2023 17:14:39 SummaryLogger public void com.demoQATest.DemoQAalertFrameWindowTest.alertFrameWindowComponentsTest(java.lang.reflect.Method)
+22/03/2023 17:14:39 SummaryLogger =========================
+22/03/2023 17:22:45 SummaryLogger Failed Test Name: fillTextBoxFullAndValidate
+22/03/2023 17:22:45 SummaryLogger Parameters passed as below: 
+22/03/2023 17:22:45 SummaryLogger public void com.demoQATest.DemoQAElementTest.fillTextBoxFullAndValidate(java.lang.reflect.Method) throws java.io.IOException
+22/03/2023 17:22:45 SummaryLogger =========================
+22/03/2023 17:22:47 SummaryLogger Failed Test Name: clickCheckBoxThenExcelAndValidate
+22/03/2023 17:22:47 SummaryLogger Parameters passed as below: 
+22/03/2023 17:22:47 SummaryLogger public void com.demoQATest.DemoQAElementTest.clickCheckBoxThenExcelAndValidate(java.lang.reflect.Method)
+22/03/2023 17:22:47 SummaryLogger =========================
+22/03/2023 17:22:48 SummaryLogger Failed Test Name: clickRadioButtonAndImpressiveButtonAndValidate
+22/03/2023 17:22:48 SummaryLogger Parameters passed as below: 
+22/03/2023 17:22:48 SummaryLogger public void com.demoQATest.DemoQAElementTest.clickRadioButtonAndImpressiveButtonAndValidate(java.lang.reflect.Method)
+22/03/2023 17:22:48 SummaryLogger =========================
+22/03/2023 17:22:50 SummaryLogger Failed Test Name: clickWebTableAndFillRegistrationFormAndSubmit
+22/03/2023 17:22:50 SummaryLogger Parameters passed as below: 
+22/03/2023 17:22:50 SummaryLogger public void com.demoQATest.DemoQAElementTest.clickWebTableAndFillRegistrationFormAndSubmit(java.lang.reflect.Method) throws java.io.IOException,java.lang.InterruptedException
+22/03/2023 17:22:50 SummaryLogger =========================
+22/03/2023 17:24:18 SummaryLogger Failed Test Name: fillTextBoxFullAndValidate
+22/03/2023 17:24:18 SummaryLogger Parameters passed as below: 
+22/03/2023 17:24:18 SummaryLogger public void com.demoQATest.DemoQAElementTest.fillTextBoxFullAndValidate(java.lang.reflect.Method) throws java.io.IOException
+22/03/2023 17:24:18 SummaryLogger =========================
+22/03/2023 17:24:25 SummaryLogger Failed Test Name: clickCheckBoxThenExcelAndValidate
+22/03/2023 17:24:25 SummaryLogger Parameters passed as below: 
+22/03/2023 17:24:25 SummaryLogger public void com.demoQATest.DemoQAElementTest.clickCheckBoxThenExcelAndValidate(java.lang.reflect.Method)
+22/03/2023 17:24:25 SummaryLogger =========================
+22/03/2023 17:25:43 SummaryLogger Failed Test Name: fillTextBoxFullAndValidate
+22/03/2023 17:25:43 SummaryLogger Parameters passed as below: 
+22/03/2023 17:25:43 SummaryLogger public void com.demoQATest.DemoQAElementTest.fillTextBoxFullAndValidate(java.lang.reflect.Method) throws java.io.IOException
+22/03/2023 17:25:43 SummaryLogger =========================
+22/03/2023 17:25:50 SummaryLogger Failed Test Name: clickCheckBoxThenExcelAndValidate
+22/03/2023 17:25:50 SummaryLogger Parameters passed as below: 
+22/03/2023 17:25:50 SummaryLogger public void com.demoQATest.DemoQAElementTest.clickCheckBoxThenExcelAndValidate(java.lang.reflect.Method)
+22/03/2023 17:25:50 SummaryLogger =========================
+22/03/2023 17:27:29 SummaryLogger Failed Test Name: fillTextBoxFullAndValidate
+22/03/2023 17:27:29 SummaryLogger Parameters passed as below: 
+22/03/2023 17:27:29 SummaryLogger public void com.demoQATest.DemoQAElementTest.fillTextBoxFullAndValidate(java.lang.reflect.Method) throws java.io.IOException
+22/03/2023 17:27:29 SummaryLogger =========================
+22/03/2023 17:27:35 SummaryLogger Failed Test Name: clickCheckBoxThenExcelAndValidate
+22/03/2023 17:27:35 SummaryLogger Parameters passed as below: 
+22/03/2023 17:27:35 SummaryLogger public void com.demoQATest.DemoQAElementTest.clickCheckBoxThenExcelAndValidate(java.lang.reflect.Method)
+22/03/2023 17:27:35 SummaryLogger =========================
+22/03/2023 17:28:44 SummaryLogger Failed Test Name: fillTextBoxFullAndValidate
+22/03/2023 17:28:44 SummaryLogger Parameters passed as below: 
+22/03/2023 17:28:44 SummaryLogger public void com.demoQATest.DemoQAElementTest.fillTextBoxFullAndValidate(java.lang.reflect.Method) throws java.io.IOException
+22/03/2023 17:28:44 SummaryLogger =========================
+22/03/2023 17:28:52 SummaryLogger Failed Test Name: clickCheckBoxThenExcelAndValidate
+22/03/2023 17:28:52 SummaryLogger Parameters passed as below: 
+22/03/2023 17:28:52 SummaryLogger public void com.demoQATest.DemoQAElementTest.clickCheckBoxThenExcelAndValidate(java.lang.reflect.Method)
+22/03/2023 17:28:52 SummaryLogger =========================
+22/03/2023 17:28:59 SummaryLogger Failed Test Name: clickRadioButtonAndImpressiveButtonAndValidate
+22/03/2023 17:28:59 SummaryLogger Parameters passed as below: 
+22/03/2023 17:28:59 SummaryLogger public void com.demoQATest.DemoQAElementTest.clickRadioButtonAndImpressiveButtonAndValidate(java.lang.reflect.Method)
+22/03/2023 17:28:59 SummaryLogger =========================
+22/03/2023 17:29:06 SummaryLogger Failed Test Name: clickWebTableAndFillRegistrationFormAndSubmit
+22/03/2023 17:29:06 SummaryLogger Parameters passed as below: 
+22/03/2023 17:29:06 SummaryLogger public void com.demoQATest.DemoQAElementTest.clickWebTableAndFillRegistrationFormAndSubmit(java.lang.reflect.Method) throws java.io.IOException,java.lang.InterruptedException
+22/03/2023 17:29:06 SummaryLogger =========================
+22/03/2023 17:29:16 SummaryLogger Failed Test Name: singleDoubleRightClickAndValidation
+22/03/2023 17:29:16 SummaryLogger Parameters passed as below: 
+22/03/2023 17:29:16 SummaryLogger public void com.demoQATest.DemoQAElementTest.singleDoubleRightClickAndValidation(java.lang.reflect.Method) throws java.lang.InterruptedException
+22/03/2023 17:29:16 SummaryLogger =========================
+22/03/2023 17:29:24 SummaryLogger Failed Test Name: clickUploadAndDownloadThenDownloadAndUploadAFile
+22/03/2023 17:29:24 SummaryLogger Parameters passed as below: 
+22/03/2023 17:29:24 SummaryLogger public void com.demoQATest.DemoQAElementTest.clickUploadAndDownloadThenDownloadAndUploadAFile(java.lang.reflect.Method) throws java.lang.InterruptedException,java.awt.AWTException
+22/03/2023 17:29:24 SummaryLogger =========================
+22/03/2023 17:29:31 SummaryLogger Failed Test Name: clickDyanamicProperties_andFetchButtonTextAfterButtonVisible
+22/03/2023 17:29:31 SummaryLogger Parameters passed as below: 
+22/03/2023 17:29:31 SummaryLogger public void com.demoQATest.DemoQAElementTest.clickDyanamicProperties_andFetchButtonTextAfterButtonVisible(java.lang.reflect.Method)
+22/03/2023 17:29:31 SummaryLogger =========================
+22/03/2023 17:33:56 SummaryLogger Failed Test Name: fillTextBoxFullAndValidate
+22/03/2023 17:33:56 SummaryLogger Parameters passed as below: 
+22/03/2023 17:33:56 SummaryLogger public void com.demoQATest.DemoQAElementTest.fillTextBoxFullAndValidate(java.lang.reflect.Method) throws java.io.IOException
+22/03/2023 17:33:56 SummaryLogger =========================
+22/03/2023 17:34:03 SummaryLogger Failed Test Name: clickCheckBoxThenExcelAndValidate
+22/03/2023 17:34:03 SummaryLogger Parameters passed as below: 
+22/03/2023 17:34:03 SummaryLogger public void com.demoQATest.DemoQAElementTest.clickCheckBoxThenExcelAndValidate(java.lang.reflect.Method)
+22/03/2023 17:34:03 SummaryLogger =========================
+22/03/2023 17:34:15 SummaryLogger Failed Test Name: clickRadioButtonAndImpressiveButtonAndValidate
+22/03/2023 17:34:15 SummaryLogger Parameters passed as below: 
+22/03/2023 17:34:15 SummaryLogger public void com.demoQATest.DemoQAElementTest.clickRadioButtonAndImpressiveButtonAndValidate(java.lang.reflect.Method)
+22/03/2023 17:34:15 SummaryLogger =========================
+22/03/2023 17:36:06 SummaryLogger Failed Test Name: fillTextBoxFullAndValidate
+22/03/2023 17:36:06 SummaryLogger Parameters passed as below: 
+22/03/2023 17:36:06 SummaryLogger public void com.demoQATest.DemoQAElementTest.fillTextBoxFullAndValidate(java.lang.reflect.Method) throws java.io.IOException
+22/03/2023 17:36:06 SummaryLogger =========================
+22/03/2023 17:36:13 SummaryLogger Failed Test Name: clickCheckBoxThenExcelAndValidate
+22/03/2023 17:36:13 SummaryLogger Parameters passed as below: 
+22/03/2023 17:36:13 SummaryLogger public void com.demoQATest.DemoQAElementTest.clickCheckBoxThenExcelAndValidate(java.lang.reflect.Method)
+22/03/2023 17:36:13 SummaryLogger =========================
+22/03/2023 17:36:20 SummaryLogger Failed Test Name: clickRadioButtonAndImpressiveButtonAndValidate
+22/03/2023 17:36:20 SummaryLogger Parameters passed as below: 
+22/03/2023 17:36:20 SummaryLogger public void com.demoQATest.DemoQAElementTest.clickRadioButtonAndImpressiveButtonAndValidate(java.lang.reflect.Method)
+22/03/2023 17:36:20 SummaryLogger =========================
+22/03/2023 17:36:27 SummaryLogger Failed Test Name: clickWebTableAndFillRegistrationFormAndSubmit
+22/03/2023 17:36:27 SummaryLogger Parameters passed as below: 
+22/03/2023 17:36:27 SummaryLogger public void com.demoQATest.DemoQAElementTest.clickWebTableAndFillRegistrationFormAndSubmit(java.lang.reflect.Method) throws java.io.IOException,java.lang.InterruptedException
+22/03/2023 17:36:27 SummaryLogger =========================
+22/03/2023 17:36:36 SummaryLogger Failed Test Name: singleDoubleRightClickAndValidation
+22/03/2023 17:36:36 SummaryLogger Parameters passed as below: 
+22/03/2023 17:36:36 SummaryLogger public void com.demoQATest.DemoQAElementTest.singleDoubleRightClickAndValidation(java.lang.reflect.Method) throws java.lang.InterruptedException
+22/03/2023 17:36:36 SummaryLogger =========================
+22/03/2023 17:36:44 SummaryLogger Failed Test Name: clickUploadAndDownloadThenDownloadAndUploadAFile
+22/03/2023 17:36:44 SummaryLogger Parameters passed as below: 
+22/03/2023 17:36:44 SummaryLogger public void com.demoQATest.DemoQAElementTest.clickUploadAndDownloadThenDownloadAndUploadAFile(java.lang.reflect.Method) throws java.lang.InterruptedException,java.awt.AWTException
+22/03/2023 17:36:44 SummaryLogger =========================
+22/03/2023 17:36:51 SummaryLogger Failed Test Name: clickDyanamicProperties_andFetchButtonTextAfterButtonVisible
+22/03/2023 17:36:51 SummaryLogger Parameters passed as below: 
+22/03/2023 17:36:51 SummaryLogger public void com.demoQATest.DemoQAElementTest.clickDyanamicProperties_andFetchButtonTextAfterButtonVisible(java.lang.reflect.Method)
+22/03/2023 17:36:51 SummaryLogger =========================
+22/03/2023 17:39:29 SummaryLogger Failed Test Name: fillTextBoxFullAndValidate
+22/03/2023 17:39:29 SummaryLogger Parameters passed as below: 
+22/03/2023 17:39:29 SummaryLogger public void com.demoQATest.DemoQAElementTest.fillTextBoxFullAndValidate(java.lang.reflect.Method) throws java.io.IOException
+22/03/2023 17:39:29 SummaryLogger =========================
+22/03/2023 17:41:18 SummaryLogger Failed Test Name: fillTextBoxFullAndValidate
+22/03/2023 17:41:18 SummaryLogger Parameters passed as below: 
+22/03/2023 17:41:18 SummaryLogger public void com.demoQATest.DemoQAElementTest.fillTextBoxFullAndValidate(java.lang.reflect.Method) throws java.io.IOException,java.lang.InterruptedException
+22/03/2023 17:41:18 SummaryLogger =========================
+22/03/2023 17:42:57 SummaryLogger Failed Test Name: fillTextBoxFullAndValidate
+22/03/2023 17:42:57 SummaryLogger Parameters passed as below: 
+22/03/2023 17:42:57 SummaryLogger public void com.demoQATest.DemoQAElementTest.fillTextBoxFullAndValidate(java.lang.reflect.Method) throws java.io.IOException,java.lang.InterruptedException
+22/03/2023 17:42:57 SummaryLogger =========================
+22/03/2023 17:46:32 SummaryLogger Failed Test Name: fillTextBoxFullAndValidate
+22/03/2023 17:46:32 SummaryLogger Parameters passed as below: 
+22/03/2023 17:46:32 SummaryLogger public void com.demoQATest.DemoQAElementTest.fillTextBoxFullAndValidate(java.lang.reflect.Method) throws java.io.IOException,java.lang.InterruptedException
+22/03/2023 17:46:32 SummaryLogger =========================
+22/03/2023 17:47:32 SummaryLogger Failed Test Name: fillTextBoxFullAndValidate
+22/03/2023 17:47:32 SummaryLogger Parameters passed as below: 
+22/03/2023 17:47:32 SummaryLogger public void com.demoQATest.DemoQAElementTest.fillTextBoxFullAndValidate(java.lang.reflect.Method) throws java.io.IOException,java.lang.InterruptedException
+22/03/2023 17:47:32 SummaryLogger =========================
+22/03/2023 17:49:26 SummaryLogger Passed Test Name: fillTextBoxFullAndValidate
+22/03/2023 17:49:26 SummaryLogger Parameters passed as below: 
+22/03/2023 17:49:26 SummaryLogger public void com.demoQATest.DemoQAElementTest.fillTextBoxFullAndValidate(java.lang.reflect.Method) throws java.io.IOException,java.lang.InterruptedException
+22/03/2023 17:49:26 SummaryLogger =========================
+22/03/2023 17:51:21 SummaryLogger Passed Test Name: fillTextBoxFullAndValidate
+22/03/2023 17:51:21 SummaryLogger Parameters passed as below: 
+22/03/2023 17:51:21 SummaryLogger public void com.demoQATest.DemoQAElementTest.fillTextBoxFullAndValidate(java.lang.reflect.Method) throws java.io.IOException,java.lang.InterruptedException
+22/03/2023 17:51:21 SummaryLogger =========================
+22/03/2023 17:51:36 SummaryLogger Passed Test Name: clickCheckBoxThenExcelAndValidate
+22/03/2023 17:51:36 SummaryLogger Parameters passed as below: 
+22/03/2023 17:51:36 SummaryLogger public void com.demoQATest.DemoQAElementTest.clickCheckBoxThenExcelAndValidate(java.lang.reflect.Method)
+22/03/2023 17:51:36 SummaryLogger =========================
+22/03/2023 17:51:47 SummaryLogger Passed Test Name: clickRadioButtonAndImpressiveButtonAndValidate
+22/03/2023 17:51:47 SummaryLogger Parameters passed as below: 
+22/03/2023 17:51:47 SummaryLogger public void com.demoQATest.DemoQAElementTest.clickRadioButtonAndImpressiveButtonAndValidate(java.lang.reflect.Method)
+22/03/2023 17:51:47 SummaryLogger =========================
+22/03/2023 17:52:04 SummaryLogger Passed Test Name: clickWebTableAndFillRegistrationFormAndSubmit
+22/03/2023 17:52:04 SummaryLogger Parameters passed as below: 
+22/03/2023 17:52:04 SummaryLogger public void com.demoQATest.DemoQAElementTest.clickWebTableAndFillRegistrationFormAndSubmit(java.lang.reflect.Method) throws java.io.IOException,java.lang.InterruptedException
+22/03/2023 17:52:04 SummaryLogger =========================
+22/03/2023 17:52:27 SummaryLogger Passed Test Name: singleDoubleRightClickAndValidation
+22/03/2023 17:52:27 SummaryLogger Parameters passed as below: 
+22/03/2023 17:52:27 SummaryLogger public void com.demoQATest.DemoQAElementTest.singleDoubleRightClickAndValidation(java.lang.reflect.Method) throws java.lang.InterruptedException
+22/03/2023 17:52:27 SummaryLogger =========================
+22/03/2023 17:52:39 SummaryLogger Passed Test Name: clickUploadAndDownloadThenDownloadAndUploadAFile
+22/03/2023 17:52:39 SummaryLogger Parameters passed as below: 
+22/03/2023 17:52:39 SummaryLogger public void com.demoQATest.DemoQAElementTest.clickUploadAndDownloadThenDownloadAndUploadAFile(java.lang.reflect.Method) throws java.lang.InterruptedException,java.awt.AWTException
+22/03/2023 17:52:39 SummaryLogger =========================
+22/03/2023 17:52:53 SummaryLogger Passed Test Name: clickDyanamicProperties_andFetchButtonTextAfterButtonVisible
+22/03/2023 17:52:53 SummaryLogger Parameters passed as below: 
+22/03/2023 17:52:53 SummaryLogger public void com.demoQATest.DemoQAElementTest.clickDyanamicProperties_andFetchButtonTextAfterButtonVisible(java.lang.reflect.Method)
+22/03/2023 17:52:53 SummaryLogger =========================
+22/03/2023 17:55:22 SummaryLogger Passed Test Name: fillTextBoxFullAndValidate
+22/03/2023 17:55:22 SummaryLogger Parameters passed as below: 
+22/03/2023 17:55:22 SummaryLogger public void com.demoQATest.DemoQAElementTest.fillTextBoxFullAndValidate(java.lang.reflect.Method) throws java.io.IOException,java.lang.InterruptedException
+22/03/2023 17:55:22 SummaryLogger =========================
+22/03/2023 17:55:34 SummaryLogger Passed Test Name: clickCheckBoxThenExcelAndValidate
+22/03/2023 17:55:34 SummaryLogger Parameters passed as below: 
+22/03/2023 17:55:34 SummaryLogger public void com.demoQATest.DemoQAElementTest.clickCheckBoxThenExcelAndValidate(java.lang.reflect.Method)
+22/03/2023 17:55:34 SummaryLogger =========================
+22/03/2023 17:55:42 SummaryLogger Passed Test Name: clickRadioButtonAndImpressiveButtonAndValidate
+22/03/2023 17:55:42 SummaryLogger Parameters passed as below: 
+22/03/2023 17:55:42 SummaryLogger public void com.demoQATest.DemoQAElementTest.clickRadioButtonAndImpressiveButtonAndValidate(java.lang.reflect.Method)
+22/03/2023 17:55:42 SummaryLogger =========================
+22/03/2023 17:55:56 SummaryLogger Passed Test Name: clickWebTableAndFillRegistrationFormAndSubmit
+22/03/2023 17:55:56 SummaryLogger Parameters passed as below: 
+22/03/2023 17:55:56 SummaryLogger public void com.demoQATest.DemoQAElementTest.clickWebTableAndFillRegistrationFormAndSubmit(java.lang.reflect.Method) throws java.io.IOException,java.lang.InterruptedException
+22/03/2023 17:55:56 SummaryLogger =========================
+22/03/2023 17:56:15 SummaryLogger Passed Test Name: singleDoubleRightClickAndValidation
+22/03/2023 17:56:15 SummaryLogger Parameters passed as below: 
+22/03/2023 17:56:15 SummaryLogger public void com.demoQATest.DemoQAElementTest.singleDoubleRightClickAndValidation(java.lang.reflect.Method) throws java.lang.InterruptedException
+22/03/2023 17:56:15 SummaryLogger =========================
+22/03/2023 17:56:25 SummaryLogger Passed Test Name: clickUploadAndDownloadThenDownloadAndUploadAFile
+22/03/2023 17:56:25 SummaryLogger Parameters passed as below: 
+22/03/2023 17:56:25 SummaryLogger public void com.demoQATest.DemoQAElementTest.clickUploadAndDownloadThenDownloadAndUploadAFile(java.lang.reflect.Method) throws java.lang.InterruptedException,java.awt.AWTException
+22/03/2023 17:56:25 SummaryLogger =========================
+22/03/2023 17:56:37 SummaryLogger Passed Test Name: clickDyanamicProperties_andFetchButtonTextAfterButtonVisible
+22/03/2023 17:56:37 SummaryLogger Parameters passed as below: 
+22/03/2023 17:56:37 SummaryLogger public void com.demoQATest.DemoQAElementTest.clickDyanamicProperties_andFetchButtonTextAfterButtonVisible(java.lang.reflect.Method)
+22/03/2023 17:56:37 SummaryLogger =========================
+22/03/2023 18:02:11 SummaryLogger Passed Test Name: Application
+22/03/2023 18:02:11 SummaryLogger Parameters passed as below: 
+22/03/2023 18:02:11 SummaryLogger public void com.demoQATest.DemoQAFormsPageTest.Application(java.lang.reflect.Method,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String) throws java.awt.AWTException,java.lang.InterruptedException
+22/03/2023 18:02:11 SummaryLogger Davinder
+22/03/2023 18:02:11 SummaryLogger Sharma
+22/03/2023 18:02:11 SummaryLogger davinder@gmail.com
+22/03/2023 18:02:11 SummaryLogger male
+22/03/2023 18:02:11 SummaryLogger 9999999999
+22/03/2023 18:02:11 SummaryLogger 12 March 2020
+22/03/2023 18:02:11 SummaryLogger English
+22/03/2023 18:02:11 SummaryLogger Sports
+22/03/2023 18:02:11 SummaryLogger Bengaluru
+22/03/2023 18:02:11 SummaryLogger NCR
+22/03/2023 18:02:11 SummaryLogger Delhi
+22/03/2023 18:02:11 SummaryLogger =========================
+22/03/2023 18:02:21 SummaryLogger Passed Test Name: Application
+22/03/2023 18:02:21 SummaryLogger Parameters passed as below: 
+22/03/2023 18:02:21 SummaryLogger public void com.demoQATest.DemoQAFormsPageTest.Application(java.lang.reflect.Method,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String) throws java.awt.AWTException,java.lang.InterruptedException
+22/03/2023 18:02:21 SummaryLogger Sapna
+22/03/2023 18:02:21 SummaryLogger Kumari
+22/03/2023 18:02:21 SummaryLogger sapna@gmail.com
+22/03/2023 18:02:21 SummaryLogger Female
+22/03/2023 18:02:21 SummaryLogger 8888888888
+22/03/2023 18:02:21 SummaryLogger 20 August 2022
+22/03/2023 18:02:21 SummaryLogger Maths
+22/03/2023 18:02:21 SummaryLogger Reading
+22/03/2023 18:02:21 SummaryLogger Patna
+22/03/2023 18:02:21 SummaryLogger Haryana
+22/03/2023 18:02:21 SummaryLogger Karnal
+22/03/2023 18:02:21 SummaryLogger =========================
+22/03/2023 18:02:31 SummaryLogger Passed Test Name: Application
+22/03/2023 18:02:31 SummaryLogger Parameters passed as below: 
+22/03/2023 18:02:31 SummaryLogger public void com.demoQATest.DemoQAFormsPageTest.Application(java.lang.reflect.Method,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String) throws java.awt.AWTException,java.lang.InterruptedException
+22/03/2023 18:02:31 SummaryLogger Random
+22/03/2023 18:02:31 SummaryLogger Name
+22/03/2023 18:02:31 SummaryLogger random@gmail.com
+22/03/2023 18:02:31 SummaryLogger OTHERS
+22/03/2023 18:02:31 SummaryLogger 7777777777
+22/03/2023 18:02:31 SummaryLogger 20 June 2008
+22/03/2023 18:02:31 SummaryLogger Accounting
+22/03/2023 18:02:31 SummaryLogger Music
+22/03/2023 18:02:31 SummaryLogger Nepal
+22/03/2023 18:02:31 SummaryLogger Rajasthan
+22/03/2023 18:02:31 SummaryLogger Jaipur
+22/03/2023 18:02:31 SummaryLogger =========================
+22/03/2023 18:04:51 SummaryLogger Passed Test Name: Application
+22/03/2023 18:04:51 SummaryLogger Parameters passed as below: 
+22/03/2023 18:04:51 SummaryLogger public void com.demoQATest.DemoQAFormsPageTest.Application(java.lang.reflect.Method,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String) throws java.awt.AWTException,java.lang.InterruptedException
+22/03/2023 18:04:51 SummaryLogger Davinder
+22/03/2023 18:04:51 SummaryLogger Sharma
+22/03/2023 18:04:51 SummaryLogger davinder@gmail.com
+22/03/2023 18:04:51 SummaryLogger male
+22/03/2023 18:04:51 SummaryLogger 9999999999
+22/03/2023 18:04:51 SummaryLogger 12 March 2020
+22/03/2023 18:04:51 SummaryLogger English
+22/03/2023 18:04:51 SummaryLogger Sports
+22/03/2023 18:04:51 SummaryLogger Bengaluru
+22/03/2023 18:04:51 SummaryLogger NCR
+22/03/2023 18:04:51 SummaryLogger Delhi
+22/03/2023 18:04:51 SummaryLogger =========================
+22/03/2023 18:05:02 SummaryLogger Passed Test Name: Application
+22/03/2023 18:05:02 SummaryLogger Parameters passed as below: 
+22/03/2023 18:05:02 SummaryLogger public void com.demoQATest.DemoQAFormsPageTest.Application(java.lang.reflect.Method,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String) throws java.awt.AWTException,java.lang.InterruptedException
+22/03/2023 18:05:02 SummaryLogger Sapna
+22/03/2023 18:05:02 SummaryLogger Kumari
+22/03/2023 18:05:02 SummaryLogger sapna@gmail.com
+22/03/2023 18:05:02 SummaryLogger Female
+22/03/2023 18:05:02 SummaryLogger 8888888888
+22/03/2023 18:05:02 SummaryLogger 20 August 2022
+22/03/2023 18:05:02 SummaryLogger Maths
+22/03/2023 18:05:02 SummaryLogger Reading
+22/03/2023 18:05:02 SummaryLogger Patna
+22/03/2023 18:05:02 SummaryLogger Haryana
+22/03/2023 18:05:02 SummaryLogger Karnal
+22/03/2023 18:05:02 SummaryLogger =========================
+22/03/2023 18:05:12 SummaryLogger Passed Test Name: Application
+22/03/2023 18:05:12 SummaryLogger Parameters passed as below: 
+22/03/2023 18:05:12 SummaryLogger public void com.demoQATest.DemoQAFormsPageTest.Application(java.lang.reflect.Method,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String) throws java.awt.AWTException,java.lang.InterruptedException
+22/03/2023 18:05:12 SummaryLogger Random
+22/03/2023 18:05:12 SummaryLogger Name
+22/03/2023 18:05:12 SummaryLogger random@gmail.com
+22/03/2023 18:05:12 SummaryLogger OTHERS
+22/03/2023 18:05:12 SummaryLogger 7777777777
+22/03/2023 18:05:12 SummaryLogger 20 June 2008
+22/03/2023 18:05:12 SummaryLogger Accounting
+22/03/2023 18:05:12 SummaryLogger Music
+22/03/2023 18:05:12 SummaryLogger Nepal
+22/03/2023 18:05:12 SummaryLogger Rajasthan
+22/03/2023 18:05:12 SummaryLogger Jaipur
+22/03/2023 18:05:12 SummaryLogger =========================
+22/03/2023 18:09:56 SummaryLogger Passed Test Name: fillTextBoxFullAndValidate
+22/03/2023 18:09:56 SummaryLogger Parameters passed as below: 
+22/03/2023 18:09:56 SummaryLogger public void com.demoQATest.DemoQAElementTest.fillTextBoxFullAndValidate(java.lang.reflect.Method) throws java.io.IOException,java.lang.InterruptedException
+22/03/2023 18:09:56 SummaryLogger =========================
+22/03/2023 18:10:08 SummaryLogger Passed Test Name: clickCheckBoxThenExcelAndValidate
+22/03/2023 18:10:08 SummaryLogger Parameters passed as below: 
+22/03/2023 18:10:08 SummaryLogger public void com.demoQATest.DemoQAElementTest.clickCheckBoxThenExcelAndValidate(java.lang.reflect.Method)
+22/03/2023 18:10:08 SummaryLogger =========================
+22/03/2023 18:10:16 SummaryLogger Passed Test Name: clickRadioButtonAndImpressiveButtonAndValidate
+22/03/2023 18:10:16 SummaryLogger Parameters passed as below: 
+22/03/2023 18:10:16 SummaryLogger public void com.demoQATest.DemoQAElementTest.clickRadioButtonAndImpressiveButtonAndValidate(java.lang.reflect.Method)
+22/03/2023 18:10:16 SummaryLogger =========================
+22/03/2023 18:10:30 SummaryLogger Passed Test Name: clickWebTableAndFillRegistrationFormAndSubmit
+22/03/2023 18:10:30 SummaryLogger Parameters passed as below: 
+22/03/2023 18:10:30 SummaryLogger public void com.demoQATest.DemoQAElementTest.clickWebTableAndFillRegistrationFormAndSubmit(java.lang.reflect.Method) throws java.io.IOException,java.lang.InterruptedException
+22/03/2023 18:10:30 SummaryLogger =========================
+22/03/2023 18:10:49 SummaryLogger Passed Test Name: singleDoubleRightClickAndValidation
+22/03/2023 18:10:49 SummaryLogger Parameters passed as below: 
+22/03/2023 18:10:49 SummaryLogger public void com.demoQATest.DemoQAElementTest.singleDoubleRightClickAndValidation(java.lang.reflect.Method) throws java.lang.InterruptedException
+22/03/2023 18:10:49 SummaryLogger =========================
+22/03/2023 18:10:58 SummaryLogger Passed Test Name: clickUploadAndDownloadThenDownloadAndUploadAFile
+22/03/2023 18:10:58 SummaryLogger Parameters passed as below: 
+22/03/2023 18:10:58 SummaryLogger public void com.demoQATest.DemoQAElementTest.clickUploadAndDownloadThenDownloadAndUploadAFile(java.lang.reflect.Method) throws java.lang.InterruptedException,java.awt.AWTException
+22/03/2023 18:10:58 SummaryLogger =========================
+22/03/2023 18:11:09 SummaryLogger Passed Test Name: clickDyanamicProperties_andFetchButtonTextAfterButtonVisible
+22/03/2023 18:11:09 SummaryLogger Parameters passed as below: 
+22/03/2023 18:11:09 SummaryLogger public void com.demoQATest.DemoQAElementTest.clickDyanamicProperties_andFetchButtonTextAfterButtonVisible(java.lang.reflect.Method)
+22/03/2023 18:11:09 SummaryLogger =========================
+22/03/2023 18:11:20 SummaryLogger Failed Test Name: alertFrameWindowComponentsTest
+22/03/2023 18:11:20 SummaryLogger Parameters passed as below: 
+22/03/2023 18:11:20 SummaryLogger public void com.demoQATest.DemoQAalertFrameWindowTest.alertFrameWindowComponentsTest(java.lang.reflect.Method)
+22/03/2023 18:11:20 SummaryLogger =========================
+22/03/2023 18:11:44 SummaryLogger Passed Test Name: Application
+22/03/2023 18:11:44 SummaryLogger Parameters passed as below: 
+22/03/2023 18:11:44 SummaryLogger public void com.demoQATest.DemoQAFormsPageTest.Application(java.lang.reflect.Method,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String) throws java.awt.AWTException,java.lang.InterruptedException
+22/03/2023 18:11:44 SummaryLogger Davinder
+22/03/2023 18:11:44 SummaryLogger Sharma
+22/03/2023 18:11:44 SummaryLogger davinder@gmail.com
+22/03/2023 18:11:44 SummaryLogger male
+22/03/2023 18:11:44 SummaryLogger 9999999999
+22/03/2023 18:11:44 SummaryLogger 12 March 2020
+22/03/2023 18:11:44 SummaryLogger English
+22/03/2023 18:11:44 SummaryLogger Sports
+22/03/2023 18:11:44 SummaryLogger Bengaluru
+22/03/2023 18:11:44 SummaryLogger NCR
+22/03/2023 18:11:44 SummaryLogger Delhi
+22/03/2023 18:11:44 SummaryLogger =========================
+22/03/2023 18:11:55 SummaryLogger Passed Test Name: Application
+22/03/2023 18:11:55 SummaryLogger Parameters passed as below: 
+22/03/2023 18:11:55 SummaryLogger public void com.demoQATest.DemoQAFormsPageTest.Application(java.lang.reflect.Method,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String) throws java.awt.AWTException,java.lang.InterruptedException
+22/03/2023 18:11:55 SummaryLogger Sapna
+22/03/2023 18:11:55 SummaryLogger Kumari
+22/03/2023 18:11:55 SummaryLogger sapna@gmail.com
+22/03/2023 18:11:55 SummaryLogger Female
+22/03/2023 18:11:55 SummaryLogger 8888888888
+22/03/2023 18:11:55 SummaryLogger 20 August 2022
+22/03/2023 18:11:55 SummaryLogger Maths
+22/03/2023 18:11:55 SummaryLogger Reading
+22/03/2023 18:11:55 SummaryLogger Patna
+22/03/2023 18:11:55 SummaryLogger Haryana
+22/03/2023 18:11:55 SummaryLogger Karnal
+22/03/2023 18:11:55 SummaryLogger =========================
+22/03/2023 18:12:04 SummaryLogger Passed Test Name: Application
+22/03/2023 18:12:04 SummaryLogger Parameters passed as below: 
+22/03/2023 18:12:04 SummaryLogger public void com.demoQATest.DemoQAFormsPageTest.Application(java.lang.reflect.Method,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String) throws java.awt.AWTException,java.lang.InterruptedException
+22/03/2023 18:12:04 SummaryLogger Random
+22/03/2023 18:12:04 SummaryLogger Name
+22/03/2023 18:12:04 SummaryLogger random@gmail.com
+22/03/2023 18:12:04 SummaryLogger OTHERS
+22/03/2023 18:12:04 SummaryLogger 7777777777
+22/03/2023 18:12:04 SummaryLogger 20 June 2008
+22/03/2023 18:12:04 SummaryLogger Accounting
+22/03/2023 18:12:04 SummaryLogger Music
+22/03/2023 18:12:04 SummaryLogger Nepal
+22/03/2023 18:12:04 SummaryLogger Rajasthan
+22/03/2023 18:12:04 SummaryLogger Jaipur
+22/03/2023 18:12:04 SummaryLogger =========================
+22/03/2023 18:13:04 SummaryLogger Failed Test Name: alertFrameWindowComponentsTest
+22/03/2023 18:13:04 SummaryLogger Parameters passed as below: 
+22/03/2023 18:13:04 SummaryLogger public void com.demoQATest.DemoQAalertFrameWindowTest.alertFrameWindowComponentsTest(java.lang.reflect.Method)
+22/03/2023 18:13:04 SummaryLogger =========================
+22/03/2023 18:15:03 SummaryLogger Passed Test Name: alertFrameWindowComponentsTest
+22/03/2023 18:15:03 SummaryLogger Parameters passed as below: 
+22/03/2023 18:15:03 SummaryLogger public void com.demoQATest.DemoQAalertFrameWindowTest.alertFrameWindowComponentsTest(java.lang.reflect.Method)
+22/03/2023 18:15:03 SummaryLogger =========================

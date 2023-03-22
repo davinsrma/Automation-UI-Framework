@@ -1,27 +1,23 @@
 package com.sample.demoQAPageFactory;
 
 import com.sample.util.custUtil;
-import com.sample.util.testBed;
+import com.sample.util.baseClass;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.awt.*;
-import java.awt.event.KeyEvent;
 import java.time.Duration;
 
-import static com.sample.util.testBed.driver;
-
-public class DemoQAFormsPage {
-    WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
+public class DemoQAFormsPage extends baseClass{
+    WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(TIMEOUT));
     custUtil custUtil= new custUtil();
 
 
-    @FindBy(xpath = "/html[1]/body[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/span[1]/div[1]")
+    @FindBy(xpath = "//div[@class='home-body']//div[2]//div[1]//div[1]")
     WebElement formsButton;
     @FindBy(xpath = "//span[normalize-space()='Practice Form']")
     WebElement practiceFormsButton;
@@ -135,32 +131,24 @@ public class DemoQAFormsPage {
     public void setClickSportsCheckBox(){
         wait.until(ExpectedConditions.visibilityOf(sportsCheckBox));
         wait.until(ExpectedConditions.elementToBeClickable(sportsCheckBox));
-        try{
         custUtil.scrollToElement(driver,sportsCheckBox);
-        }catch (Exception e){
-            e.printStackTrace();
-        }
+
         sportsCheckBox.click();
     }
     public void setReadingCheckBox(){
         wait.until(ExpectedConditions.visibilityOf(readingCheckBox));
         wait.until(ExpectedConditions.elementToBeClickable(readingCheckBox));
-        try {
+
             custUtil.scrollToElement(driver,readingCheckBox);
-        }catch (Exception e){
-            e.printStackTrace();
-        }
 
         readingCheckBox.click();
     }
     public void setMusicCheckBox(){
         wait.until(ExpectedConditions.visibilityOf(musicCheckBox));
         wait.until(ExpectedConditions.elementToBeClickable(musicCheckBox));
-        try{
+
         custUtil.scrollToElement(driver,musicCheckBox);
-        }catch (Exception e){
-            e.printStackTrace();
-        }
+
         musicCheckBox.click();
     }
 
@@ -172,11 +160,9 @@ public class DemoQAFormsPage {
     public void setCurrentAddressBox(String address){
         wait.until(ExpectedConditions.visibilityOf(currentAddressBox));
         wait.until(ExpectedConditions.elementToBeClickable(currentAddressBox));
-        try{
+
             custUtil.scrollToElement(driver,currentAddressBox);
-        }catch (Exception e){
-            e.printStackTrace();
-        }
+
             currentAddressBox.sendKeys(address);
     }
     @FindBy(id = "state")
@@ -223,7 +209,7 @@ public class DemoQAFormsPage {
         }catch (Exception e){
             e.printStackTrace();
         }
-        ((JavascriptExecutor) testBed.driver).executeScript("arguments[0].scrollIntoView(true);", submit);
+        ((JavascriptExecutor) baseClass.driver).executeScript("arguments[0].scrollIntoView(true);", submit);
         submit.click();
     }
 }
