@@ -13,13 +13,19 @@ public class DemoQAalertFrameWindowTest  extends baseClass {
     DemoAlertFrameWindowPage demoAlertFrameWindowPage;
 
     @Test
-    public void alertFrameWindowComponentsTest(Method method){
+    public void alertFrameWindowComponentsTest(Method method) throws InterruptedException {
         test = extent.createTest(method.getName());
         test.log(Status.INFO, "The thread ID for method: " + method.getName() + "browser: " + TestBedBrowser + " is " + Thread.currentThread().getId());
 
         demoAlertFrameWindowPage= PageFactory.initElements(baseClass.driver, DemoAlertFrameWindowPage.class);
 
         demoAlertFrameWindowPage.clickAlertFrameWindowButton();
+        demoAlertFrameWindowPage.clickBrowserWindow();
+        demoAlertFrameWindowPage.clickNewTabButton();
+        demoAlertFrameWindowPage.clickNewWindowButton();
+        demoAlertFrameWindowPage.clickNewWindowMessageButton();
+
+
 
     }
 

@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.Set;
 
 public class DemoAlertFrameWindowPage extends baseClass {
     custUtil custUtil=new custUtil();
@@ -15,6 +16,9 @@ public class DemoAlertFrameWindowPage extends baseClass {
 
     @FindBy(xpath = "//div[3]//div[1]//div[2]//*[name()='svg']")
     WebElement alertFrameWindowButton;
+
+    @FindBy(xpath = "//div[@class='element-list collapse show']//li[@id='item-0']")
+    WebElement browserWindow;
 
     @FindBy(xpath = "//button[@id='tabButton']")
     WebElement newTabButton;
@@ -32,8 +36,69 @@ public class DemoAlertFrameWindowPage extends baseClass {
 
             custUtil.scrollToElement(driver, alertFrameWindowButton);
             alertFrameWindowButton.click();
-
+    }
+    public void clickBrowserWindow(){
+        wait.until(ExpectedConditions.visibilityOf(browserWindow));
+        wait.until(ExpectedConditions.elementToBeClickable(browserWindow));
+        custUtil.scrollToElement(driver, browserWindow);
+        browserWindow.click();
     }
 
+    public void clickNewTabButton() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOf(newTabButton));
+        wait.until(ExpectedConditions.elementToBeClickable(newTabButton));
+        custUtil.scrollToElement(driver, newTabButton);
 
+        String originalTab= driver.getWindowHandle();
+        newTabButton.click();
+        Set<String> tabs = driver.getWindowHandles();
+        // Loop through handles to find new tab
+        for(String tab : tabs) {
+            if (!tab.equals(originalTab)) {
+                // Switch to the new tab
+                driver.switchTo().window(tab);
+
+                driver.close();
+                driver.switchTo().window(originalTab);
+            }
+        }
+    }
+    public void clickNewWindowButton(){
+        wait.until(ExpectedConditions.visibilityOf(newWindowButton));
+        wait.until(ExpectedConditions.elementToBeClickable(newWindowButton));
+        String originalTab= driver.getWindowHandle();
+
+        custUtil.scrollToElement(driver, newWindowButton);
+        newWindowButton.click();
+        Set<String> tabs = driver.getWindowHandles();
+        // Loop through handles to find new tab
+        for(String tab : tabs) {
+            if (!tab.equals(originalTab)) {
+                // Switch to the new tab
+                driver.switchTo().window(tab);
+
+                driver.close();
+                driver.switchTo().window(originalTab);
+
+            }
+        }
+    }
+    public void clickNewWindowMessageButton(){
+
+        wait.until(ExpectedConditions.visibilityOf(newWindowMessageButton));
+        wait.until(ExpectedConditions.elementToBeClickable(newWindowMessageButton));
+        custUtil.scrollToElement(driver, newWindowMessageButton);
+        String originalTab= driver.getWindowHandle();
+
+        newWindowMessageButton.click();
+        Set<String> tabs = driver.getWindowHandles();
+        for(String tab : tabs) {
+            if (!tab.equals(originalTab)) {
+                // Switch to the new tab
+                driver.switchTo().window(tab);
+                driver.close();
+                driver.switchTo().window(originalTab);
+            }
+        }
+    }
 }
