@@ -52,6 +52,7 @@ public abstract class baseClass {
     public static ExtentReports extent;
     //helps to generate the logs in the test report.
     public static ExtentTest test;
+    SmsSender smsSender=new SmsSender();
 
 
     @BeforeSuite
@@ -104,6 +105,10 @@ public abstract class baseClass {
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--incognito");
             options.addArguments("--start-maximized");
+//          Below line is useful to remote the exception of WebSocket issue
+            options.addArguments("--remote-allow-origins=*");
+
+//          If you want to operate your code without opening the chrome (Background)
 
 //          options.addArguments("--headless");
 //			options.addArguments("--disable-web-security");
@@ -112,12 +117,14 @@ public abstract class baseClass {
 
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver(options);
-        } else if (browser.equalsIgnoreCase("edge")) {
-            EdgeOptions options = new EdgeOptions();
-            options.addArguments("--incognito");
-            options.addArguments("--start-maximized");
-            WebDriverManager.edgedriver().setup();
-            driver = new EdgeDriver(options);
+
+//            I don't have edge in my macbook, That's why disabled this part
+//        } else if (browser.equalsIgnoreCase("edge")) {
+//            EdgeOptions options = new EdgeOptions();
+//            options.addArguments("--incognito");
+//            options.addArguments("--start-maximized");
+//            WebDriverManager.edgedriver().setup();
+//            driver = new EdgeDriver(options);
 
         } else if (browser.equalsIgnoreCase("firefox")) {
 			FirefoxOptions options = new FirefoxOptions();
@@ -208,32 +215,36 @@ public abstract class baseClass {
         List<String> summary =new ArrayList<String>();
 
         summary.add("\n");
-        summary.add("*******************************");
-        summary.add("\n");
-        summary.add("** Test Execution Summary **");
-        summary.add("\n");
-        summary.add("*******************************");
-        summary.add("\n");
+        summary.add("******************************\n");
+//        summary.add("\n");
+        summary.add("** Test Execution Summary **\n");
+//        summary.add("\n");
+        summary.add("******************************\n");
+//        summary.add("\n");
         summary.add("Pass : " + itstCntxt.getPassedTests().size());
         summary.add("\n");
         summary.add("Fail : " + itstCntxt.getFailedTests().size());
         summary.add("\n");
         summary.add("Skipped : " + itstCntxt.getSkippedTests().size());
         summary.add("\n");
-        summary.add("*******************************");
-        summary.add("\n");
-        summary.add("NOTE: This is system generated email. plz do not reply. If any questions please let me know at davinsrma@gmail.com or Call +91 8877993131");
+        summary.add("******************************\n");
+//        summary.add("\n");
+        summary.add("NOTE: This is system generated report. plz do not reply. If any questions please let me know at \n\ndavinsrma@gmail.com or Call +91 8877993131");
         summary.add("\n");
         custUtil.sendEmailReport(extentReportName , summary);
-    }
 
-    public WebDriver getDriver() {
-        return driver;
-    }
 
-    public WebDriverWait getWebDriverWait() {
-        return wait;
+        smsSender.SendSMS(String.valueOf(summary));
+//        smsSender.SendSMS("\n\n\nAutomation Test Results Below\nPass Test: " + itstCntxt.getPassedTests().size()+"\n"+"Fail Test: " + itstCntxt.getFailedTests().size()+"\n"+"Skipped Test: " + itstCntxt.getSkippedTests().size());
     }
+//
+//    public WebDriver getDriver() {
+//        return driver;
+//    }
+//
+//    public WebDriverWait getWebDriverWait() {
+//        return wait;
+//    }
 
     public static String getEnvFilePath() {
         String filename = "";

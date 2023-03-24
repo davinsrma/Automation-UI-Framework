@@ -10,11 +10,11 @@
 	</listeners>
 
 	<test name="Simple Smoke Test" >
-		<parameter name="browser" value="firefox" />
+		<parameter name="browser" value="chrome" />
 		<classes>
-<!--			<class name="com.demoQATest.DemoQAElementTest" />-->
+			<class name="com.demoQATest.DemoQAElementTest" />
 			<class name="com.demoQATest.DemoQAalertFrameWindowTest" />
-<!--			<class name="com.demoQATest.DemoQAFormsPageTest" />-->
+			<class name="com.demoQATest.DemoQAFormsPageTest" />
 		</classes>
 	</test>
 </suite>

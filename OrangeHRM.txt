@@ -1,7 +1,0 @@
-Open https://www.orangehrm.com/. (Url need to fetch from properties file)
-HoverOver on Plateform
-Then  people management
-then click on Employee management
-click a book demo
-then enter name, email, country, phone, click on i'm not robot then click on submit (Email and other details need to fetch from excel file)
-
