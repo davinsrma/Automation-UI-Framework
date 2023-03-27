@@ -67,7 +67,7 @@ public abstract class baseClass {
         //initialize ExtentReports and attach the HtmlReporter
         extent = new ExtentReports();
 
-        spark.config().setTheme(Theme.DARK);
+        spark.config().setTheme(Theme.STANDARD);
         spark.config().setDocumentTitle("UI Automation Report");
         spark.config().setReportName("Extent Test Report");
         spark.config().setTimeStampFormat("EEEE, MMMM dd, yyyy, hh:mm a '('zzz')'");
@@ -209,7 +209,7 @@ public abstract class baseClass {
         }
     }
 
-    @AfterSuite
+//    @AfterSuite
     public void afterSuite(ITestContext itstCntxt) {
         System.out.println("AfterSuite: Emailing Report");
         List<String> summary =new ArrayList<String>();
@@ -233,18 +233,16 @@ public abstract class baseClass {
         summary.add("\n");
         custUtil.sendEmailReport(extentReportName , summary);
 
-
-        smsSender.SendSMS(String.valueOf(summary));
-//        smsSender.SendSMS("\n\n\nAutomation Test Results Below\nPass Test: " + itstCntxt.getPassedTests().size()+"\n"+"Fail Test: " + itstCntxt.getFailedTests().size()+"\n"+"Skipped Test: " + itstCntxt.getSkippedTests().size());
+//        smsSender.SendSMS(String.valueOf(summary));
     }
-//
-//    public WebDriver getDriver() {
-//        return driver;
-//    }
-//
-//    public WebDriverWait getWebDriverWait() {
-//        return wait;
-//    }
+
+    public WebDriver getDriver() {
+        return driver;
+    }
+
+    public WebDriverWait getWebDriverWait() {
+        return wait;
+    }
 
     public static String getEnvFilePath() {
         String filename = "";

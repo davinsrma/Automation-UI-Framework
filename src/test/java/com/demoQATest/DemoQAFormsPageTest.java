@@ -67,7 +67,7 @@ public class DemoQAFormsPageTest extends baseClass {
 
 //        demoQAFormsPage.selectState(state);
 //        demoQAFormsPage.selectCity(city);
-//        demoQAFormsPage.setSubmit();
+        demoQAFormsPage.setSubmit();
 
     }
 

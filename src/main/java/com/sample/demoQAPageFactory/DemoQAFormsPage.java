@@ -27,15 +27,19 @@ public class DemoQAFormsPage extends baseClass{
         wait.until(ExpectedConditions.elementToBeClickable(formsButton));
         try{
             custUtil.scrollToElement(driver,formsButton);
+
         }catch (Exception e){
             e.printStackTrace();
         }
+        custUtil.highlightElement(formsButton);
         formsButton.click();
     }
     public void clickPracticeFormButton(){
         wait.until(ExpectedConditions.visibilityOf(practiceFormsButton));
         wait.until(ExpectedConditions.elementToBeClickable(practiceFormsButton));
+        custUtil.highlightElement(practiceFormsButton);
         practiceFormsButton.click();
+
     }
 
     @FindBy(id = "firstName")
@@ -46,20 +50,24 @@ public class DemoQAFormsPage extends baseClass{
     WebElement Email;
 
     public void enterFirstName(String firstname){
+
         wait.until(ExpectedConditions.visibilityOf(firstName));
         wait.until(ExpectedConditions.elementToBeClickable(firstName));
+        custUtil.highlightElement(firstName);
         firstName.clear();
         firstName.sendKeys(firstname);
     }
     public void enterLastName(String lastname){
         wait.until(ExpectedConditions.visibilityOf(lastName));
         wait.until(ExpectedConditions.elementToBeClickable(lastName));
+        custUtil.highlightElement(lastName);
         lastName.clear();
         lastName.sendKeys(lastname);
     }
     public void enterEmail(String email){
         wait.until(ExpectedConditions.visibilityOf(Email));
         wait.until(ExpectedConditions.elementToBeClickable(Email));
+        custUtil.highlightElement(Email);
         Email.clear();
         Email.sendKeys(email);
     }
@@ -75,16 +83,22 @@ public class DemoQAFormsPage extends baseClass{
         wait.until(ExpectedConditions.visibilityOf(maleRadioButton));
         wait.until(ExpectedConditions.elementToBeClickable(maleRadioButton));
         maleRadioButton.click();
+        custUtil.highlightElement(maleRadioButton);
+
     }
     public void clickFemailRadioButton(){
         wait.until(ExpectedConditions.visibilityOf(femaleRadioButton));
         wait.until(ExpectedConditions.elementToBeClickable(femaleRadioButton));
         femaleRadioButton.click();
+        custUtil.highlightElement(femaleRadioButton);
+
     }
     public void clickOtherRadioButton(){
         wait.until(ExpectedConditions.visibilityOf(otherRadioButton));
         wait.until(ExpectedConditions.elementToBeClickable(otherRadioButton));
         otherRadioButton.click();
+        custUtil.highlightElement(otherRadioButton);
+
     }
 
     @FindBy(id = "userNumber")
@@ -96,6 +110,7 @@ public class DemoQAFormsPage extends baseClass{
     public void setMobileNumber(String number){
         wait.until(ExpectedConditions.visibilityOf(mobileNumber));
         wait.until(ExpectedConditions.elementToBeClickable(mobileNumber));
+        custUtil.highlightElement(mobileNumber);
         mobileNumber.clear();
         mobileNumber.sendKeys(number);
     }
@@ -115,6 +130,7 @@ public class DemoQAFormsPage extends baseClass{
         }catch (Exception e){
             e.printStackTrace();
         }
+        custUtil.highlightElement(subjectsTextBox);
         subjectsTextBox.click();
 
         subjectsTextBox.sendKeys(subject1);
@@ -132,6 +148,7 @@ public class DemoQAFormsPage extends baseClass{
         wait.until(ExpectedConditions.visibilityOf(sportsCheckBox));
         wait.until(ExpectedConditions.elementToBeClickable(sportsCheckBox));
         custUtil.scrollToElement(driver,sportsCheckBox);
+        custUtil.highlightElement(sportsCheckBox);
 
         sportsCheckBox.click();
     }
@@ -140,6 +157,7 @@ public class DemoQAFormsPage extends baseClass{
         wait.until(ExpectedConditions.elementToBeClickable(readingCheckBox));
 
             custUtil.scrollToElement(driver,readingCheckBox);
+            custUtil.highlightElement(readingCheckBox);
 
         readingCheckBox.click();
     }
@@ -148,6 +166,7 @@ public class DemoQAFormsPage extends baseClass{
         wait.until(ExpectedConditions.elementToBeClickable(musicCheckBox));
 
         custUtil.scrollToElement(driver,musicCheckBox);
+        custUtil.highlightElement(musicCheckBox);
 
         musicCheckBox.click();
     }
@@ -162,6 +181,7 @@ public class DemoQAFormsPage extends baseClass{
         wait.until(ExpectedConditions.elementToBeClickable(currentAddressBox));
 
             custUtil.scrollToElement(driver,currentAddressBox);
+            custUtil.highlightElement(currentAddressBox);
 
             currentAddressBox.sendKeys(address);
     }
@@ -175,6 +195,7 @@ public class DemoQAFormsPage extends baseClass{
         wait.until(ExpectedConditions.elementToBeClickable(stateDropDown));
         try{
             custUtil.scrollToElement(driver,stateDropDown);
+            custUtil.highlightElement(stateDropDown);
 //            custUtil.pageScrollDown(driver);
         }catch (Exception e){
             e.printStackTrace();
@@ -188,6 +209,7 @@ public class DemoQAFormsPage extends baseClass{
         wait.until(ExpectedConditions.elementToBeClickable(cityDropDown));
         try{
             custUtil.scrollToElement(driver,cityDropDown);
+            custUtil.highlightElement(cityDropDown);
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -200,16 +222,15 @@ public class DemoQAFormsPage extends baseClass{
     WebElement submit;
 
     public void setSubmit(){
-        wait.until(ExpectedConditions.visibilityOf(submit));
-        wait.until(ExpectedConditions.elementToBeClickable(submit));
         try {
+            custUtil.zoomControl(50);
+            custUtil.scrollToElement(driver, submit);
+            custUtil.highlightElement(submit);
+            submit.click();
 
-            custUtil.pageScrollDown(driver);
-//            custUtil.scrollToElement(driver,submit);
+            Thread.sleep(1000);
         }catch (Exception e){
             e.printStackTrace();
         }
-        ((JavascriptExecutor) baseClass.driver).executeScript("arguments[0].scrollIntoView(true);", submit);
-        submit.click();
     }
 }

@@ -41,10 +41,16 @@ public class custUtil {
         return r1.nextInt(1000);
     }
 
-    public void zoomOutPage(WebDriver driver){
+    public void zoomControl(int zoomSize){
         jse = (JavascriptExecutor) driver;
-        jse.executeScript("document.body.style.zoom='50%'");
+        jse.executeScript("document.body.style.zoom='"+zoomSize+"%'");
     }
+
+    public void highlightElement(WebElement element) {
+        jse = (JavascriptExecutor) driver;
+        jse.executeScript("arguments[0].setAttribute('style', 'background: yellow; border: 2px solid red;');", element);
+    }
+
 
 
 
