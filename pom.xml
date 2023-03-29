@@ -52,6 +52,10 @@
                             </suiteXmlFiles>
                         </configuration>
                     </plugin>
+
+
+
+
                 </plugins>
             </build>
         </profile>
@@ -72,6 +76,7 @@
             <artifactId>testng</artifactId>
             <version>7.5</version>
         </dependency>
+
 
         <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
         <dependency>
@@ -207,6 +212,21 @@
             <artifactId>allure-testng</artifactId>
             <version>2.21.0</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.twilio.sdk/twilio -->
+        <dependency>
+            <groupId>com.twilio.sdk</groupId>
+            <artifactId>twilio</artifactId>
+            <version>9.3.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>7.5</version>
+            <scope>compile</scope>
+        </dependency>
+
 
     </dependencies>
 </project>

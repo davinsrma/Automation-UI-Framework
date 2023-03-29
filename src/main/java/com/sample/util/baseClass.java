@@ -53,6 +53,7 @@ public abstract class baseClass {
     //helps to generate the logs in the test report.
     public static ExtentTest test;
     SmsSender smsSender=new SmsSender();
+    WhatsAppSender whatsAppSender=new WhatsAppSender();
 
 
     @BeforeSuite
@@ -209,9 +210,12 @@ public abstract class baseClass {
         }
     }
 
-//    @AfterSuite
-    public void afterSuite(ITestContext itstCntxt) {
+    @AfterSuite
+    public void afterSuite(ITestContext itstCntxt) throws IOException {
         System.out.println("AfterSuite: Emailing Report");
+        System.out.println("Sending WhatsApp Report");
+        System.out.println("Sending Report on Mobile as SMS");
+
         List<String> summary =new ArrayList<String>();
 
         summary.add("\n");
@@ -232,8 +236,9 @@ public abstract class baseClass {
         summary.add("NOTE: This is system generated report. plz do not reply. If any questions please let me know at \n\ndavinsrma@gmail.com or Call +91 8877993131");
         summary.add("\n");
         custUtil.sendEmailReport(extentReportName , summary);
-
+//        whatsAppSender.sendWhatsAppReport(String.valueOf(summary));
 //        smsSender.SendSMS(String.valueOf(summary));
+
     }
 
     public WebDriver getDriver() {

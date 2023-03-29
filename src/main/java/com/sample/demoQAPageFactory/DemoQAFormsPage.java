@@ -2,7 +2,6 @@ package com.sample.demoQAPageFactory;
 
 import com.sample.util.custUtil;
 import com.sample.util.baseClass;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -226,6 +225,8 @@ public class DemoQAFormsPage extends baseClass{
             custUtil.zoomControl(50);
             custUtil.scrollToElement(driver, submit);
             custUtil.highlightElement(submit);
+            wait.until(ExpectedConditions.visibilityOf(submit));
+            wait.until(ExpectedConditions.elementToBeClickable(submit));
             submit.click();
 
             Thread.sleep(1000);

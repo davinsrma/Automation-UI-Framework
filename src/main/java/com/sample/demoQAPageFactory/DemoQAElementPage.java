@@ -23,6 +23,7 @@ public class DemoQAElementPage extends baseClass {
     public void clickElementButton(){
         try{
             custUtil.scrollToElement(driver, elementButton);
+            custUtil.highlightElement(elementButton);
             elementButton.click();
         }catch (Exception e){
             e.printStackTrace();
@@ -87,6 +88,7 @@ public class DemoQAElementPage extends baseClass {
         wait.until(ExpectedConditions.visibilityOf(textBox));
         wait.until(ExpectedConditions.elementToBeClickable(textBox));
         custUtil.scrollToElement(driver, textBox);
+        custUtil.highlightElement(textBox);
         textBox.click();
         }catch (Exception e){
             e.printStackTrace();
@@ -96,9 +98,13 @@ public class DemoQAElementPage extends baseClass {
     public void fillTextBox(String userName, String email, String currAdd, String perAdd){
         wait.until(ExpectedConditions.visibilityOf(textBoxFullName));
         wait.until(ExpectedConditions.elementToBeClickable(textBoxFullName));
+        custUtil.highlightElement(textBoxFullName);
         textBoxFullName.sendKeys(userName);
+        custUtil.highlightElement(textBoxEmail);
         textBoxEmail.sendKeys(email);
+        custUtil.highlightElement(texBoxCurrentAddress);
         texBoxCurrentAddress.sendKeys(currAdd);
+        custUtil.highlightElement(texBoxPermanentAddress);
         texBoxPermanentAddress.sendKeys(perAdd);
 
 
@@ -110,6 +116,7 @@ public class DemoQAElementPage extends baseClass {
 
        try{
            custUtil.scrollToElement(driver,textBoxSubmit);
+           custUtil.highlightElement(textBoxSubmit);
         textBoxSubmit.click();
        }catch (Exception e){
            System.out.println(e);
@@ -118,16 +125,19 @@ public class DemoQAElementPage extends baseClass {
     public String getUsername(){
         wait.until(ExpectedConditions.visibilityOf(getUsername));
         String actual=getUsername.getText();
+        custUtil.highlightElement(getUsername);
         return actual;
     }
     public String getEmail(){
         wait.until(ExpectedConditions.visibilityOf(getEmail));
         String actual=getEmail.getText();
+        custUtil.highlightElement(getEmail);
         return actual;
     }
     public void clickCheckboxButton(){
         wait.until(ExpectedConditions.visibilityOf(checkBoxButton));
         wait.until(ExpectedConditions.elementToBeClickable(checkBoxButton));
+        custUtil.highlightElement(checkBoxButton);
         checkBoxButton.click();
     }
     public void clickDropdownHome(){
@@ -155,6 +165,7 @@ public class DemoQAElementPage extends baseClass {
         wait.until(ExpectedConditions.elementToBeClickable(excelFile));
         try{
             custUtil.scrollToElement(driver,excelFile);
+            custUtil.highlightElement(excelFile);
         excelFile.click();
         }catch (Exception e){
             System.out.println(e);
@@ -163,6 +174,7 @@ public class DemoQAElementPage extends baseClass {
     public String getExcelClickValue(){
         wait.until(ExpectedConditions.visibilityOf(excelFileValue));
         String actual=excelFileValue.getText();
+        custUtil.highlightElement(excelFileValue);
 
         return actual;
     }
@@ -171,6 +183,7 @@ public class DemoQAElementPage extends baseClass {
         wait.until(ExpectedConditions.elementToBeClickable(radioButton));
         try{
             custUtil.scrollToElement(driver,radioButton);
+            custUtil.highlightElement(radioButton);
         radioButton.click();
         }catch (Exception e){
 
@@ -182,6 +195,7 @@ public class DemoQAElementPage extends baseClass {
         wait.until(ExpectedConditions.elementToBeClickable(impressivRadioButton));
         try{
             custUtil.scrollToElement(driver,impressivRadioButton);
+            custUtil.highlightElement(impressivRadioButton);
         impressivRadioButton.click();
         }catch (Exception e){
             System.out.println(e);
@@ -191,6 +205,7 @@ public class DemoQAElementPage extends baseClass {
         wait.until(ExpectedConditions.visibilityOf(getImpressivButtonText));
         wait.until(ExpectedConditions.elementToBeClickable(getImpressivButtonText));
         String actual = getImpressivButtonText.getText();
+        custUtil.highlightElement(getImpressivButtonText);
         return actual;
     }
 
@@ -199,6 +214,7 @@ public class DemoQAElementPage extends baseClass {
         wait.until(ExpectedConditions.elementToBeClickable(webTableButton));
         try{
             custUtil.scrollToElement(driver,webTableButton);
+            custUtil.highlightElement(webTableButton);
             webTableButton.click();
         }catch (Exception e){
             System.out.println(e);
@@ -209,6 +225,7 @@ public class DemoQAElementPage extends baseClass {
         wait.until(ExpectedConditions.elementToBeClickable(addRecordButton));
         try{
             custUtil.scrollToElement(driver,addRecordButton);
+            custUtil.highlightElement(addRecordButton);
             addRecordButton.click();
         }catch (Exception e){
             System.out.println(e);
@@ -216,11 +233,17 @@ public class DemoQAElementPage extends baseClass {
     }
     public void fillRegistrationForm(String firstName, String lastName,String uEmail, String age,String salary,String department){
         wait.until(ExpectedConditions.visibilityOf(userFirstname));
+        custUtil.highlightElement(userFirstname);
         userFirstname.sendKeys(firstName);
+        custUtil.highlightElement(userLastname);
         userLastname.sendKeys(lastName);
+        custUtil.highlightElement(userEmail);
         userEmail.sendKeys(uEmail);
+        custUtil.highlightElement(userAge);
         userAge.sendKeys(age);
+        custUtil.highlightElement(userSalary);
         userSalary.sendKeys(salary);
+        custUtil.highlightElement(userDepartment);
         userDepartment.sendKeys(department);
     }
     public void submitRegistrationForm(){
@@ -228,6 +251,7 @@ public class DemoQAElementPage extends baseClass {
         wait.until(ExpectedConditions.elementToBeClickable(userSubmit));
         try{
             custUtil.scrollToElement(driver,userSubmit);
+            custUtil.highlightElement(userSubmit);
             userSubmit.click();
 
         }catch (Exception e){
@@ -258,6 +282,7 @@ public class DemoQAElementPage extends baseClass {
             custUtil.scrollToElement(driver, buttons);
             wait.until(ExpectedConditions.visibilityOf(buttons));
             wait.until(ExpectedConditions.elementToBeClickable(buttons));
+            custUtil.highlightElement(buttons);
             buttons.click();
         }catch (Exception e){
             System.out.println(e);
@@ -267,6 +292,7 @@ public class DemoQAElementPage extends baseClass {
         wait.until(ExpectedConditions.visibilityOf(doubleClickMe));
         wait.until(ExpectedConditions.elementToBeClickable(doubleClickMe));
         custUtil.scrollToElement(driver,doubleClickMe);
+        custUtil.highlightElement(doubleClickMe);
         actions.doubleClick(doubleClickMe).perform();
     }
     public String doubleClickValidation(){
@@ -274,24 +300,28 @@ public class DemoQAElementPage extends baseClass {
         custUtil.scrollToElement(driver,doubleClickValidation);
 
         String doubleClickValidate=doubleClickValidation.getText();
+        custUtil.highlightElement(doubleClickValidation);
         return doubleClickValidate;
     }
     public void rightClickMe(){
         wait.until(ExpectedConditions.visibilityOf(rightClickMe));
         wait.until(ExpectedConditions.elementToBeClickable(rightClickMe));
         custUtil.scrollToElement(driver,rightClickMe);
+        custUtil.highlightElement(rightClickMe);
         actions.contextClick(rightClickMe).perform();
     }
     public String setRightClickValidation(){
         wait.until(ExpectedConditions.visibilityOf(rightClickValidation));
         custUtil.scrollToElement(driver,rightClickValidation);
         String rightClickValidate=rightClickValidation.getText();
+        custUtil.highlightElement(rightClickValidation);
         return rightClickValidate;
     }
     public void singleClick(){
         wait.until(ExpectedConditions.visibilityOf(clickMe));
         wait.until(ExpectedConditions.elementToBeClickable(clickMe));
         custUtil.scrollToElement(driver,clickMe);
+        custUtil.highlightElement(clickMe);
         actions.click(clickMe).perform();
     }
     public String sigleClickValidation() throws InterruptedException {
@@ -299,6 +329,7 @@ public class DemoQAElementPage extends baseClass {
         wait.until(ExpectedConditions.visibilityOf(clickMeValidation));
         custUtil.scrollToElement(driver,clickMeValidation);
         String clickMeValidate=clickMeValidation.getText();
+        custUtil.highlightElement(clickMeValidation);
         return clickMeValidate;
     }
     @FindBy(xpath = "//span[normalize-space()='Upload and Download']")
@@ -312,11 +343,13 @@ public class DemoQAElementPage extends baseClass {
         wait.until(ExpectedConditions.visibilityOf(uploadAndDownloadButton));
         wait.until(ExpectedConditions.elementToBeClickable(uploadAndDownloadButton));
         custUtil.scrollToElement(driver,uploadAndDownloadButton);
+        custUtil.highlightElement(uploadAndDownloadButton);
         uploadAndDownloadButton.click();
     }
     public void setClickToDownload(){
         wait.until(ExpectedConditions.visibilityOf(clickToDownload));
         wait.until(ExpectedConditions.elementToBeClickable(clickToDownload));
+        custUtil.highlightElement(clickToDownload);
         clickToDownload.click();
     }
     public void setClickToUpload() throws InterruptedException, AWTException {
@@ -337,18 +370,21 @@ public class DemoQAElementPage extends baseClass {
         wait.until(ExpectedConditions.visibilityOf(dynamicPropertiesButton));
         wait.until(ExpectedConditions.elementToBeClickable(dynamicPropertiesButton));
         custUtil.scrollToElement(driver,dynamicPropertiesButton);
+        custUtil.highlightElement(dynamicPropertiesButton);
         dynamicPropertiesButton.click();
     }
     public String visibleAfter5Sec(){
         wait.until(ExpectedConditions.visibilityOf(visibleAfter5SceButton));
         wait.until(ExpectedConditions.elementToBeClickable(visibleAfter5SceButton));
         String actual=visibleAfter5SceButton.getText();
+        custUtil.highlightElement(visibleAfter5SceButton);
         return actual;
     }
 
     public String getButtonColor(){
         wait.until(ExpectedConditions.visibilityOf(buttonColor));
         String color=buttonColor.getText();
+        custUtil.highlightElement(buttonColor);
         return color;
     }
 }

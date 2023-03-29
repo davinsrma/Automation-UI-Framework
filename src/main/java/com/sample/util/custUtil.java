@@ -46,12 +46,11 @@ public class custUtil {
         jse.executeScript("document.body.style.zoom='"+zoomSize+"%'");
     }
 
+
     public void highlightElement(WebElement element) {
         jse = (JavascriptExecutor) driver;
         jse.executeScript("arguments[0].setAttribute('style', 'background: yellow; border: 2px solid red;');", element);
     }
-
-
 
 
     public void clearDirectory(String Dir) throws NullPointerException {

@@ -35,12 +35,14 @@ public class DemoAlertFrameWindowPage extends baseClass {
             wait.until(ExpectedConditions.elementToBeClickable(alertFrameWindowButton));
 
             custUtil.scrollToElement(driver, alertFrameWindowButton);
+            custUtil.highlightElement(alertFrameWindowButton);
             alertFrameWindowButton.click();
     }
     public void clickBrowserWindow(){
         wait.until(ExpectedConditions.visibilityOf(browserWindow));
         wait.until(ExpectedConditions.elementToBeClickable(browserWindow));
         custUtil.scrollToElement(driver, browserWindow);
+        custUtil.highlightElement(browserWindow);
         browserWindow.click();
     }
 
@@ -50,6 +52,7 @@ public class DemoAlertFrameWindowPage extends baseClass {
         custUtil.scrollToElement(driver, newTabButton);
 
         String originalTab= driver.getWindowHandle();
+        custUtil.highlightElement(newTabButton);
         newTabButton.click();
         Set<String> tabs = driver.getWindowHandles();
         // Loop through handles to find new tab
@@ -69,6 +72,7 @@ public class DemoAlertFrameWindowPage extends baseClass {
         String originalTab= driver.getWindowHandle();
 
         custUtil.scrollToElement(driver, newWindowButton);
+        custUtil.highlightElement(newWindowButton);
         newWindowButton.click();
         Set<String> tabs = driver.getWindowHandles();
         // Loop through handles to find new tab
@@ -89,7 +93,7 @@ public class DemoAlertFrameWindowPage extends baseClass {
         wait.until(ExpectedConditions.elementToBeClickable(newWindowMessageButton));
         custUtil.scrollToElement(driver, newWindowMessageButton);
         String originalTab= driver.getWindowHandle();
-
+        custUtil.highlightElement(newWindowMessageButton);
         newWindowMessageButton.click();
         Set<String> tabs = driver.getWindowHandles();
         for(String tab : tabs) {
