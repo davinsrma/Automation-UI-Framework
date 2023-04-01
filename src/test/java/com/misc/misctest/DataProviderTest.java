@@ -1,6 +1,6 @@
 package com.misc.misctest;
 
-import com.sample.util.excelUtil;
+import com.sample.util.ExcelUtil;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -10,7 +10,7 @@ import java.lang.reflect.Method;
 public class DataProviderTest {
     @DataProvider(name = "first")
     public Object[][] getData() throws IOException {
-        Object [][]data=excelUtil.ReadDataFromExcelFile("./src/test/resources/userDataInformation.xlsx","abc");
+        Object [][]data= ExcelUtil.ReadDataFromExcelFile("./src/test/resources/userDataInformation.xlsx","abc");
         return data;
     }
     @Test(dataProvider = "first")

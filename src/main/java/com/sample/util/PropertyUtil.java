@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 
-public class propertyUtil
+public class PropertyUtil
 {
     public static Properties LoadProperties(final String fileName)  {
         FileInputStream fis = null;

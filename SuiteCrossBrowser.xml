@@ -10,22 +10,22 @@
         <listener class-name="org.testng.reporters.EmailableReporter"/>
     </listeners>
 
-    <test name="Smoke Test in Chrome">
-        <parameter name="browser" value="Chrome" />
-        <classes>
-            <class name="com.demoQATest.DemoQAElementTest" />
-            <class name="com.demoQATest.DemoQAFormsPageTest" />
-            <class name="com.demoQATest.DemoQAalertFrameWindowTest"/>
-        </classes>
-    </test>
-    <test name ="Smoke Test in FirefoxTest">
-        <parameter name="browser" value="Firefox" />
-        <classes>
-            <class name="com.demoQATest.DemoQAElementTest" />
-            <class name="com.demoQATest.DemoQAFormsPageTest" />
-            <class name="com.demoQATest.DemoQAalertFrameWindowTest"/>
-        </classes>
-    </test>
+<!--    <test name="Smoke Test in Chrome">-->
+<!--        <parameter name="browser" value="Chrome" />-->
+<!--        <classes>-->
+<!--            <class name="com.demoQATest.DemoQAElementTest" />-->
+<!--            <class name="com.demoQATest.DemoQAFormsPageTest" />-->
+<!--            <class name="com.demoQATest.DemoQAalertFrameWindowTest"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--    <test name ="Smoke Test in FirefoxTest">-->
+<!--        <parameter name="browser" value="Firefox" />-->
+<!--        <classes>-->
+<!--            <class name="com.demoQATest.DemoQAElementTest" />-->
+<!--            <class name="com.demoQATest.DemoQAFormsPageTest" />-->
+<!--            <class name="com.demoQATest.DemoQAalertFrameWindowTest"/>-->
+<!--        </classes>-->
+<!--    </test>-->
     <test name="Smoke Test in Safari Test">
         <parameter name="browser" value="safari" />
         <classes>

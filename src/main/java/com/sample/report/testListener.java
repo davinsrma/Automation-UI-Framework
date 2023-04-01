@@ -1,11 +1,11 @@
 package com.sample.report;
-import com.sample.util.logs4jUtil;
+import com.sample.util.Logs4jUtil;
 import org.testng.*;
 
 public class testListener implements ITestListener	,ISuiteListener
 {
 
-	public static logs4jUtil Log4j = new logs4jUtil();
+	public static Logs4jUtil Log4j = new Logs4jUtil();
 
     public String TCName = null;
 	

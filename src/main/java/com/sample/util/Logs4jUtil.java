@@ -6,7 +6,7 @@ import org.apache.log4j.Logger;
  import org.apache.log4j.PropertyConfigurator;
 //Reference DOC: http://blogs.quovantis.com/how-to-use-log4j-with-selenium-web-driver/
 
-public class logs4jUtil
+public class Logs4jUtil
 {
     static String log4jConfPath;
     
@@ -20,8 +20,8 @@ public class logs4jUtil
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-        logs4jUtil.log4jConfPath = current+"/config/log4j.properties";
-        PropertyConfigurator.configure(logs4jUtil.log4jConfPath);
+        Logs4jUtil.log4jConfPath = current+"/config/log4j.properties";
+        PropertyConfigurator.configure(Logs4jUtil.log4jConfPath);
     }
     
 //    public void LogRootInfo(final String msg) {

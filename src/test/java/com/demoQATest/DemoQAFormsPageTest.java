@@ -2,8 +2,8 @@ package com.demoQATest;
 
 import com.aventstack.extentreports.Status;
 import com.sample.demoQAPageFactory.DemoQAFormsPage;
-import com.sample.util.excelUtil;
-import com.sample.util.baseClass;
+import com.sample.util.ExcelUtil;
+import com.sample.util.BaseClass;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Reporter;
 import org.testng.annotations.DataProvider;
@@ -13,7 +13,7 @@ import java.awt.*;
 import java.io.IOException;
 import java.lang.reflect.Method;
 
-public class DemoQAFormsPageTest extends baseClass {
+public class DemoQAFormsPageTest extends BaseClass {
     DemoQAFormsPage demoQAFormsPage;
 
 
@@ -21,16 +21,9 @@ public class DemoQAFormsPageTest extends baseClass {
 
     @Test(dataProvider = "dataForApplicationForm")
     public void Application(Method method,String firstname,String lastname, String email,String gender, String mobile, String dob,String subject, String hobbies, String currentAdd,String state,String city) throws AWTException, InterruptedException {
-        demoQAFormsPage= PageFactory.initElements(baseClass.driver,DemoQAFormsPage.class);
+        demoQAFormsPage= PageFactory.initElements(BaseClass.driver,DemoQAFormsPage.class);
         test = extent.createTest(method.getName());
         test.log(Status.INFO, "The thread ID for method: " + method.getName() + "browser: " + TestBedBrowser + " is " + Thread.currentThread().getId());
-
-//        Actions actions = new Actions(driver);
-//        actions.keyDown(Keys.CONTROL).sendKeys("-").keyUp(Keys.CONTROL).build().perform();
-//        actions.keyDown(Keys.CONTROL).sendKeys("-").keyUp(Keys.CONTROL).build().perform();
-//        actions.keyDown(Keys.CONTROL).sendKeys("-").keyUp(Keys.CONTROL).build().perform();
-//        actions.keyDown(Keys.CONTROL).sendKeys("-").keyUp(Keys.CONTROL).build().perform();
-
 
         demoQAFormsPage.clickFormsButton();
         Reporter.log("Forms Button Clicked");
@@ -73,7 +66,7 @@ public class DemoQAFormsPageTest extends baseClass {
 
     @DataProvider(name = "dataForApplicationForm")
     public Object[][] dataForApplicationForm() throws IOException {
-        Object[][] data2=excelUtil.ReadDataFromExcelFile("./src/test/resources/userDataInformation.xlsx","data2");
+        Object[][] data2= ExcelUtil.ReadDataFromExcelFile("./src/test/resources/userDataInformation.xlsx","data2");
         return data2;
     }
 

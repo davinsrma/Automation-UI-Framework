@@ -4,7 +4,9 @@ import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import org.apache.commons.codec.binary.Base64;
 import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
 
@@ -29,31 +31,29 @@ import java.time.Duration;
 import java.util.*;
 import java.util.List;
 
-import static com.sample.util.baseClass.*;
+import static com.sample.util.BaseClass.*;
 
-public class custUtil {
+public class CustUtil {
 
-    protected javaScriptUtil js = new javaScriptUtil();
-    protected JavascriptExecutor jse= (JavascriptExecutor) driver;
+    protected static javaScriptUtil js = new javaScriptUtil();
+    protected static JavascriptExecutor jse= (JavascriptExecutor) driver;
 
     public static int GetRandomInteger() {
         Random r1 = new Random();
         return r1.nextInt(1000);
     }
 
-    public void zoomControl(int zoomSize){
+    public static void zoomControl(int zoomSize){
         jse = (JavascriptExecutor) driver;
         jse.executeScript("document.body.style.zoom='"+zoomSize+"%'");
     }
 
-
-    public void highlightElement(WebElement element) {
+    public static void highlightElement(WebElement element) {
         jse = (JavascriptExecutor) driver;
         jse.executeScript("arguments[0].setAttribute('style', 'background: yellow; border: 2px solid red;');", element);
     }
 
-
-    public void clearDirectory(String Dir) throws NullPointerException {
+    public static void clearDirectory(String Dir) throws NullPointerException {
         File file = new File(Dir);
         String[] myFiles;
 
@@ -74,7 +74,6 @@ public class custUtil {
         } catch (NullPointerException e) {
             throw new RuntimeException(e);
         }
-
     }
 
     public static void DeleteDirectoryRecursively(String DirPath) throws IOException {
@@ -97,7 +96,7 @@ public class custUtil {
         });
     }
 
-    public void getAllCookies(WebDriver driver, String sFileNameWithPath) {
+    public static void getAllCookies(WebDriver driver, String sFileNameWithPath) {
 //		File file = new File("d:\\a\\Cookies1.data");
         File file = new File(sFileNameWithPath);
         try {
@@ -125,7 +124,7 @@ public class custUtil {
 
     }
 
-    public void uploadFileUsingRobot(String sFilename) throws AWTException, InterruptedException {
+    public static void uploadFileUsingRobot(String sFilename) throws AWTException, InterruptedException {
         Thread.sleep(1000);
         StringSelection ss = new StringSelection(sFilename);
         Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
@@ -168,7 +167,7 @@ public class custUtil {
 //	}
 
 
-    public void waitForElementToDisapper(WebDriver driver, By Byele) throws InterruptedException {
+    public static void waitForElementToDisapper(WebDriver driver, By Byele) throws InterruptedException {
         int Cnt = 0;
 //        By btest = By.xpath("//div[contains(text(),'Loading...')]");
         while (driver.findElements(Byele).size() > 0 && Cnt <= 60) {
@@ -180,7 +179,7 @@ public class custUtil {
 //		System.out.println("");
     }
 
-    public boolean isAlertPresent(WebDriver driver) {
+    public static boolean isAlertPresent(WebDriver driver) {
         try {
             driver.switchTo().alert();
             return true;
@@ -189,9 +188,9 @@ public class custUtil {
         }
     }
 
-    private boolean acceptNextAlert = true;
+    private static boolean acceptNextAlert = true;
 
-    public String closeAlertAndGetItsText(WebDriver driver) {
+    public static String closeAlertAndGetItsText(WebDriver driver) {
         try {
             Alert alert = driver.switchTo().alert();
             String alertText = alert.getText();
@@ -206,13 +205,13 @@ public class custUtil {
         }
     }
 
-    public boolean VerifyTextContainsOnPage(WebDriver driver, String textToVerify) {
+    public static boolean VerifyTextContainsOnPage(WebDriver driver, String textToVerify) {
         driver.getPageSource();
         return driver.getPageSource().contains(textToVerify);
     }
 
 
-    public boolean verifyElementNotDisplayed(WebDriver driver, WebElement ele) {
+    public static boolean verifyElementNotDisplayed(WebDriver driver, WebElement ele) {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 //		driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
         boolean bstatus = verifyElementNotDisplayed(ele);
@@ -220,7 +219,7 @@ public class custUtil {
         return bstatus;
     }
 
-    public boolean verifyElementNotDisplayed(WebElement ele) {
+    public static boolean verifyElementNotDisplayed(WebElement ele) {
         try {
             return (!ele.isDisplayed());
         } catch (Exception e) {
@@ -243,7 +242,7 @@ public class custUtil {
         // Current System Date and time is assigned to objDate
         return (sdf.format(objDate));
     }
-    public void scrollToElement(WebDriver driver, WebElement ele) {
+    public static void scrollToElement(WebDriver driver, WebElement ele) {
 
         try {
             js.execute_js(driver, "arguments[0].scrollIntoView();", ele);
@@ -252,7 +251,8 @@ public class custUtil {
             System.err.println(e);
         }
     }
-    public void pageScrollDown(WebDriver driver)
+
+    public static void pageScrollDown(WebDriver driver)
     {
         try {
         Thread.sleep(1000);
@@ -267,10 +267,10 @@ public class custUtil {
 
 
 
-    public void click(WebDriverWait mywait, WebElement ele) {
+    public static void click(WebDriverWait wait, WebElement ele) {
         try {
-            mywait.until(ExpectedConditions.visibilityOf(ele));
-            mywait.until(ExpectedConditions.elementToBeClickable(ele));
+            wait.until(ExpectedConditions.visibilityOf(ele));
+            wait.until(ExpectedConditions.elementToBeClickable(ele));
             ele.click();
         } catch (Exception e) {
             //noinspection ThrowablePrintedToSystemOut
@@ -278,7 +278,8 @@ public class custUtil {
         }
     }
 
-    public void captureScreenShot(WebDriver driver, String Message) {
+
+    public static void captureScreenShot(WebDriver driver, String Message) {
       try {
           File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
           String encodedBase64 = null;
@@ -304,7 +305,7 @@ public class custUtil {
       }
     }
 
-    public void sendEmailReport(String fileName, List<String> summary) {
+    public static void sendEmailReport(String fileName, List<String> summary) {
 
         // Create object of Property file
         Properties props = new Properties();
@@ -346,7 +347,7 @@ public class custUtil {
             message.setFrom(new InternetAddress("davinsrmaa@gmail.com"));
             // Set the recipient address
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("davinsrma@gmail.com"));
-//            message.setRecipients(Message.RecipientType.CC, InternetAddress.parse("kumarsaurav.234@gmail.com"));
+//            message.setRecipients(Message.RecipientType.CC, InternetAddress.parse("davinsrma@gmail.com"));
 
             // Add the subject link
             message.setSubject("**** UI Automation Rep - Device: "+SystemDetails+" ReportId: " + getCurrentDateTimeStamp() + " On Browser: "+TestBedBrowser+ "****");
@@ -390,12 +391,12 @@ public class custUtil {
         } catch (MessagingException e) {
             throw new RuntimeException(e);
         }
-
     }
-    public void CookiesTest(WebDriver driver) {
+
+    public static void CookiesTest(WebDriver driver) {
         String TempFolder = System.getProperty("user.dir") + "/Temp";
         new File(TempFolder).mkdir();
-        String FileName = TempFolder + "/Cookie_" + custUtil.getCurrentDateTimeStamp() + ".txt";
+        String FileName = TempFolder + "/Cookie_" + CustUtil.getCurrentDateTimeStamp() + ".txt";
 
         Set<Cookie> cookies = driver.manage().getCookies();
 
@@ -411,4 +412,63 @@ public class custUtil {
         }
     }
 
+    public static void mouseHovering(WebElement element){
+        Actions actions=new Actions(driver);
+        actions.moveToElement(element).perform();
+    }
+
+    public static String getVisibleText(WebElement element){
+        String text=element.getText();
+        return text;
+    }
+
+    public static void enterValue(WebElement element, String value){
+        if(element.isDisplayed() && element.isEnabled()){
+            element.clear();
+            element.sendKeys(value);
+        }
+    }
+
+    public static String getPageTitle(){
+        String title= driver.getTitle();
+        return title;
+    }
+
+    public static void dragAndDrop(WebElement source, WebElement destination){
+        Actions actions=new Actions(driver);
+        actions.dragAndDrop(source,destination).perform();
+    }
+    public static void pressTab(){
+        Actions actions=new Actions(driver);
+        actions.sendKeys(Keys.TAB).perform();
+
+    }
+
+    public static void pressEnter(){
+        Actions actions=new Actions(driver);
+        actions.sendKeys(Keys.ENTER).perform();
+    }
+// Similar we can write code for select by index, select by value also
+    public static void selectDropDown(WebElement dropdDown, String text){
+        Select select=new Select(dropdDown);
+        select.selectByVisibleText(text);
+    }
+
+    public static void acceptAlert(){
+       driver.switchTo().alert().accept();
+    }
+
+    public static void dismissAlert(){
+        driver.switchTo().alert().dismiss();
+    }
+
+    public static String getAlertMsg(){
+        String text=driver.switchTo().alert().getText();
+        return text;
+    }
+
+    public static void sendValueToAlert(String value){
+        driver.switchTo().alert().sendKeys(value);
+
+    }
 }

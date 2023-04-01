@@ -16,7 +16,7 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 
-public class excelUtil {
+public class ExcelUtil {
 	public static XSSFWorkbook workbook;
 	public static XSSFSheet worksheet;
 

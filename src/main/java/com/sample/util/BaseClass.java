@@ -16,8 +16,6 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.safari.SafariDriver;
@@ -39,16 +37,16 @@ import java.util.List;
 import static java.net.InetAddress.getLocalHost;
 
 @Listeners({testListener.class, custReportListener.class})
-public abstract class baseClass {
+public abstract class BaseClass {
     public static final int TIMEOUT = 5;
     public  static String TestBedBrowser;
-    private final String produrl = propertyUtil.getProperty(getEnvFilePath(), "URL");
-    custUtil custUtil=new custUtil();
+    private final String produrl = PropertyUtil.getProperty(getEnvFilePath(), "URL");
+    CustUtil CustUtil =new CustUtil();
     Banner banner=new Banner();
-    private final String extentReportName = getResultPath() + "/testReport_" + custUtil.getCurrentDateTimeStamp() + ".html";
+    private final String extentReportName = getResultPath() + "/testReport_" + CustUtil.getCurrentDateTimeStamp() + ".html";
     ExtentSparkReporter spark;
     public static WebDriver driver;
-    public WebDriverWait wait;
+    public static WebDriverWait wait;
     public static ExtentReports extent;
     //helps to generate the logs in the test report.
     public static ExtentTest test;
@@ -90,7 +88,7 @@ public abstract class baseClass {
     }
     @BeforeTest(alwaysRun = true)
     public void beforeTest(final ITestContext testContext) {
-        System.out.println("BeforeTest: Testcase start time stamp: " + custUtil.getCurrentDateTimeStamp());
+        System.out.println("BeforeTest: Testcase start time stamp: " + CustUtil.getCurrentDateTimeStamp());
         extentConfig();
     }
 
@@ -153,14 +151,14 @@ public abstract class baseClass {
 
     @BeforeMethod
     public void beforeMethod() {
-        System.out.println("BeforeMethod time stamp: " + custUtil.getCurrentDateTimeStamp());
+        System.out.println("BeforeMethod time stamp: " + CustUtil.getCurrentDateTimeStamp());
         Reporter.log("Launching URL : " + produrl);
         driver.get(produrl);
     }
 
     @AfterMethod
     public void tearDownMethod(ITestResult result)  {
-        System.out.println("AfterMethod: Testcase end time stamp: " + custUtil.getCurrentDateTimeStamp());
+        System.out.println("AfterMethod: Testcase end time stamp: " + CustUtil.getCurrentDateTimeStamp());
         Reporter.setCurrentTestResult(result);
 
         File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
@@ -182,9 +180,9 @@ public abstract class baseClass {
         String sImageFile = "data:image/png;base64," + encodedBase64;
 
         if (result.getStatus() == ITestResult.FAILURE) {
-            test.log(Status.FAIL, "TimeStamp" + custUtil.getCurrentDateTimeStamp() + ":" + result.getName());
+            test.log(Status.FAIL, "TimeStamp" + CustUtil.getCurrentDateTimeStamp() + ":" + result.getName());
             test.log(Status.FAIL, result.getThrowable(), MediaEntityBuilder.createScreenCaptureFromPath(sImageFile).build());
-            Reporter.log("Failure Time Stamp:" + custUtil.getCurrentDateTimeStamp(), true);
+            Reporter.log("Failure Time Stamp:" + CustUtil.getCurrentDateTimeStamp(), true);
             Reporter.log(String.valueOf(MediaEntityBuilder.createScreenCaptureFromPath(sImageFile).build()));
 
         } else if (result.getStatus() == ITestResult.SUCCESS) {
@@ -210,44 +208,36 @@ public abstract class baseClass {
         }
     }
 
-    @AfterSuite
+//    @AfterSuite
     public void afterSuite(ITestContext itstCntxt) throws IOException {
         System.out.println("AfterSuite: Emailing Report");
-        System.out.println("Sending WhatsApp Report");
-        System.out.println("Sending Report on Mobile as SMS");
+//        System.out.println("Sending Report on Mobile as SMS");
 
         List<String> summary =new ArrayList<String>();
 
         summary.add("\n");
-        summary.add("******************************\n");
-//        summary.add("\n");
-        summary.add("** Test Execution Summary **\n");
-//        summary.add("\n");
-        summary.add("******************************\n");
-//        summary.add("\n");
+        summary.add("******************************");
+        summary.add("\n");
+        summary.add("** Test Execution Summary **");
+        summary.add("\n");
+        summary.add("******************************");
+        summary.add("\n");
         summary.add("Pass : " + itstCntxt.getPassedTests().size());
         summary.add("\n");
         summary.add("Fail : " + itstCntxt.getFailedTests().size());
         summary.add("\n");
         summary.add("Skipped : " + itstCntxt.getSkippedTests().size());
         summary.add("\n");
-        summary.add("******************************\n");
-//        summary.add("\n");
+        summary.add("******************************");
+        summary.add("\n");
         summary.add("NOTE: This is system generated report. plz do not reply. If any questions please let me know at \n\ndavinsrma@gmail.com or Call +91 8877993131");
         summary.add("\n");
-        custUtil.sendEmailReport(extentReportName , summary);
+        CustUtil.sendEmailReport(extentReportName , summary);
 //        whatsAppSender.sendWhatsAppReport(String.valueOf(summary));
 //        smsSender.SendSMS(String.valueOf(summary));
 
     }
 
-    public WebDriver getDriver() {
-        return driver;
-    }
-
-    public WebDriverWait getWebDriverWait() {
-        return wait;
-    }
 
     public static String getEnvFilePath() {
         String filename = "";

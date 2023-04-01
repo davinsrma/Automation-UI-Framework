@@ -1,9 +1,5 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-
 <suite name="Simple Smoke Test Suite " verbose="1" parallel="none" >
-
-
-
 
 	<listeners>
 		<listener class-name="com.sample.report.custReportListener"/>
@@ -14,8 +10,6 @@
 
 	<test name="Simple Smoke Test For Demo" >
 		<parameter name="browser" value="chrome" />
-
-
 		<classes>
 <!--			<class name="com.demoQATest.DemoQAElementTest" />-->
 			<class name="com.demoQATest.DemoQAalertFrameWindowTest" />
