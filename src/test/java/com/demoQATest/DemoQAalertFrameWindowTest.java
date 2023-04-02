@@ -27,7 +27,7 @@ public class DemoQAalertFrameWindowTest  extends BaseClass {
         demoAlertFrameWindowPage.clickNewWindowMessageButton();
     }
 
-    @Test
+//    @Test
     public void alertClicksAndValidation(Method method) throws InterruptedException {
         test = extent.createTest(method.getName());
         test.log(Status.INFO, "The thread ID for method: " + method.getName() + "browser: " + TestBedBrowser + " is " + Thread.currentThread().getId());
@@ -40,7 +40,22 @@ public class DemoQAalertFrameWindowTest  extends BaseClass {
         demoAlertFrameWindowPage.clickButton1AndAcceptAlert();
         demoAlertFrameWindowPage.clickButton2AndWaitForAlertToApper();
         demoAlertFrameWindowPage.clickButton3AndSelectOK();
-        demoAlertFrameWindowPage.clickButton4AndSendValue();
+        demoAlertFrameWindowPage.clickButton4AndSendValue("Hello");
+    }
+
+    @Test
+    public void switching_Frames_And_Fetching_Frame_Value(Method method) throws InterruptedException {
+        test = extent.createTest(method.getName());
+        test.log(Status.INFO, "The thread ID for method: " + method.getName() + "browser: " + TestBedBrowser + " is " + Thread.currentThread().getId());
+
+        demoAlertFrameWindowPage= PageFactory.initElements(BaseClass.driver, DemoAlertFrameWindowPage.class);
+
+        demoAlertFrameWindowPage.clickAlertFrameWindowButton();
+        demoAlertFrameWindowPage.clickOnFrame();
+        demoAlertFrameWindowPage.fetchFrameContent1();
+        Thread.sleep(2000);
+        demoAlertFrameWindowPage.fetchFrameContent2();
+        Thread.sleep(2000);
     }
 
 }

@@ -3017,3 +3017,11 @@
 01/04/2023 18:09:04 SummaryLogger Parameters passed as below: 
 01/04/2023 18:09:04 SummaryLogger public void com.demoQATest.DemoQAalertFrameWindowTest.alertClicksAndValidation(java.lang.reflect.Method) throws java.lang.InterruptedException
 01/04/2023 18:09:04 SummaryLogger =========================
+01/04/2023 22:57:00 SummaryLogger Failed Test Name: switching_Frames_And_Fetching_Frame_Value
+01/04/2023 22:57:00 SummaryLogger Parameters passed as below: 
+01/04/2023 22:57:00 SummaryLogger public void com.demoQATest.DemoQAalertFrameWindowTest.switching_Frames_And_Fetching_Frame_Value(java.lang.reflect.Method) throws java.lang.InterruptedException
+01/04/2023 22:57:00 SummaryLogger =========================
+01/04/2023 23:00:16 SummaryLogger Failed Test Name: switching_Frames_And_Fetching_Frame_Value
+01/04/2023 23:00:16 SummaryLogger Parameters passed as below: 
+01/04/2023 23:00:16 SummaryLogger public void com.demoQATest.DemoQAalertFrameWindowTest.switching_Frames_And_Fetching_Frame_Value(java.lang.reflect.Method) throws java.lang.InterruptedException
+01/04/2023 23:00:16 SummaryLogger =========================

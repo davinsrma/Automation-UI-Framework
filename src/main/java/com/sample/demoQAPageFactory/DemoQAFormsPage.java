@@ -24,13 +24,13 @@ public class DemoQAFormsPage extends BaseClass {
         wait.until(ExpectedConditions.visibilityOf(formsButton));
         wait.until(ExpectedConditions.elementToBeClickable(formsButton));
         CustUtil.scrollToElement(driver,formsButton);
-        CustUtil.highlightElement(formsButton);
+        CustUtil.highlightElement(driver,formsButton);
         formsButton.click();
     }
     public void clickPracticeFormButton(){
         wait.until(ExpectedConditions.visibilityOf(practiceFormsButton));
         wait.until(ExpectedConditions.elementToBeClickable(practiceFormsButton));
-        CustUtil.highlightElement(practiceFormsButton);
+        CustUtil.highlightElement(driver,practiceFormsButton);
         practiceFormsButton.click();
 
     }
@@ -46,21 +46,21 @@ public class DemoQAFormsPage extends BaseClass {
 
         wait.until(ExpectedConditions.visibilityOf(firstName));
         wait.until(ExpectedConditions.elementToBeClickable(firstName));
-        CustUtil.highlightElement(firstName);
+        CustUtil.highlightElement(driver,firstName);
         firstName.clear();
         firstName.sendKeys(firstname);
     }
     public void enterLastName(String lastname){
         wait.until(ExpectedConditions.visibilityOf(lastName));
         wait.until(ExpectedConditions.elementToBeClickable(lastName));
-        CustUtil.highlightElement(lastName);
+        CustUtil.highlightElement(driver,lastName);
         lastName.clear();
         lastName.sendKeys(lastname);
     }
     public void enterEmail(String email){
         wait.until(ExpectedConditions.visibilityOf(Email));
         wait.until(ExpectedConditions.elementToBeClickable(Email));
-        CustUtil.highlightElement(Email);
+        CustUtil.highlightElement(driver,Email);
         Email.clear();
         Email.sendKeys(email);
     }
@@ -77,7 +77,7 @@ public class DemoQAFormsPage extends BaseClass {
         wait.until(ExpectedConditions.visibilityOf(maleRadioButton));
         wait.until(ExpectedConditions.elementToBeClickable(maleRadioButton));
 
-        CustUtil.highlightElement(maleRadioButton);
+        CustUtil.highlightElement(driver,maleRadioButton);
         CustUtil.click(wait, maleRadioButton);
 
 
@@ -86,7 +86,7 @@ public class DemoQAFormsPage extends BaseClass {
         CustUtil.scrollToElement(driver, femaleRadioButton);
         wait.until(ExpectedConditions.visibilityOf(femaleRadioButton));
         wait.until(ExpectedConditions.elementToBeClickable(femaleRadioButton));
-        CustUtil.highlightElement(femaleRadioButton);
+        CustUtil.highlightElement(driver,femaleRadioButton);
         femaleRadioButton.click();
 
 
@@ -95,7 +95,7 @@ public class DemoQAFormsPage extends BaseClass {
         CustUtil.scrollToElement(driver, otherRadioButton);
         wait.until(ExpectedConditions.visibilityOf(otherRadioButton));
         wait.until(ExpectedConditions.elementToBeClickable(otherRadioButton));
-        CustUtil.highlightElement(otherRadioButton);
+        CustUtil.highlightElement(driver,otherRadioButton);
         otherRadioButton.click();
 
 
@@ -110,7 +110,7 @@ public class DemoQAFormsPage extends BaseClass {
     public void setMobileNumber(String number){
         wait.until(ExpectedConditions.visibilityOf(mobileNumber));
         wait.until(ExpectedConditions.elementToBeClickable(mobileNumber));
-        CustUtil.highlightElement(mobileNumber);
+        CustUtil.highlightElement(driver,mobileNumber);
         mobileNumber.clear();
         mobileNumber.sendKeys(number);
     }
@@ -130,7 +130,7 @@ public class DemoQAFormsPage extends BaseClass {
         }catch (Exception e){
             e.printStackTrace();
         }
-        CustUtil.highlightElement(subjectsTextBox);
+        CustUtil.highlightElement(driver,subjectsTextBox);
         subjectsTextBox.click();
 
         subjectsTextBox.sendKeys(subject1);
@@ -148,7 +148,7 @@ public class DemoQAFormsPage extends BaseClass {
         wait.until(ExpectedConditions.visibilityOf(sportsCheckBox));
         wait.until(ExpectedConditions.elementToBeClickable(sportsCheckBox));
         CustUtil.scrollToElement(driver,sportsCheckBox);
-        CustUtil.highlightElement(sportsCheckBox);
+        CustUtil.highlightElement(driver,sportsCheckBox);
 
         sportsCheckBox.click();
     }
@@ -157,7 +157,7 @@ public class DemoQAFormsPage extends BaseClass {
         wait.until(ExpectedConditions.elementToBeClickable(readingCheckBox));
 
             CustUtil.scrollToElement(driver,readingCheckBox);
-            CustUtil.highlightElement(readingCheckBox);
+            CustUtil.highlightElement(driver,readingCheckBox);
 
         readingCheckBox.click();
     }
@@ -166,7 +166,7 @@ public class DemoQAFormsPage extends BaseClass {
         wait.until(ExpectedConditions.elementToBeClickable(musicCheckBox));
 
         CustUtil.scrollToElement(driver,musicCheckBox);
-        CustUtil.highlightElement(musicCheckBox);
+        CustUtil.highlightElement(driver,musicCheckBox);
 
         musicCheckBox.click();
     }
@@ -181,7 +181,7 @@ public class DemoQAFormsPage extends BaseClass {
         wait.until(ExpectedConditions.elementToBeClickable(currentAddressBox));
 
             CustUtil.scrollToElement(driver,currentAddressBox);
-            CustUtil.highlightElement(currentAddressBox);
+            CustUtil.highlightElement(driver,currentAddressBox);
 
             currentAddressBox.sendKeys(address);
     }
@@ -195,7 +195,7 @@ public class DemoQAFormsPage extends BaseClass {
         wait.until(ExpectedConditions.elementToBeClickable(stateDropDown));
         try{
             CustUtil.scrollToElement(driver,stateDropDown);
-            CustUtil.highlightElement(stateDropDown);
+            CustUtil.highlightElement(driver,stateDropDown);
 //            custUtil.pageScrollDown(driver);
         }catch (Exception e){
             e.printStackTrace();
@@ -209,7 +209,7 @@ public class DemoQAFormsPage extends BaseClass {
         wait.until(ExpectedConditions.elementToBeClickable(cityDropDown));
         try{
             CustUtil.scrollToElement(driver,cityDropDown);
-            CustUtil.highlightElement(cityDropDown);
+            CustUtil.highlightElement(driver,cityDropDown);
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -228,7 +228,7 @@ public class DemoQAFormsPage extends BaseClass {
             wait.until(ExpectedConditions.elementToBeClickable(submit));
             CustUtil.scrollToElement(driver, submit);
 
-            CustUtil.highlightElement(submit);
+            CustUtil.highlightElement(driver,submit);
 
             Thread.sleep(1000);
         }catch (Exception e){

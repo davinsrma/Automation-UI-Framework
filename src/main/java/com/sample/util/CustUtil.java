@@ -48,7 +48,7 @@ public class CustUtil {
         jse.executeScript("document.body.style.zoom='"+zoomSize+"%'");
     }
 
-    public static void highlightElement(WebElement element) {
+    public static void highlightElement(WebDriver driver,WebElement element) {
         jse = (JavascriptExecutor) driver;
         jse.executeScript("arguments[0].setAttribute('style', 'background: yellow; border: 2px solid red;');", element);
     }
@@ -469,6 +469,12 @@ public class CustUtil {
 
     public static void sendValueToAlert(String value){
         driver.switchTo().alert().sendKeys(value);
+    }
 
+    public static void switchFrame(WebElement frameName){
+        driver.switchTo().frame(frameName);
+    }
+    public static void switchDefaultFrame(){
+        driver.switchTo().defaultContent();
     }
 }

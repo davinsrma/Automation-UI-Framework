@@ -34,14 +34,14 @@ public class DemoAlertFrameWindowPage extends BaseClass {
             wait.until(ExpectedConditions.elementToBeClickable(alertFrameWindowButton));
 
             CustUtil.scrollToElement(driver, alertFrameWindowButton);
-            CustUtil.highlightElement(alertFrameWindowButton);
+            CustUtil.highlightElement(driver,alertFrameWindowButton);
             alertFrameWindowButton.click();
     }
     public void clickBrowserWindow(){
         wait.until(ExpectedConditions.visibilityOf(browserWindow));
         wait.until(ExpectedConditions.elementToBeClickable(browserWindow));
         CustUtil.scrollToElement(driver, browserWindow);
-        CustUtil.highlightElement(browserWindow);
+        CustUtil.highlightElement(driver,browserWindow);
         browserWindow.click();
     }
 
@@ -51,7 +51,7 @@ public class DemoAlertFrameWindowPage extends BaseClass {
         CustUtil.scrollToElement(driver, newTabButton);
 
         String originalTab= driver.getWindowHandle();
-        CustUtil.highlightElement(newTabButton);
+        CustUtil.highlightElement(driver,newTabButton);
         newTabButton.click();
         Set<String> tabs = driver.getWindowHandles();
         // Loop through handles to find new tab
@@ -71,7 +71,7 @@ public class DemoAlertFrameWindowPage extends BaseClass {
         String originalTab= driver.getWindowHandle();
 
         CustUtil.scrollToElement(driver, newWindowButton);
-        CustUtil.highlightElement(newWindowButton);
+        CustUtil.highlightElement(driver,newWindowButton);
         newWindowButton.click();
         Set<String> tabs = driver.getWindowHandles();
         // Loop through handles to find new tab
@@ -92,7 +92,7 @@ public class DemoAlertFrameWindowPage extends BaseClass {
         wait.until(ExpectedConditions.elementToBeClickable(newWindowMessageButton));
         CustUtil.scrollToElement(driver, newWindowMessageButton);
         String originalTab= driver.getWindowHandle();
-        CustUtil.highlightElement(newWindowMessageButton);
+        CustUtil.highlightElement(driver,newWindowMessageButton);
         newWindowMessageButton.click();
         Set<String> tabs = driver.getWindowHandles();
         for(String tab : tabs) {
@@ -121,35 +121,67 @@ public class DemoAlertFrameWindowPage extends BaseClass {
         wait.until(ExpectedConditions.visibilityOf(alertButton));
         wait.until(ExpectedConditions.elementToBeClickable(alertButton));
         CustUtil.scrollToElement(driver, alertButton);
-        CustUtil.highlightElement(alertButton);
+        CustUtil.highlightElement(driver,alertButton);
         alertButton.click();
     }
     public void clickButton1AndAcceptAlert(){
         wait.until(ExpectedConditions.visibilityOf(clickButton1));
         wait.until(ExpectedConditions.elementToBeClickable(clickButton1));
         CustUtil.scrollToElement(driver, clickButton1);
-        CustUtil.highlightElement(clickButton1);
+        CustUtil.highlightElement(driver,clickButton1);
         clickButton1.click();
         CustUtil.acceptAlert();
     }
     public void clickButton2AndWaitForAlertToApper() throws InterruptedException {
         CustUtil.scrollToElement(driver, clickButton2);
-        CustUtil.highlightElement(clickButton2);
+        CustUtil.highlightElement(driver,clickButton2);
         clickButton2.click();
         Thread.sleep(6000);
         CustUtil.acceptAlert();
     }
     public void clickButton3AndSelectOK(){
         CustUtil.scrollToElement(driver, clickButton3);
-        CustUtil.highlightElement(clickButton3);
+        CustUtil.highlightElement(driver,clickButton3);
         clickButton3.click();
         CustUtil.acceptAlert();
     }
-    public void clickButton4AndSendValue(){
+    public void clickButton4AndSendValue(String value) throws InterruptedException {
         CustUtil.scrollToElement(driver, clickButton4);
-        CustUtil.highlightElement(clickButton4);
+        CustUtil.highlightElement(driver,clickButton4);
         clickButton4.click();
-        CustUtil.sendValueToAlert("Hello");
+        CustUtil.sendValueToAlert(value);
         CustUtil.acceptAlert();
+        Thread.sleep(2000);
     }
+
+    @FindBy(xpath = "//span[text()='Frames']")
+    WebElement framesButton;
+
+    public void clickOnFrame(){
+        wait.until(ExpectedConditions.visibilityOf(framesButton));
+        wait.until(ExpectedConditions.elementToBeClickable(framesButton));
+        CustUtil.scrollToElement(driver, framesButton);
+        framesButton.click();
+    }
+    @FindBy(id="frame1")
+    WebElement frame1;
+    @FindBy(xpath = "//h1[@id='sampleHeading']")
+    WebElement frame1Value;
+
+    public String fetchFrameContent1(){
+        wait.until(ExpectedConditions.visibilityOf(frame1));
+        CustUtil.switchFrame(frame1);
+        String text=frame1Value.getText();
+        return text;
+    }
+    @FindBy(id = "frame2")
+    WebElement frame2;
+
+    public String fetchFrameContent2(){
+        wait.until(ExpectedConditions.visibilityOf(frame2));
+        CustUtil.switchFrame(frame2);
+        String text=frame1Value.getText();
+        return text;
+    }
+
 }
