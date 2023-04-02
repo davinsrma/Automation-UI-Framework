@@ -6,37 +6,37 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
-
 import java.time.Duration;
 import java.util.List;
 
-//Incomplete codes
 public class ClickEachElement {
-    private static WebDriver driver;
 
     public static void main(String[] args) {
-
-        FirefoxOptions options = new FirefoxOptions();
-        options.addArguments("--incognito");
-        options.addArguments("--start-maximized");
         WebDriverManager.firefoxdriver().setup();
-        driver = new FirefoxDriver(options);
+        WebDriver driver = new FirefoxDriver();
 
-        // Navigate to the website you want to test
+        // Navigate to the webpage
         driver.get("https://www.google.com");
 
+        // Find all clickable elements on the page
+        List<WebElement> clickableElements = driver.findElements(By.xpath("//a | //button"));
 
-        List<WebElement> elementsToClick = driver.findElements(By.xpath("//button"));
-        for(WebElement element : elementsToClick) {
-//            CustUtil.highlightElement(driver, element);
-            element.click();
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-            driver.navigate().back();
+        // Click on each clickable element
+        for (int i = 0; i < clickableElements.size(); i++) {
+            // Find the element again to handle stale element reference exceptions
+            clickableElements = driver.findElements(By.xpath("//a | //button"));
 
+            WebElement element = clickableElements.get(i);
+            try{
+                CustUtil.highlightElement(driver, element);
+                element.click();
+                driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+                driver.navigate().back();
+
+            }catch (Exception e){
+                System.out.println("Some elements are not clickable :"+element.getText());
+            }
         }
         driver.quit();
-
-
     }
 }
