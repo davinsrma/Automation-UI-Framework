@@ -17,7 +17,7 @@ public class ClickEachElement {
 
         // Navigate to the webpage
         driver.get("https://www.google.com");
-
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         // Find all clickable elements on the page
         List<WebElement> clickableElements = driver.findElements(By.xpath("//a | //button"));
 
@@ -27,14 +27,21 @@ public class ClickEachElement {
             clickableElements = driver.findElements(By.xpath("//a | //button"));
 
             WebElement element = clickableElements.get(i);
-            try{
-                CustUtil.highlightElement(driver, element);
-                element.click();
-                driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-                driver.navigate().back();
 
-            }catch (Exception e){
-                System.out.println("Some elements are not clickable :"+element.getText());
+                if(element.isDisplayed() && element.isEnabled()){
+                try{
+                CustUtil.scrollToElement(driver, element);
+                CustUtil.highlightElement(driver, element);
+                    try{
+                        System.out.println("Clicked elements :"+element.getText());
+                        element.click();
+                        driver.navigate().back();
+                         }catch (Exception e){
+                    }
+
+                }catch (Exception e){
+//                System.out.println("Not clicked elements :"+element.getText());
+                }
             }
         }
         driver.quit();
