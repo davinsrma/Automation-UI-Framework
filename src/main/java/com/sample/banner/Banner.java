@@ -10,7 +10,6 @@ public class Banner {
         String line;
         while ((line = reader.readLine())!=null){
             System.out.println(line);
-
         }
     }
 }
