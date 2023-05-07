@@ -28,7 +28,7 @@ public class ClickEachElement {
 
             WebElement element = clickableElements.get(i);
 
-                if(element.isDisplayed() && element.isEnabled()){
+                if(element.isDisplayed() && element.isEnabled() ){
                 try{
                 CustUtil.scrollToElement(driver, element);
                 CustUtil.highlightElement(driver, element);
