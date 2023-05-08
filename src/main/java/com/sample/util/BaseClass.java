@@ -16,6 +16,8 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.safari.SafariDriver;
@@ -95,7 +97,7 @@ public abstract class BaseClass {
 
     @Parameters("browser")
     @BeforeClass
-    public void beforeClass(@Optional("safari") String browser) throws IOException {
+    public void beforeClass(String browser) throws IOException {
         banner.bannerReader();
         System.out.println("BeforeClass: invoking browser:" + browser);
         TestBedBrowser = browser;
@@ -117,13 +119,12 @@ public abstract class BaseClass {
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver(options);
 
-//            I don't have edge in my macbook, That's why disabled this part
-//        } else if (browser.equalsIgnoreCase("edge")) {
-//            EdgeOptions options = new EdgeOptions();
-//            options.addArguments("--incognito");
-//            options.addArguments("--start-maximized");
-//            WebDriverManager.edgedriver().setup();
-//            driver = new EdgeDriver(options);
+        } else if (browser.equalsIgnoreCase("edge")) {
+            EdgeOptions options = new EdgeOptions();
+            options.addArguments("--incognito");
+            options.addArguments("--start-maximized");
+            WebDriverManager.edgedriver().setup();
+            driver = new EdgeDriver(options);
 
         } else if (browser.equalsIgnoreCase("firefox")) {
 			FirefoxOptions options = new FirefoxOptions();
@@ -208,7 +209,7 @@ public abstract class BaseClass {
         }
     }
 
-//    @AfterSuite
+    @AfterSuite
     public void afterSuite(ITestContext itstCntxt) throws IOException {
         System.out.println("AfterSuite: Emailing Report");
 //        System.out.println("Sending Report on Mobile as SMS");

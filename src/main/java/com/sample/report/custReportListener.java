@@ -357,8 +357,10 @@ public class custReportListener implements IReporter {
 
 	@SuppressWarnings("unused")
 	public void generateSuiteSummaryReport(List<ISuite> suites) throws IOException {
+
 		tableStart("testOverview", null);
 		writer.print("<tr>");
+		titleRow("ENV URL: "+ PropertyUtil.getProperty(BaseClass.getEnvFilePath(), "URL"));
 		tableColumnStart("Test");
 		tableColumnStart("Methods<br/>Passed");
 		tableColumnStart("# skipped");
@@ -380,7 +382,7 @@ public class custReportListener implements IReporter {
 		int qty_fail = 0;
 		long time_end = Long.MIN_VALUE;
 		m_testIndex = 1;
-		titleRow("ENV URL: "+ PropertyUtil.getProperty(BaseClass.getEnvFilePath(), "URL"));
+//		titleRow("ENV URL: "+ PropertyUtil.getProperty(BaseClass.getEnvFilePath(), "URL"));
 		for (ISuite suite : suites) {
 			if (suites.size() >= 1) {
 				titleRow(suite.getName());
@@ -490,6 +492,7 @@ public class custReportListener implements IReporter {
 	}
 
 	protected void writeReportTitle() {
+
 		writer.print("<center><h1>" + custReportListener.reportTitle + " - " + getDateAsString() + "</h1></center>");
 	}
 
