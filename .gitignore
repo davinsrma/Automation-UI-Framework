@@ -1,2 +1,9 @@
 
 /target/
+.idea
+/allure-results
+/logs
+/Results
+/target
+.classpath
+.project

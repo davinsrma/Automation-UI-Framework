@@ -8,6 +8,8 @@ import java.io.IOException;
 import java.lang.reflect.Method;
 
 public class DataProviderTest {
+
+
     @DataProvider(name = "first")
     public Object[][] getData() throws IOException {
         Object [][]data= ExcelUtil.ReadDataFromExcelFile("./src/test/resources/userDataInformation.xlsx","abc");
