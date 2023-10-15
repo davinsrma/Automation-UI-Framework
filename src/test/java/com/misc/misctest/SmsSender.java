@@ -15,8 +15,8 @@ import java.util.List;
 
 public class SmsSender {
     public static void main(String[] args) {
-        String accountSid = "AC4be9d7225cb89e953cc7ac8f5438e433";
-        String authToken = "55854c1f4ee6719684faf99b3c887e81";
+        String accountSid = "xxxxxx";
+        String authToken = "xxxxxx";
         String apiUrl = "https://api.twilio.com/2010-04-01/Accounts/" + accountSid + "/Messages.json";
 
         HttpClient httpClient = HttpClientBuilder.create().build();
