@@ -51,7 +51,7 @@ public class SendResultByEmailTest {
 
                     protected PasswordAuthentication getPasswordAuthentication() {
 
-                        return new PasswordAuthentication("davinsrmaa@gmail.com", "depksbavxmgemsbi");
+                        return new PasswordAuthentication("davinsrmaa@gmail.com", "xxxxxxx");
 
                     }
 
